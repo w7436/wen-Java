@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * @ClassName Test
  * @Description
- * @Author wenxin 
+ * @Author wenxin
  * @Data 2019/10/15 19:32
  * @Version 1.0
  **/
