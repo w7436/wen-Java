@@ -11,6 +11,67 @@ import java.util.Arrays;
 
 
 public class Test {
+    //数组的定义
+    public static void main3(String[] args) {
+        //length是方法的属性，遍历数组
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = new int[]{1, 2, 3, 4, 5};//new产生一个对象，引用存放对象de地址
+        int[] array3 = new int[5];//当定义好数组之后，未初始化，则为0，如果是引用类型就是NULL
+
+
+        //采用for循环
+        for (int i = 0; i < array1.length; i++) {
+            System.out.print(array1[i] + " ");
+        }
+        //foreach
+        for (int x : array1) {//不能用下标去访问
+            System.out.print(x + " ");
+        }
+        //采用字符串的形式打印
+        System.out.println(Arrays.toString(array1));//将数组以字符串的形式打印
+        //区别：对于foreach来说，不能用下标访问
+        //当定义好数组之后没有初始化，默认值为0，数组当中如果是引用类型就是null
+    }
+
+
+    //数组作为参数
+    public static void func(int x){
+        x=10;
+    }
+    public static void func2(int []array){
+        array[0]=99;
+    }
+
+    //数组作为返回值
+    public static int[] fun3(){
+        int []array={1,2,3,4,5};
+        return array;
+    }
+    public static void main9(String[] args) {
+        int []array={1,2,3,4,5};
+        int a=20;
+        System.out.println(a);//20
+        func(a);
+        System.out.println(a);//20
+
+        func2(array);
+        System.out.println(array[0]);//99
+
+        int[] ret=fun3();
+        for (int x : ret) {//不能用下标去访问
+            System.out.print(x + " ");
+        }
+    }
+
+//空指针异常
+    public static void main11(String[] args) {
+//        int array[]=null;
+//        System.out.println(array);
+//        System.out.println(array.length);
+        String str=null;
+        System.out.println(str.length());
+    }
+
     //最大值
     public static int Max(int []array){
         int max=array[0];
@@ -126,24 +187,7 @@ public class Test {
     }
 
 
-    public static void main3(String[] args) {
-        //length是方法的属性，遍历数组
-        int[] array1 = {1, 2, 3, 4, 5};
-        int[] array2 = new int[]{1, 2, 3, 4, 5};
-        int[] array3 = new int[5];
-        //采用for循环
-        for (int i = 0; i < array1.length; i++) {
-            System.out.print(array1[i] + " ");
-        }
-        //foreach
-        for (int x : array1) {
-            System.out.print(x + " ");
-        }
-        //采用字符串的形式打印
-        System.out.println(Arrays.toString(array1));//将数组以字符串的形式打印
-        //区别：对于foreach来说，不能用下标访问
-        //当定义好数组之后没有初始化，默认值为0，数组当中如果是引用类型就是null
-    }
+
 
 
 
@@ -184,11 +228,10 @@ public class Test {
     public static void main5(String[] args) {
         int[] array = {1,2,3,4,5,6};
         int [] array2=new int[array.length];
-        System.out.println(Arrays.toString(array2));
+
         //采用循环
         for (int i = 0; i <array.length ; i++) {
             array2[i]=array[i];
-
         }
         System.out.println(Arrays.toString(array2));
         //采用arraycopy方法
@@ -274,9 +317,6 @@ public class Test {
 
     }
 
-    public static void main(String[] args) {
-        
-    }
 
 
 
