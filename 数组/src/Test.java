@@ -316,11 +316,18 @@ public class Test {
         System.out.println(Arrays.deepToString(array5));
 
     }
+    //可变参数编程
+    public static int sum(int... a){
+        int ret=0;
+        for (int x:a){
+            ret+=x;
+        }
+        return ret;
+    }
+    public static void main(String[] args) {
+        System.out.println(sum(1,2,3,4,5));//匿名数组
+        int[] arr={1,2,3,4,5};
+        System.out.println(sum(arr));//匿名数组
 
-
-
-
-
-
-
+    }
 }
