@@ -1,3 +1,5 @@
+import com.sun.glass.ui.Size;
+
 import java.util.Arrays;
 
 /**
@@ -8,8 +10,7 @@ import java.util.Arrays;
  * @Version 1.0
  **/
 class MyArrayList {
-
-    public final int CAPACITY =2;
+    public final int CAPACITY =10;
     public int usedSize;
     public int[] elem;
 
@@ -18,6 +19,7 @@ class MyArrayList {
         this.elem = new int[CAPACITY];
     }
     //判断是否需要扩容
+
     private void judge(){
         int i=0;
         if(this.usedSize==elem.length){
@@ -54,6 +56,7 @@ class MyArrayList {
         }
         return false;
     }
+
     // 查找某个元素对应的位置
     public int search(int toFind) {
         for (int i=0;i<this.usedSize;i++){
@@ -73,12 +76,21 @@ class MyArrayList {
         return -1;
     }
     // 给 pos 位置的元素设为 value
-    // public void setPos(int pos, int value) { }
-    //删除第一次出现的关键字key
+     public void setPos(int pos, int value) {
+        if (pos<0||pos>this.usedSize){
+            System.out.println("位置不合法");
+        }
+         for (int i =this.usedSize-1; i >0 ; i--) {
+            if (pos==i){
+              elem[i]=value;
+            }
+         }
+     }
+
+    //删除第一次出现的关键字Remove
     public void remove(int toRemove) {
         if (this.usedSize==0){
             System.out.println("顺序表为空！");
-            return;
         }
         int i=search(toRemove);
         if (i!=-1){
@@ -94,7 +106,6 @@ class MyArrayList {
     }
     // 获取顺序表长度
     public int size() {
-
         return this.usedSize;
     }
     // 清空顺序表

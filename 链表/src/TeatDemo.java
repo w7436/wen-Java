@@ -20,7 +20,9 @@ public class TeatDemo {
         myarraylist.display();
         myarraylist.remove(6);
         myarraylist.display();
-        System.out.println(myarraylist.size());
+
+
+
 
 
 
