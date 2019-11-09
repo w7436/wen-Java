@@ -124,6 +124,7 @@ public class MySignalList {
         }
         return null;
     }
+
     //删除第一次出现关键字为key的节点
     public void remove(int key){
 
@@ -167,39 +168,27 @@ public class MySignalList {
             this.head=this.head.next;
         }
     }
-    //反转单链表
-    public ListNode reverseList(){
-        ListNode prev=null;
-        ListNode newHead=null;
-        ListNode cur=this.head;
-        while(cur!=null){
-            ListNode curNext=cur.next;
-            if (curNext==null){
-                newHead=cur;
-            }
-            cur.next=prev;
-            prev=cur;
-            cur=curNext;
-        }
-        return newHead;
-    }
 
 
+////反转链表
+//    public ListNode reverseList(){
+//        ListNode prev=null;
+//        ListNode newHead=null;
+//        ListNode cur=this.head;
+//        while(cur!=null){
+//            ListNode curNext=cur.next;
+//            if (curNext==null){
+//                newHead=cur;
+//            }
+//            cur.next=prev;
+//            prev=cur;
+//            cur=curNext;
+//        }
+//        return newHead;
+//    }
 
 
-    public ListNode reverseList1(){
-        ListNode newHead=null;
-       ListNode cur=this.head;
-       while(cur.next!=null){
-           ListNode node=cur;
-           ListNode curNext=node.next;
-           ListNode h=addFirst1(node.data,newHead);
-           cur=cur.next;
-       }
-       return newHead;
-
-    }
-    //中间结点的结点
+    //中间结点的结点：快慢指针
     public ListNode middleNode(){
         ListNode fast=this.head;
         ListNode slow=this.head;
@@ -230,7 +219,6 @@ public class MySignalList {
             fast=fast.next;
             slow=slow.next;
         }
-
         return slow;
     }
     public void display1(ListNode head){
@@ -253,7 +241,6 @@ public class MySignalList {
             //每遍历一次节点，接此节点的下一个结点置为空，
             ListNode curNext=cur.next;
             cur.next=null;
-
             if (cur.data<x){
                 if (beforeStart==null){
                     beforeStart=cur;
@@ -299,11 +286,9 @@ public class MySignalList {
         while (cur != null) {
             if(cur.next != null &&
                     cur.data == cur.next.data) {
-                //1、循环
-                 while(cur.next != null&&cur.data==cur.next.data){
-                    cur=cur.next;
+                 while(cur.next != null&&cur.data==cur.next.data) {
+                     cur = cur.next;
                  }
-                    //2、退出循环 cur要多走一步
                     cur=cur.next;
             }else {
                 //当前节点 不等于下一个节点的时候
@@ -375,7 +360,7 @@ public class MySignalList {
         }
         cur.next=this.head.next;
     }
-    //////////////////找环的结点
+    //找环的结点:
     public ListNode detectCycle(){
         ListNode fast=this.head;
         ListNode slow=this.head;
@@ -394,7 +379,15 @@ public class MySignalList {
         return fast;
     }
 
-
+//内存泄露问题
+    public void clear(){
+        //一个一个置为空
+        while(this.head!=null){
+            ListNode cur=this.head.next;
+            this.head.next=null;
+            this.head=null;
+        }
+    }
     //打印单链表
     public void display(){
         ListNode cur=this.head;

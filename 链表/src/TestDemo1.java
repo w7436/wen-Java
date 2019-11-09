@@ -59,34 +59,36 @@ public class TestDemo1 {
         return null;
     }
 
-
-
     //合并两个有序链表
-    public static ListNode mergeTwoLists(
-            ListNode headA,ListNode headB) {
-        ListNode node=new ListNode(-1);
-        ListNode tmp=node;
+    public static ListNode mergeTwoLists(ListNode headA,ListNode headB){
+        ListNode newHead=new ListNode(-1);//创建虚拟的链表
+        ListNode tmp=newHead;
         while(headA!=null&&headB!=null){
-            if (headA.data<headB.data){
-                tmp=headA;
+            if(headA.data<headB.data){
+                tmp.next=headA;
                 headA=headA.next;
                 tmp=tmp.next;
-            }else {
-                tmp=headB;
+            }else{
+                tmp.next=headB;
                 headB=headB.next;
                 tmp=tmp.next;
             }
         }
-        if (headA==null){
+        if(headA==null){
             tmp.next=headB;
         }
-        if (headB==null){
+        if(headB==null){
             tmp.next=headA;
         }
-        return node.next;
+        return newHead.next;
     }
 
     public static void main(String[] args) {
+        System.out.println(System.getProperties());
+    }
+
+
+    public static void main2(String[] args) {
        MySignalList mysignallist=new MySignalList();
 
        mysignallist.addLast(1);
