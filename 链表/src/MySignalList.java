@@ -169,7 +169,6 @@ public class MySignalList {
         }
     }
 
-
 ////反转链表
 //    public ListNode reverseList(){
 //        ListNode prev=null;
