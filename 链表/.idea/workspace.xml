@@ -27,7 +27,7 @@
       <file leaf-file-name="MySignalList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MySignalList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2845">
+            <state relative-caret-position="-1919">
               <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
               <folding>
                 <element signature="e#380#381#0" expanded="true" />
@@ -77,15 +77,13 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-15" />
     <option name="width" value="3225" />
-    <option name="height" value="1740" />
+    <option name="height" value="1725" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -108,7 +106,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,11 +233,12 @@
       <workItem from="1574066918428" duration="275000" />
       <workItem from="1574067206046" duration="2736000" />
       <workItem from="1574156089683" duration="1529000" />
+      <workItem from="1574177052573" duration="636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109898000" />
+    <option name="totallyTimeSpent" value="110534000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -264,7 +265,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15036379" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15278901" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -273,10 +274,10 @@
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39721254" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="6" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3292683" />
     </layout>
@@ -284,28 +285,28 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Run" order="11" weight="0.3292683" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="5" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17138238" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39721254" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5004042" side_tool="true" weight="0.6672474" />
       <window_info id="Capture Tool" order="4" />
-      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3292683" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
@@ -777,7 +778,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MySignalList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2845">
+        <state relative-caret-position="-1919">
           <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
           <folding>
             <element signature="e#380#381#0" expanded="true" />
