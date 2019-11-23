@@ -275,16 +275,13 @@ public class MySignalList {
         return beforeStart;
     }
 
-
-
     //在一个有序的链表中，删除重复的结点
     public ListNode deleteDuplication() {
         ListNode node = new ListNode(-1);//虚拟结点
         ListNode cur = this.head;
         ListNode tmp = node;
         while (cur != null) {
-            if(cur.next != null &&
-                    cur.data == cur.next.data) {
+            if(cur.next != null && cur.data == cur.next.data) {
                  while(cur.next != null&&cur.data==cur.next.data) {
                      cur = cur.next;
                  }
@@ -377,8 +374,28 @@ public class MySignalList {
         }
         return fast;
     }
-
-//内存泄露问题
+//单链表的旋转,k代表向后移动的位置
+    public ListNode rotateRight(ListNode head, int k){
+        if(head==null){
+            return null;
+        }
+        ListNode cur=head;
+        //1.先将链表设为有环，同时求出链表的长度
+        int n;//链表的长度
+        for(n=1;cur.next!=null;n++){
+            cur=cur.next;
+        }
+        cur.next=head;
+        ListNode newTail=head;
+        ListNode newHead=head;
+        for (int i = 0; i <(n-k%n-1) ; i++) {
+            newTail=newTail.next;
+        }
+        newHead=newTail.next;
+        newTail.next=null;
+        return newHead;
+    }
+    //内存泄露问题
     public void clear(){
         //一个一个置为空
         while(this.head!=null){
