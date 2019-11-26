@@ -1,4 +1,6 @@
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @ClassName MySignalList
@@ -403,6 +405,28 @@ public class MySignalList {
             this.head.next=null;
             this.head=null;
         }
+    }
+    //链表组件,给定一个链表（链表结点包含一个整型值）的头结点 head。
+    //同时给定列表 G，该列表是上述链表中整型值的一个子集。
+    //返回列表 G 中组件的个数，这里对组件的定义为：链表中一段最长连续结点的值（该值必须在列表 G 中）构成的集合。
+//    输入:
+//    head: 0->1->2->3
+//    G = [0, 1, 3]
+//    输出: 2
+    public int numComponents(int[] G){
+        ListNode cur=this.head;
+        int count=0;
+        Set<Integer> Gset=new HashSet();//构造一个空的集合
+        for(int x:G){
+            Gset.add(x);
+        }
+        while(cur!=null){
+            if(Gset.contains(cur.data)&&(cur.next==null||!Gset.contains(cur.next.data))){
+                count++;
+            }
+            cur=cur.next;
+        }
+        return count;
     }
     //打印单链表
     public void display(){

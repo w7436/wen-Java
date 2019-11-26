@@ -86,7 +86,17 @@ public class TestDemo1 {
     }
 
     public static void main(String[] args) {
-        System.out.println(System.getProperties());
+        MySignalList mysignallist=new MySignalList();
+
+        mysignallist.addLast(1);
+        mysignallist.addLast(2);
+        mysignallist.addLast(0);
+        mysignallist.addLast(4);
+
+        int[] array={0,1,2,3,4};
+        int m=mysignallist.numComponents(array);
+        System.out.println(m);
+
     }
 
 
