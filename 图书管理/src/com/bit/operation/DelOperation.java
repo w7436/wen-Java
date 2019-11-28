@@ -31,7 +31,6 @@ public class DelOperation implements IOperation {
         for (int j = pos; j <booklist.getSize()-1; j++) {
             Book nextBook=booklist.getBook(j+1);
             booklist.setBooks(j,nextBook);
-
         }
         booklist.setSize(booklist.getSize()-1);
         System.out.println("删除成功");

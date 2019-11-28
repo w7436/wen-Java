@@ -29,6 +29,5 @@ public class AddOperation implements IOperation {
         booklist.setBooks(curSize,book);
         booklist.setSize(curSize+1);
         System.out.println("添加书籍成功");
-
     }
 }

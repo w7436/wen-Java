@@ -36,8 +36,6 @@ public class BorrowOperration implements IOperation{
         }else{
             book.isBorrowead=true;
             System.out.println("书籍借阅成功");
-
         }
-
     }
 }
