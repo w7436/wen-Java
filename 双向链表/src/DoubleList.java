@@ -142,6 +142,7 @@ class DoubleList {
     }
     //防止内存泄露
     public void clear(){
+
         while(this.head!=null){
            ListNode cur=this.head.next;
            this.head.next=null;
@@ -149,7 +150,7 @@ class DoubleList {
            this.head=cur;
         }
         this.last=null;
-    }
+}
     //打印
     public void display(){
         ListNode cur=this.head;
