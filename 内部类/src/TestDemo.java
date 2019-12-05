@@ -31,7 +31,7 @@ class OuterClass{
     public void method(){
         //外部类可以通过内部类的对象调用内部类的成员和方法
         System.out.println(new InnerClass().data1);
-        System.out.println(new InnerClass().data2);
+        System.out.println(InnerClass.data2);
     }
     class  InnerClass{
        public int data1=100;
@@ -47,7 +47,7 @@ class OuterClass{
             System.out.println("InnerClass()");
         }
 
-        public void func(){
+         public void func(){
             //当内部类与外部类有同名成员变量和方法时，内部类可通过Outer.this方式来引用外部类成员。
             System.out.println("data2"+data2);
             System.out.println("data1"+this.data1);//this代表的是内部类的引用
@@ -102,7 +102,7 @@ class MyThread{
  */
 public class TestDemo {
     //匿名内部类
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         new MyThread(){
             @Override
             public void func() {
@@ -117,7 +117,7 @@ public class TestDemo {
         in.func();//100 200 10 20
     }
     //实例内部类
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
         //实例内部类是依附于外部类的，只有创建了外部类才可以创建内部类
                OuterClass o=new OuterClass();
         OuterClass.InnerClass in=o.new InnerClass();
