@@ -8,6 +8,8 @@ protected ：
 
  */
 //导入所有的包，用谁导入谁，如果编译器区分不了，只能自己指定，用谁加载谁，动态导入
+import com.src.demo1.Animal;
+
 import java.util.*;
 import java.sql.*;
 //静态导入
@@ -23,8 +25,9 @@ import static java.lang.System.*;//一般情况不用
  * @Version 1.0
  **/
 //路径指定到哪里，就从哪里启动JVM
+//包访问权限只能访问包当中的内容
 public class TestDemo1 {
-    String name;
+    String name;//包访问权限
     public static void main(String[] args) {
           out.println("hello");
 

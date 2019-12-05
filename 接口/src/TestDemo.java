@@ -17,7 +17,7 @@ class Rect implements IShape {
 
 
 }
-class Cycle implements IShape{
+class  Cycle implements IShape{
     @Override
     public void draw() {
         System.out.println("画圆");

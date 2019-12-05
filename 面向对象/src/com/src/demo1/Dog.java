@@ -21,4 +21,9 @@ public class Dog extends Animal{
         System.out.println(this.name+"wangwang");
 
     }
+//相对于Bird类，在同一个包中，可以通过父类的引用去访问受保护类型
+//    public static void main(String[] args) {
+//        Animal animal=new Animal("ni",12);
+//        animal.name
+//    }
 }

@@ -11,7 +11,7 @@ public class Animal {
 
     protected String name;
     private int age;
-    public int a;
+
     
     static {
         System.out.println("Animal::static{}");

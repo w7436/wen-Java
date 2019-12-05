@@ -403,7 +403,7 @@ public class MySignalList {
         while(this.head!=null){
             ListNode cur=this.head.next;
             this.head.next=null;
-            this.head=null;
+            this.head=cur;
         }
     }
     //链表组件,给定一个链表（链表结点包含一个整型值）的头结点 head。
@@ -428,6 +428,35 @@ public class MySignalList {
         }
         return count;
     }
+
+    public ListNode sortList(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode fast = head.next, slow = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode tmp = slow.next;
+        slow.next = null;
+        ListNode left = sortList(head);
+        ListNode right = sortList(tmp);
+        ListNode h = new ListNode(0);
+        ListNode res = h;
+        while (left != null && right != null) {
+            if (left.data < right.data) {
+                h.next = left;
+                left = left.next;
+            } else {
+                h.next = right;
+                right = right.next;
+            }
+            h = h.next;
+        }
+        h.next = left != null ? left : right;
+        return res.next;
+    }
+
     //打印单链表
     public void display(){
         ListNode cur=this.head;

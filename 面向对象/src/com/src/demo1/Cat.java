@@ -32,8 +32,10 @@ public class Cat extends Animal{
 //    }
     public void func(){
         super.sleep();
-        int a=super.a;
+
     }
+
+
 
 
 

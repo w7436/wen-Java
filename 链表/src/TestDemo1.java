@@ -84,18 +84,49 @@ public class TestDemo1 {
         }
         return newHead.next;
     }
+//测试内训泄露
+    /*
+    *jps查看java的进程号
+    * jmap -histo:live 13008(进程号) > d:log.txt
+    *
+    *
+     */
+
+
+
 
     public static void main(String[] args) {
         MySignalList mysignallist=new MySignalList();
 
         mysignallist.addLast(1);
+        mysignallist.addLast(7);
+        mysignallist.addLast(3);
         mysignallist.addLast(2);
-        mysignallist.addLast(0);
-        mysignallist.addLast(4);
+        mysignallist.addLast(3);
+        mysignallist.display();
+        mysignallist.clear();
+        System.out.println("hahahah");
 
-        int[] array={0,1,2,3,4};
-        int m=mysignallist.numComponents(array);
-        System.out.println(m);
+    }
+    public static void main3(String[] args) {
+
+      MySignalList mysignallist=new MySignalList();
+//
+//        mysignallist.addLast(1);
+//        mysignallist.addLast(2);
+//        mysignallist.addLast(0);
+//        mysignallist.addLast(4);
+        ListNode head= new ListNode(1);
+        head.next=new ListNode(2);
+        head.next.next=new ListNode(3);
+        head.next.next.next=new ListNode(4);
+
+
+
+        mysignallist.sortList(head);
+//        int[] array={0,1,2,3,4};
+//        int m=mysignallist.numComponents(array);
+//        System.out.println(m);
 
     }
 
