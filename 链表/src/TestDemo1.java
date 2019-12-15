@@ -95,7 +95,7 @@ public class TestDemo1 {
 
 
 
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         MySignalList mysignallist=new MySignalList();
 
         mysignallist.addLast(1);
@@ -108,7 +108,7 @@ public class TestDemo1 {
         System.out.println("hahahah");
 
     }
-    public static void main3(String[] args) {
+    public static void main(String[] args) {
 
       MySignalList mysignallist=new MySignalList();
 //
@@ -116,10 +116,13 @@ public class TestDemo1 {
 //        mysignallist.addLast(2);
 //        mysignallist.addLast(0);
 //        mysignallist.addLast(4);
-        ListNode head= new ListNode(1);
+        ListNode head= new ListNode(7);
         head.next=new ListNode(2);
-        head.next.next=new ListNode(3);
+        head.next.next=new ListNode(6);
         head.next.next.next=new ListNode(4);
+        head.next.next.next.next=new ListNode(12);
+
+
 
 
 
