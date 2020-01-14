@@ -1,5 +1,6 @@
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Stack;
 
 /**
  * @ClassName TestDemo
@@ -52,7 +53,7 @@ class Solution {
     //     return tmp;
     // }
 }
-public class Solution {
+
     Stack<Integer> stack1 = new Stack<Integer>();
     Stack<Integer> stack2 = new Stack<Integer>();
 
@@ -68,7 +69,21 @@ public class Solution {
         }
         return stack2.pop();
     }
-}
+    //赎金信
+    public boolean canConstruct(String ransomNote, String magazine) {
+        int b[]=new int[26];
+        for(char c:magazine.toCharArray()){
+            b[c-'a']++;
+        }
+        for(char c:ransomNote.toCharArray()){
+            if(b[c-'a']==0)
+                return false;
+            b[c-'a']--;
+        }
+        return true;
+
+    }
+
 public class TestDemo {
     public static void main(String[] args) {
 
