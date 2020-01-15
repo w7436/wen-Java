@@ -83,6 +83,19 @@ class Solution {
         return true;
 
     }
+//整数反转
+    public long reverse(int x){
+        long sum=0;
+        while(x!=0){
+            sum*=10;
+            sum+=x%10;
+            x/=10;
+        }
+
+        if(sum<-2147483648||sum>2147483647)
+            return 0;
+        return sum;
+    }
 
 public class TestDemo {
     public static void main(String[] args) {
