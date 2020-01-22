@@ -150,6 +150,100 @@ class Solution {
             return true;
         return false;
     }
+    //加一
+    public int[] plusOne(int[] digits) {
+
+        int len = digits.length;
+        for(int i = len-1; i >= 0; i--) {
+            digits[i]++;
+            digits[i] %= 10;
+            if(digits[i]!=0)
+                return digits;
+        }
+        digits = new int[len + 1];
+        digits[0] = 1;
+        return digits;
+    }
+    //寻找数组的中间索引
+    public int pivotIndex(int[] nums) {
+        int sum = 0,leftsum = 0;
+        for(int x : nums)
+            sum+=x;
+
+        for (int i = 0; i < nums.length ; i++  ){
+            if(sum - nums[i] - leftsum == leftsum){
+                return i;
+            }
+            leftsum += nums[i];
+
+        }
+        return -1;
+    }
+    //按照奇数偶数排序数组
+    public int[] sortArrayByParity(int[] A) {
+        // int[] ans = new int[A.length];
+        // int t = 0;
+
+        // for (int i = 0; i < A.length; ++i)
+        //     if (A[i] % 2 == 0)
+        //         ans[t++] = A[i];
+
+        // for (int i = 0; i < A.length; ++i)
+        //     if (A[i] % 2 == 1)
+        //         ans[t++] = A[i];
+
+        // return ans;
+        int i = 0, j = A.length - 1;
+        while (i < j) {
+            if (A[i] % 2 > A[j] % 2) {
+                int tmp = A[i];
+                A[i] = A[j];
+                A[j] = tmp;
+            }
+
+            if (A[i] % 2 == 0) i++;
+            if (A[j] % 2 == 1) j--;
+        }
+
+        return A;
+    }
+    //只是字母的反转
+    public String reverseOnlyLetters(String S) {
+        StringBuilder ans = new StringBuilder();
+        int j = S.length() - 1;
+        for (int i = 0; i < S.length(); ++i) {
+            if (Character.isLetter(S.charAt(i))) {
+                //确保j指向的始终是字符
+                while (!Character.isLetter(S.charAt(j)))
+                    j--;
+                ans.append(S.charAt(j--));
+
+            } else {
+                ans.append(S.charAt(i));
+            }
+        }
+        return ans.toString();
+
+        //     //利用栈的思想
+        //    Stack<Character> stack = new Stack();
+        //     for (char c: S.toCharArray())
+        //     //是字母就将其压入栈
+        //         if (Character.isLetter(c))
+        //             stack.push(c);
+
+        //     StringBuilder ans = new StringBuilder();
+        //     //从原先字符串拿到的只是符号
+        //     for (char c: S.toCharArray()) {
+        //         if (Character.isLetter(c))
+        //             ans.append(stack.pop());
+        //         else
+        //             ans.append(c);
+        //     }
+
+        //     return ans.toString();
+
+    }
+    //
 }
 
 
