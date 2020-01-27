@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @ClassName TestDemo
@@ -243,7 +240,61 @@ class Solution {
         //     return ans.toString();
 
     }
-    //
+    //字符串二级制求和
+     public String addBinary(String a, String b) {
+            StringBuilder ans = new StringBuilder();
+            int ca = 0;
+            for(int i = a.length() - 1, j = b.length() - 1;i >= 0 || j >= 0; i--, j--)          {
+                int sum = ca;
+                sum += i >= 0 ? a.charAt(i) - '0' : 0;
+                sum += j >= 0 ? b.charAt(j) - '0' : 0;
+                ans.append(sum % 2);
+                ca = sum / 2;
+            }
+            ans.append(ca == 1 ? ca : "");
+            return ans.reverse().toString();
+        }
+        //两数之和
+    public int[] twoSum(int[] nums, int target) {
+        // int[] arr=new int[2];
+        // for(int i = 0;i < nums.length; i++){
+        //     for(int j = i + 1;j <nums.length;j++){
+        //         if(nums[i] + nums[j] == target){
+        //             arr[0]=i;
+        //             arr[1]=j;
+        //             return arr;
+        //         }
+        //     }
+        // }
+        // return null;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
+            }
+            map.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("No two sum solution");
+    }
+    //第三大的数
+    public int thirdMax(int[] nums) {
+        long first=Long.MIN_VALUE,second=Long.MIN_VALUE,third=Long.MIN_VALUE;
+        for(long num:nums){
+            if(num>first){
+                third=second;
+                second=first;
+                first=num;
+            }else if(num>second&&num<first){
+                third=second;
+                second=num;
+            }else if(num>third&&num<second){
+                third=num;
+            }
+        }
+        return (third==Long.MIN_VALUE||third==second)?(int)first:(int)third;
+
+    }
 }
 
 
