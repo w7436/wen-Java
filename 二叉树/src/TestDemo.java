@@ -1,6 +1,8 @@
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
+import java.util.function.BinaryOperator;
 
 /**
  * @ClassName TestDemo
@@ -56,7 +58,10 @@ public class TestDemo {
 //    }
 
     private TreeNode root = null;
+    private int index = 0;
+    public TestDemo (int[] array){
 
+    }
     public TestDemo() {
         TreeNode n1 = new TreeNode(1);
         TreeNode n2 = new TreeNode(2);
@@ -263,6 +268,33 @@ public class TestDemo {
     //根据前序和中序，还原二叉树
     //根据中序和后序，还原二叉树
 
+
+    public void postOrderNor(){
+
+        TreeNode cur = root;
+        TreeNode prev = null;
+        Stack<TreeNode> s = new Stack<>();
+        while (!s.empty()||null != cur){
+            //1、找以cur为根的二叉树，最左侧的结点
+            while (null != cur){
+                s.push(cur);
+                cur = cur.left;
+            }
+            //2、获取cur子树的跟
+            TreeNode top = s.peek();
+            //3、遍历top的右子树,如果为空，则打印top值，
+            // 不为空，则重新开始
+            if (top.right == null && prev != top){
+                System.out.println(top.val+ " ");
+                prev = top;
+                s.pop();
+            }
+            else{
+                cur = top .right;
+            }
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         TestDemo testDemo= new TestDemo();
         testDemo.preOrder();
