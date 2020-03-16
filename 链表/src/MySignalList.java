@@ -18,6 +18,18 @@ class ListNode{
         this.next=null;
     }
 }
+//随机链表
+class Node {
+    int val;
+    Node next;
+    Node random;
+
+    public Node(int val) {
+        this.val = val;
+        this.next = null;
+        this.random = null;
+    }
+}
 //链表类
 public class MySignalList {
     public ListNode head;
@@ -456,7 +468,44 @@ public class MySignalList {
         h.next = left != null ? left : right;
         return res.next;
     }
+//复杂链表的复制
+    public Node copyRandomList(Node head) {
+        //复制链表
+        if(head == null){
+            return null;
+        }
+        //将复制后的链表与原链表串起来，不包括随机结点的复制
+        Node cur = head;
+        while (cur != null){
+            Node node = new Node (cur.val);//复制的新节点
+            node.next = cur.next;//将复制后的结点的next指向源节点的next
+            Node tmp = cur.next;
+            cur.next = node;
+            cur = tmp;
+        }
 
+        //随机结点
+        cur = head;
+        while(cur!=null){
+            if(cur.random != null){
+                cur.next.random = cur.random.next;
+            }
+            else{
+                cur.next.random = null;
+            }
+            cur=cur.next.next;
+        }
+
+        //拆分链表
+        cur = head;
+        Node newHead = cur.next;
+        while(cur.next != null){
+            Node tmp = cur.next;
+            cur.next = tmp.next;
+            cur = tmp;
+        }
+        return newHead;
+    }
     //打印单链表
     public void display(){
         ListNode cur=this.head;
