@@ -177,6 +177,7 @@ public class TestDemo {
         int rightHeight = getHeight(root.right);
         return leftHeight > rightHeight ? leftHeight+1 : rightHeight+1;
     }
+
     public int getHeight(){
         return getHeight(root);
     }
@@ -295,6 +296,63 @@ public class TestDemo {
         }
         System.out.println();
     }
+    //二叉树的最近公共祖祖先
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null || p == null || q== null){
+            return null;
+        }
+        if(root == p || root == q ){
+            return root;
+        }
+        //检测p,q在root子树中的情况
+        boolean isPleft = false;
+        boolean isPright = false;
+        boolean isQleft = false;
+        boolean isQright = false;
+        //检测p是否在左子树
+        if(isNodeInTree(root.left,p)){
+            isPleft = true;
+            isPright = false;
+        }
+        else{
+            isPleft = false;
+            isPright = true;
+        }
+        //检测q在左子树
+        if(isNodeInTree(root.left,q)){
+            isQleft = true;
+            isQright = false;
+        }
+        else{
+            isQleft = false;
+            isQright = true;
+        }
+
+
+        if(isPleft && isQright || isPright && isQleft){
+            return root;
+        }
+        else if(isPleft && isQleft){
+            return lowestCommonAncestor(root.left, p ,q);
+        }
+        else{
+            return lowestCommonAncestor(root.right , p ,q);
+        }
+
+    }
+
+    private boolean isNodeInTree(TreeNode root,TreeNode node){
+        if(root == null){
+            return false;
+        }
+        if(root == node ){
+            return true;
+        }
+        if( isNodeInTree(root.left,node) ||  isNodeInTree(root.right,node)){
+            return true;
+        }
+        return false;
+    }
     public static void main(String[] args) {
         TestDemo testDemo= new TestDemo();
         testDemo.preOrder();
@@ -304,6 +362,7 @@ public class TestDemo {
         testDemo .getLeafCount();
         System.out.println(testDemo.getKNodeCount(3));
         System.out.println(testDemo.getHeight());
+
 
     }
 }
