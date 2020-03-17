@@ -505,6 +505,52 @@ public class MySignalList {
             cur = tmp;
         }
         return newHead;
+
+
+//        if(head == null){
+//            return null;
+//        }
+//        //将新复制的结点链接在源节点的后面
+//        for(Node p = head; p != null; p=p.next.next ){
+//            Node copy = new Node(p.val);
+//            copy.next = p.next;
+//            p.next = copy;
+//        }
+//        for(Node p = head; p != null ;p = p.next.next){
+//            if(p.random != null){
+//                p.next.random = p.random.next;
+//            }
+//        }
+//        Node dummy = new Node(0);
+//        Node p = head,q = dummy;
+//        while(p != null){
+//            Node copy = p.next,next = p.next.next;
+//            q.next = copy;
+//            q = copy;
+//            p.next = next;
+//            p = next;
+//        }
+//        return dummy.next;
+
+
+        // if( head == null){
+        //     return null;
+        // }
+        // Map <Node,Node> map = new HashMap<>();
+        // Node copyHead = new Node(head.val,head.next,null);//新建链表的头结点
+        // map.put(head,copyHead);
+        // for(Node p=head.next,q=copyHead; p != null; p= p.next,q=q.next){
+        //     q.next = new Node(p.val);
+        //     map.put(p,q.next);
+        // }
+        // for(Node p = head,q = copyHead; p !=null; p=p.next,q=q.next ){
+        //     if(p.random != null)  q.random = map.get(p.random);
+        // }
+        // return copyHead;
+
+
+
+
     }
     //打印单链表
     public void display(){
