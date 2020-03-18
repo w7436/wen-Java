@@ -1,7 +1,5 @@
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 import java.util.function.BinaryOperator;
 
 /**
@@ -297,7 +295,7 @@ public class TestDemo {
         System.out.println();
     }
     //二叉树的最近公共祖祖先
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null || p == null || q== null){
             return null;
         }
@@ -327,20 +325,16 @@ public class TestDemo {
             isQleft = false;
             isQright = true;
         }
-
-
         if(isPleft && isQright || isPright && isQleft){
             return root;
         }
         else if(isPleft && isQleft){
-            return lowestCommonAncestor(root.left, p ,q);
+            return lowestCommonAncestor1(root.left, p ,q);
         }
         else{
-            return lowestCommonAncestor(root.right , p ,q);
+            return lowestCommonAncestor1(root.right , p ,q);
         }
-
     }
-
     private boolean isNodeInTree(TreeNode root,TreeNode node){
         if(root == null){
             return false;
@@ -352,6 +346,64 @@ public class TestDemo {
             return true;
         }
         return false;
+    }
+
+    //
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null || root == p || root == q)  return root;
+        TreeNode left = lowestCommonAncestor2(root.left, p, q);
+        TreeNode right = lowestCommonAncestor2(root.right, p, q);
+        if(left != null && right != null) return root;
+        else if(left != null) return left;
+        else return right;
+    }
+
+    //保存从根节点到目标结点之间的路径结点
+    private boolean search (TreeNode root, TreeNode node, List<TreeNode> path){
+        if (root == null) return false;
+        path.add(root);
+        if (root == node) return true;
+        boolean ret =(search(root.left, node, path ) || search(root.right, node, path));
+        if (ret ) return true;
+        path.remove(path.size()-1);
+        return false;
+    }
+
+    //利用保存路径 1 2 4     ，，，      1 2 5       那么最近的公共祖先就是 2
+    public TreeNode lowestCommonAncestor3(TreeNode root, TreeNode p, TreeNode q) {
+        List<TreeNode> ppath = new ArrayList<>();
+        List<TreeNode> qpath = new ArrayList<>();
+        search(root, p, ppath);
+        search(root, q, qpath);
+        int i = 0,len = Math.min(ppath.size(),qpath.size());
+        while(i < len && ppath.get(i) == qpath.get(i)) i++;
+        return ppath.get(i-1);
+    }
+
+    //求二叉搜索树的的公共祖先
+    public TreeNode QlowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
+        if (p.val < root.val && q.val < root.val){
+            return QlowestCommonAncestor1(root.left, p, q);
+        }
+        else if (p.val > root.val && q.val > root.val){
+            return QlowestCommonAncestor1(root.right,p, q);
+        }
+        else
+            return root;
+    }
+    public TreeNode QlowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q){
+        while(root != null){
+            if (p.val < root.val && q.val < root.val){
+                root = root.left;
+            }
+            else if(p.val > root.val && q.val > root.val){
+                root = root.right;
+            }
+            else{
+                return root;
+            }
+        }
+        return null;
     }
     public static void main(String[] args) {
         TestDemo testDemo= new TestDemo();
