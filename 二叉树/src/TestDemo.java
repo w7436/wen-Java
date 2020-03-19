@@ -57,26 +57,41 @@ public class TestDemo {
 
     private TreeNode root = null;
     private int index = 0;
-    public TestDemo (int[] array){
 
+    public TestDemo (int[] array,int invalid){
+        root = createBinTree(array,invalid);
     }
-    public TestDemo() {
-        TreeNode n1 = new TreeNode(1);
-        TreeNode n2 = new TreeNode(2);
-        TreeNode n3 = new TreeNode(3);
-        TreeNode n4 = new TreeNode(4);
-        TreeNode n5 = new TreeNode(5);
-        TreeNode n6 = new TreeNode(6);
-
-        root = n1;
-        n1.left = n2;
-        n1.right = n4;
-        n2.left = n3;
-        n4.left = n5;
-        n4.right = n6;
-
-
+    //按照前序遍历创造
+    TreeNode createBinTree(int[] array,int invalid){
+        TreeNode newRoot = null;
+        if(index <array.length && array[index]!= invalid){
+            //创建根节点
+            newRoot = new TreeNode(array[index]);
+            //创建左子树
+            ++index;
+            newRoot.left = createBinTree(array,invalid);
+            ++index;
+            newRoot.right = createBinTree(array,invalid);
+        }
+        return newRoot;
     }
+//    public TestDemo() {
+//        TreeNode n1 = new TreeNode(1);
+//        TreeNode n2 = new TreeNode(2);
+//        TreeNode n3 = new TreeNode(3);
+//        TreeNode n4 = new TreeNode(4);
+//        TreeNode n5 = new TreeNode(5);
+//        TreeNode n6 = new TreeNode(6);
+//
+//        root = n1;
+//        n1.left = n2;
+//        n1.right = n4;
+//        n2.left = n3;
+//        n4.left = n5;
+//        n4.right = n6;
+//
+//
+//    }
 
     //前序遍历
     private void preOrder (TreeNode root){
@@ -406,14 +421,18 @@ public class TestDemo {
         return null;
     }
     public static void main(String[] args) {
-        TestDemo testDemo= new TestDemo();
-        testDemo.preOrder();
-        testDemo.inOrder();
-        testDemo.postOrder();
-  //      testDemo.getNodeCount();
-        testDemo .getLeafCount();
-        System.out.println(testDemo.getKNodeCount(3));
-        System.out.println(testDemo.getHeight());
+        int [] array = {1,2,3,-1,-1,-1,4,5,-1,-1,6,-1,-1};
+
+        TestDemo t = new TestDemo(array,-1);
+
+//        TestDemo testDemo= new TestDemo();
+//        testDemo.preOrder();
+//        testDemo.inOrder();
+//        testDemo.postOrder();
+//  //      testDemo.getNodeCount();
+//        testDemo .getLeafCount();
+//        System.out.println(testDemo.getKNodeCount(3));
+//        System.out.println(testDemo.getHeight());
 
 
     }
