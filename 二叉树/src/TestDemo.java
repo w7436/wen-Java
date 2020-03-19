@@ -69,8 +69,10 @@ public class TestDemo {
             newRoot = new TreeNode(array[index]);
             //创建左子树
             ++index;
+
             newRoot.left = createBinTree(array,invalid);
             ++index;
+
             newRoot.right = createBinTree(array,invalid);
         }
         return newRoot;
