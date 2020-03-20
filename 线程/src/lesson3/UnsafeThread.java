@@ -19,8 +19,7 @@ public class UnsafeThread {
                @Override
                public void run() {
                    for (int i = 0 ; i < 10000; i++){
-                        num ++;
-                   }
+                       increment();                   }
                }
            }).start();
        }
@@ -31,5 +30,8 @@ public class UnsafeThread {
         //2、每次的结果不一样
         System.out.println(num);
 
+    }
+    public static synchronized void increment(){
+        num++;
     }
 }
