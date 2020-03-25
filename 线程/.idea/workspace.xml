@@ -34,7 +34,7 @@
       <file leaf-file-name="UnsafeThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Thread3/UnsafeThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-31">
+            <state relative-caret-position="190">
               <caret line="10" selection-start-line="10" selection-end-line="32" selection-end-column="5" />
               <folding>
                 <element signature="e#830#831#0" expanded="true" />
@@ -47,12 +47,8 @@
       <file leaf-file-name="safeThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Thread4/safeThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="914">
-              <caret line="55" column="7" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="55" selection-end-column="7" />
-              <folding>
-                <element signature="e#1003#1004#0" expanded="true" />
-                <element signature="e#1024#1025#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1007">
+              <caret line="55" column="7" selection-start-line="51" selection-start-column="5" selection-end-line="55" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -60,7 +56,7 @@
       <file leaf-file-name="VolatileTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Thread4/VolatileTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
+            <state relative-caret-position="494">
               <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
             </state>
           </provider>
@@ -69,7 +65,7 @@
       <file leaf-file-name="VolatileTest2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Thread4/VolatileTest2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
+            <state relative-caret-position="361">
               <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
             </state>
           </provider>
@@ -78,7 +74,7 @@
       <file leaf-file-name="Sington.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Thread5/Sington.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
+            <state relative-caret-position="665">
               <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
             </state>
           </provider>
@@ -87,8 +83,8 @@
       <file leaf-file-name="BreadOperator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Thread5/BreadOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+            <state relative-caret-position="69">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -96,11 +92,11 @@
       <file leaf-file-name="SingtonMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Thread5/SingtonMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
+            <state relative-caret-position="190">
               <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
               <folding>
                 <element signature="e#201#202#0" expanded="true" />
-                <element signature="e#241#242#0" expanded="true" />
+                <element signature="e#256#257#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,57 +149,15 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="126" />
-    <option name="y" value="325" />
+    <option name="y" value="324" />
     <option name="width" value="1443" />
-    <option name="height" value="935" />
+    <option name="height" value="936" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="线程" type="b2602c69:ProjectViewProjectNode" />
-              <item name="线程" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="线程" type="b2602c69:ProjectViewProjectNode" />
-              <item name="线程" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="线程" type="b2602c69:ProjectViewProjectNode" />
-              <item name="线程" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="线程" type="b2602c69:ProjectViewProjectNode" />
-              <item name="线程" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="线程" type="b2602c69:ProjectViewProjectNode" />
-              <item name="线程" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Thread4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="线程" type="b2602c69:ProjectViewProjectNode" />
-              <item name="线程" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Thread5" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -394,6 +348,7 @@
       <workItem from="1584865333896" duration="2289000" />
       <workItem from="1584929487610" duration="12731000" />
       <workItem from="1585010853119" duration="23617000" />
+      <workItem from="1585098235121" duration="657000" />
     </task>
     <servers />
   </component>
@@ -409,15 +364,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59124000" />
+    <option name="totallyTimeSpent" value="59781000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="84" y="217" width="962" height="623" extended-state="0" />
+    <frame x="84" y="216" width="962" height="624" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.3289256" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -431,7 +385,6 @@
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49753696" weight="0.32964602" />
       <window_info anchor="right" id="Database" order="6" weight="0.32964602" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.3289256" />
       <window_info id="Structure" order="1" sideWeight="0.50246304" side_tool="true" weight="0.19805983" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
@@ -439,10 +392,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.5049505" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.3289256" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3289256" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,28 +607,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Thread3/Thread4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Thread3/Thread4.java" />
+    <entry file="file://$PROJECT_DIR$/src/Thread.java" />
     <entry file="file://$PROJECT_DIR$/src/Thread3/InterruptThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="77" column="28" lean-forward="true" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
-          <folding>
-            <element signature="e#944#945#0" expanded="true" />
-            <element signature="e#966#967#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -714,7 +653,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Thread3/UnsafeThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
+        <state relative-caret-position="190">
           <caret line="10" selection-start-line="10" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="e#830#831#0" expanded="true" />
@@ -723,60 +662,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Thread4/Thread5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Thread4/Thread5.java" />
     <entry file="file://$PROJECT_DIR$/src/Thread5/SingtonMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
+        <state relative-caret-position="190">
           <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
           <folding>
             <element signature="e#201#202#0" expanded="true" />
-            <element signature="e#241#242#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Thread4/safeThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="914">
-          <caret line="55" column="7" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="55" selection-end-column="7" />
-          <folding>
-            <element signature="e#1003#1004#0" expanded="true" />
-            <element signature="e#1024#1025#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1007">
+          <caret line="55" column="7" selection-start-line="51" selection-start-column="5" selection-end-line="55" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Thread4/VolatileTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
+        <state relative-caret-position="494">
           <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Thread4/VolatileTest2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
+        <state relative-caret-position="361">
           <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Thread5/Sington.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="665">
           <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Thread5/BreadOperator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        <state relative-caret-position="69">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
