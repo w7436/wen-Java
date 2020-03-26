@@ -1,4 +1,6 @@
 
+import javafx.util.Pair;
+
 import java.util.*;
 import java.util.function.BinaryOperator;
 
@@ -108,6 +110,26 @@ public class TestDemo {
         System.out.print("前序遍历：");
         preOrder(root);
         System.out.println();
+    }
+    //前序非递归
+    public List<Integer> preorderTraversal(TreeNode root) {
+        Stack<TreeNode> s = new Stack<>();
+        List<Integer> l = new LinkedList<>();
+        if(root == null){
+            return l;
+        }
+        s.push(root);
+        while(!s.empty()){
+            TreeNode ret = s.pop();
+            l.add(ret.val);
+            if(ret.right != null){
+                s.push(ret.right);
+            }
+            if(ret.left != null){
+                s.push(ret.left);
+            }
+        }
+        return l;
     }
 
     private void inOrder (TreeNode root){
@@ -422,10 +444,107 @@ public class TestDemo {
         }
         return null;
     }
-    public static void main(String[] args) {
-        int [] array = {1,2,3,-1,-1,-1,4,5,-1,-1,6,-1,-1};
 
-        TestDemo t = new TestDemo(array,-1);
+    //完全二叉树
+    boolean isCompleteTree(TreeNode root){
+        if (root == null){
+            return true;
+
+        }
+        //1、找第一个不饱和结点（层序）
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        boolean isLeaf = false;
+        while(!q.isEmpty()){
+            TreeNode cur = q.poll();
+            if (isLeaf){
+                //从第一个不饱和结点之后，所有的结点不能有孩子
+                if (cur.left!=null||cur.right!=null){
+                    return false;
+                }
+            }
+            else{
+                if (cur.right!=null && cur.left!=null){
+                    q.offer(cur.left);
+                    q.offer(cur.right);
+                }
+                else if(cur.left!=null){
+                    q.offer(cur.left);
+                    isLeaf = true;
+
+                }
+                else if(cur.right != null){
+                    return false;
+                }
+                else{
+                    //叶子结点
+                    isLeaf = true;
+                }
+            }
+
+        }
+        return true;
+
+    }
+    //根据一棵树的前序遍历与中序遍历构造二叉树
+    class Solution {
+        int index = 0;
+        private TreeNode reBuildTree(int[] preorder,int[] inorder,int left,int right){
+            if(left >= right || index >= preorder.length){
+                return null;
+            }
+
+            //在中序遍历中找根的位置
+            int inrootIdx  = left;
+            while(inrootIdx < right){
+                if(inorder[inrootIdx] == preorder[index]){
+                    break;
+                }
+                inrootIdx++;
+            }
+
+            TreeNode root = new TreeNode(preorder[index]);
+            index++;
+            root.left = reBuildTree(preorder,inorder, left,inrootIdx);
+            root.right = reBuildTree(preorder,inorder,inrootIdx+1,right);
+            return root;
+
+        }
+        public TreeNode buildTree(int[] preorder, int[] inorder) {
+            return  reBuildTree(preorder,inorder,0,preorder.length);
+        }
+    }
+    //根据一棵树的中序遍历与后序遍历构造二叉树
+//    class Solution {
+//        int index = 0;
+//        private TreeNode buildTree(int[] inorder,int left,int right,int[] postorder){
+//            if(index < 0 || left >= right){
+//                return null;
+//            }
+//            int rootIdx = left;
+//            while(rootIdx < right){
+//                if(inorder[rootIdx] == postorder[index]){
+//                    break;
+//                }
+//                rootIdx++;
+//            }
+//
+//            TreeNode root = new TreeNode(postorder[index]);
+//            --index;
+//            root.right = buildTree(inorder,rootIdx+1,right,postorder);
+//            root.left = buildTree(inorder, left,rootIdx,postorder);
+//            return root;
+//
+//        }
+//        public TreeNode buildTree(int[] inorder, int[] postorder) {
+//            index = postorder.length-1;
+//            return buildTree(inorder,0,inorder.length,postorder);
+//        }
+//    }
+    public static void main(String[] args) {
+//        int [] array = {1,2,3,-1,-1,-1,4,5,-1,-1,6,-1,-1};
+////
+////        TestDemo t = new TestDemo(array,-1); Pair<Integer, String> pair = new MutablePair<>(3, "Three");
 
 //        TestDemo testDemo= new TestDemo();
 //        testDemo.preOrder();
