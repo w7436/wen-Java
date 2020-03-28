@@ -215,9 +215,7 @@ public class TestDemo {
         return leftHeight > rightHeight ? leftHeight+1 : rightHeight+1;
     }
 
-    public int getHeight(){
-        return getHeight(root);
-    }
+
 
 //    //获取Val在树中对应的结点，找到并返回该节点
     public TreeNode find (TreeNode root,int val){
