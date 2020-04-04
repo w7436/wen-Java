@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -183,6 +184,83 @@ public class TestDemo{
 //        System.out.println(count);
 //    }
 
+
+    /**
+     * 输入一个整型数组，数组里有正数也有负数。数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。
+     * 输入: nums = [-2,1,-3,4,-1,2,1,-5,4]
+     * 输出: 6
+     * 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
+     */
+
+
+    class Solution {
+        public int maxSubArray(int[] nums) {
+
+            int res = nums[0];
+            for(int i = 1; i < nums.length; i++) {
+                nums[i] += Math.max(nums[i - 1], 0);
+                res = Math.max(res, nums[i]);
+            }
+            return res;
+        }
+    }
+
+    /**
+     * 给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, ...）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。
+     * 输入: n = 12
+     * 输出: 3
+     * 解释: 12 = 4 + 4 + 4.
+     *
+     * 利用动态规划：
+     * d(12) =min(d(11)+1 ,d(8)+1,d(3)+1)
+     */
+
+
+    class Solution {
+        public int numSquares(int n) {
+            int[] d = new int[n+1];
+            d[0] = 0;
+            for(int i = 0;i < d.length;i++){
+                d[i] = i;
+                for(int j = 0;j * j <= i;j++){
+                    d[i] = Math.min(d[i], d[i - j*j] + 1);
+                }
+            }
+            return d[n];
+        }
+    }
+
+    /**
+     *给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
+     * 给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。
+     * 输入："23"
+     * 输出：["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+     */
+    class Solution {
+        private final String[] mapping = new String[]{
+                "abc", "def", "ghi", "jkl",
+                "mno", "pqrs", "tuv", "wxyz"
+        };
+        public List<String> letterCombinations(String digits) {
+            LinkedList<String> l = new LinkedList<>();
+            if(digits == null||digits.length()==0){
+                return l;
+            }
+            l.add("");
+            for(int i = 0;i < digits.length();i++){
+                String chars = mapping[digits.charAt(i) - '2'];
+                int size = l.size();
+                for(int j = 0;j <size;j++){
+                    String str = l.poll();//取出队头元素
+                    for (int k = 0; k < chars.length(); ++k) {
+                        l.add(str + chars.charAt(k));
+                    }
+
+                }
+            }
+            return l;
+        }
+    }
 
     class Solution {
         private void combSum(int[] nums, int target, int start,
