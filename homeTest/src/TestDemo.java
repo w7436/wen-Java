@@ -185,6 +185,31 @@ public class TestDemo{
 //    }
 
 
+    //丑数
+    public boolean isUgly(int num) {
+        if(num <= 0){
+            return false;
+        }
+        while(num%2==0||num%3==0||num%5==0){
+            if(num%2==0){
+                num/=2;
+            }
+            if(num%3==0){
+                num/=3;
+            }
+            if(num%5==0){
+                num/=5;
+            }
+        }
+        return num==1;
+    }
+
+
+
+
+
+
+
     /**
      * 输入一个整型数组，数组里有正数也有负数。数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。
      * 输入: nums = [-2,1,-3,4,-1,2,1,-5,4]
