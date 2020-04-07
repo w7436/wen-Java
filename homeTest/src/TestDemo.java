@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @ClassName TestDemo
@@ -152,7 +149,24 @@ public class TestDemo{
 
     }
 
-
+    /**
+     *数组中数字出现的次数
+     * 输入：nums = [4,1,4,6]
+     * 输出：[1,6] 或 [6,1]
+     */
+    public int[] singleNumbers(int[] nums) {
+        Set<Integer> set = new HashSet<>(nums.length);
+        int[] arr = new int[nums.length];
+        int index = 0;
+        for (int x: nums) {
+            if (set.contains(x)){
+                set.remove(x);
+            }
+            else{
+                set.add(x);
+            }
+        }
+        return set.stream().mapToInt(Integer::intValue).toArray();
 
     /**
      * 统计回文数的个数
