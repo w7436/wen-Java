@@ -8,6 +8,74 @@ import java.util.*;
  * @Version 1.0
  **/
 
+/**
+ * 队列的最大值
+ * 利用双端队列
+ */
+class MaxQueue {
+
+    Queue<Integer> q;
+    Deque<Integer> d;
+    public MaxQueue() {
+        q= new LinkedList<>();
+        d = new LinkedList<>();
+    }
+
+    public int max_value() {
+        return d.size()>0?d.peek():-1;
+    }
+
+    public void push_back(int value) {
+        q.add(value);
+        while(d.size()> 0 && d.peekLast() < value ){
+            d.pollLast();
+        }
+        d.add(value);
+    }
+
+    public int pop_front() {
+        int m= q.size()==0 ? -1: q.poll();
+        if(d.size() > 0 && d.peek() == m){
+            d.poll();
+        }
+        return m;
+    }
+}
+
+/**
+ * 两个栈实现队列
+ */
+class CQueue {
+
+    Stack<Integer> s1 ;
+    Stack<Integer> s2;
+    int size;
+    public CQueue() {
+        s1 = new Stack<>();
+        s2 = new Stack<>();
+        size = 0;
+    }
+
+    public void appendTail(int value) {
+        s1.push(value);
+        size++;
+    }
+
+    public int deleteHead() {
+        if(size == 0){
+            return -1;
+        }
+        if(s2.empty()){
+            while(!s1.empty()){
+                s2.push(s1.pop());
+            }
+
+        }
+        size--;
+        return s2.pop();
+    }
+}
+
 public class TestDemo {
 ////    //返回相同位置上相同的数字的个数
 ////   public static int cmp(int x, int y){
@@ -149,8 +217,51 @@ public class TestDemo {
 //
 //    }
 
+
     /**
-     * 只出现依次的数据
+     *
+     * @param num(判断是否h是完全平凡数)
+     * @return
+     */
+
+    public boolean isPerfectSquare(int num) {
+        // double i = 1;
+        // while(i * i < num) {
+        //     i++;
+        // }
+        // return i * i == num;
+
+        //数学公式
+        // int i = 1;
+        // while(num > 0){
+        //     num -= i;
+        //     i += 2;
+        // }
+        // return num==0;
+
+
+        //利用二分法
+        if(num ==1){
+            return true;
+        }
+        long left = 2, right = num >>1, x, guessSquared;
+        while (left <= right) {
+            x = left + ((right - left) >>1);
+            guessSquared = x * x;
+            if (guessSquared == num) {
+                return true;
+            }
+            if (guessSquared > num) {
+                right = x - 1;
+            } else {
+                left = x + 1;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 只出现一次的数据
      * @param nums
      * @return
      */
