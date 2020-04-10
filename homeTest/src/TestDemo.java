@@ -77,6 +77,26 @@ class CQueue {
 }
 
 public class TestDemo {
+    //剪绳子
+    public static int cuttingRope(int n) {
+        if (n < 2) {
+            return 0;
+        }
+        int[] dp = new int[n + 1];
+        dp[2] = 1;
+        for (int i = 3; i <= n; i++) {
+            for (int j = 1; j < i; j++) {
+                dp[i] = Math.max(Math.max(j * dp[i - j], j * (i - j)), dp[i]);
+            }
+        }
+        return dp[n];
+    }
+    public static void main(String[] args) {
+        int n=8;
+        System.out.println(cuttingRope(n));
+
+    }
+}
 ////    //返回相同位置上相同的数字的个数
 ////   public static int cmp(int x, int y){
 ////        int res = 0;
@@ -224,58 +244,58 @@ public class TestDemo {
      * @return
      */
 
-    public boolean isPerfectSquare(int num) {
-        // double i = 1;
-        // while(i * i < num) {
-        //     i++;
-        // }
-        // return i * i == num;
-
-        //数学公式
-        // int i = 1;
-        // while(num > 0){
-        //     num -= i;
-        //     i += 2;
-        // }
-        // return num==0;
-
-
-        //利用二分法
-        if(num ==1){
-            return true;
-        }
-        long left = 2, right = num >>1, x, guessSquared;
-        while (left <= right) {
-            x = left + ((right - left) >>1);
-            guessSquared = x * x;
-            if (guessSquared == num) {
-                return true;
-            }
-            if (guessSquared > num) {
-                right = x - 1;
-            } else {
-                left = x + 1;
-            }
-        }
-        return false;
-    }
+//    public boolean isPerfectSquare(int num) {
+//        // double i = 1;
+//        // while(i * i < num) {
+//        //     i++;
+//        // }
+//        // return i * i == num;
+//
+//        //数学公式
+//        // int i = 1;
+//        // while(num > 0){
+//        //     num -= i;
+//        //     i += 2;
+//        // }
+//        // return num==0;
+//
+//
+//        //利用二分法
+//        if(num ==1){
+//            return true;
+//        }
+//        long left = 2, right = num >>1, x, guessSquared;
+//        while (left <= right) {
+//            x = left + ((right - left) >>1);
+//            guessSquared = x * x;
+//            if (guessSquared == num) {
+//                return true;
+//            }
+//            if (guessSquared > num) {
+//                right = x - 1;
+//            } else {
+//                left = x + 1;
+//            }
+//        }
+//        return false;
+//    }
 
     /**
      * 只出现一次的数据
      * @param nums
      * @return
      */
-    public int singleNumber(int[] nums) {
-
-    HashMap<Integer, Integer> hashmap = new HashMap<>();
-    for (int num : nums)
-        hashmap.put(num, hashmap.getOrDefault(num, 0) + 1);
-
-    for (int k : hashmap.keySet())
-        if (hashmap.get(k) == 1) return k;
-    return -1;
-
-}
+//    public int singleNumber(int[] nums) {
+//
+//    HashMap<Integer, Integer> hashmap = new HashMap<>();
+//    for (int num : nums)
+//        hashmap.put(num, hashmap.getOrDefault(num, 0) + 1);
+//
+//    for (int k : hashmap.keySet())
+//        if (hashmap.get(k) == 1) return k;
+//    return -1;
+//
+//}
 
     /**
      *
@@ -285,30 +305,30 @@ public class TestDemo {
      * 在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。
      *
      */
-
-    public int strStr(String haystack, String needle) {
-        if (needle == null) {
-            return 0;
-        }
-        // int hsize = haystack.length();
-        // int nsize = needle.length();
-
-        // for(int i = 0; i <= hsize-nsize;i++){
-        //     int j =0;
-        //     for(;j < nsize;j++){
-        //         if(haystack.charAt(i+j)!=needle.charAt(j)){
-        //             break;
-        //         }
-        //     }
-        //     if(j==nsize){
-        //         return i;
-        //     }
-        // }
-        // return -1;
-        return haystack.indexOf(needle);
-
-    }
-}
+//
+//    public int strStr(String haystack, String needle) {
+//        if (needle == null) {
+//            return 0;
+//        }
+//        // int hsize = haystack.length();
+//        // int nsize = needle.length();
+//
+//        // for(int i = 0; i <= hsize-nsize;i++){
+//        //     int j =0;
+//        //     for(;j < nsize;j++){
+//        //         if(haystack.charAt(i+j)!=needle.charAt(j)){
+//        //             break;
+//        //         }
+//        //     }
+//        //     if(j==nsize){
+//        //         return i;
+//        //     }
+//        // }
+//        // return -1;
+//        return haystack.indexOf(needle);
+//
+//    }
+//}
 
 
 
