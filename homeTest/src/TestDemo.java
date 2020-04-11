@@ -77,6 +77,32 @@ class CQueue {
 }
 
 public class TestDemo {
+    /**
+     *
+     * @param grid,二维数组中放置礼物
+     * @return 礼物的最大值
+     * 你可以从棋盘的左上角开始拿格子里的礼物，并每次向右或者向下移动一格、直到到达棋盘的右下角。
+     */
+    public int maxValue(int[][] grid) {
+        int m = grid.length;//行
+        int n = grid[0].length;//列
+        for(int i = 0 ;i < m;i++){
+            for(int j = 0;j < n;j++){
+                if(i == 0 && j ==0){
+                    continue;
+                }
+                else if(i==0) {
+                    grid[i][j] += grid[i][j-1];
+                }
+                else if(j==0){
+                    grid[i][j] += grid[i-1][j];
+                }else{
+                    grid[i][j] += Math.max(grid[i-1][j],grid[i][j-1]);
+                }
+            }
+        }
+        return grid[m-1][n-1];
+    }
     //剪绳子
     public static int cuttingRope(int n) {
         if (n < 2) {
@@ -97,6 +123,10 @@ public class TestDemo {
 
     }
 }
+
+
+
+
 ////    //返回相同位置上相同的数字的个数
 ////   public static int cmp(int x, int y){
 ////        int res = 0;
