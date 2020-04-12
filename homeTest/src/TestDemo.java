@@ -77,6 +77,60 @@ class CQueue {
 }
 
 public class TestDemo {
+
+
+    /**
+     *
+     * @param nums 数组
+     * @return 数组中任意个重复的数字
+     */
+
+    public int findRepeatNumber(int[] nums) {
+        Set<Integer> set = new HashSet<Integer>();
+        int repeat = -1;
+        for (int num : nums) {
+            if (!set.add(num)) {
+                repeat = num;
+                break;
+            }
+        }
+        return repeat;
+    }
+
+
+    /**
+     *
+     * @param nums 数组
+     * @param k 数组中含的数字个数
+     * @return 各个数组中的最大值
+     *采用双队列，存储下标，最左侧代表的是最大值的下标
+     * /
+
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        if(nums == null || nums.length == 0) {
+            return new int[0];
+        }
+        int[] arr = new int[nums.length - k + 1];
+        Deque<Integer> queue = new ArrayDeque<>();
+        for(int i = 0, j = 0; i < nums.length; i++) {
+            if(!queue.isEmpty() && i - queue.peek() >= k) {
+                queue.poll();
+            }
+            while(!queue.isEmpty() && nums[i] > nums[queue.peekLast()]) {
+                queue.pollLast();
+            }
+            queue.offer(i);
+            if(i >= k - 1) {
+                arr[j++] = nums[queue.peek()];
+            }
+        }
+        return arr;
+
+    }
+
+
+
+
     /**
      *
      * @param grid,二维数组中放置礼物
