@@ -80,6 +80,59 @@ public class TestDemo {
 
 
     /**
+     * 在一个数组 nums 中除一个数字只出现一次之外，其他数字都出现了三次。请找出那个只出现一次的数字。
+     * 输入：nums = [3,4,3,3]
+     * 输出：4
+     *
+     *
+     * @param nums
+     * @return
+     */
+    public int singleNumber(int[] nums) {
+        Map<Integer,Boolean> h = new HashMap<>();
+        for( int n : nums){
+            //如果不包含映射，则添加映射
+            if(!h.containsKey(n)){
+                h.put(n,!h.containsKey(n));
+            }
+            else{
+                h.put(n,!h.containsKey(n));
+            }
+        }
+        for(int n : nums){
+            if(h.get(n) == true){
+                return n;
+            }
+        }
+        return -1;
+    }
+
+
+    /**
+     * 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，
+     * 输出旋转数组的最小元素。例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。 
+     */
+    public int minArray(int[] numbers) {
+        int i = 0;
+        int j = numbers.length-1;
+        while(i < j){
+            int m = (i + j)>>1;
+            //从右边序列找
+            if(numbers[m] > numbers[j]){
+                i=m+1;
+            }
+            else if(numbers[m] < numbers[j]){
+                j=m;
+            }
+            else{
+                j-=1;
+            }
+        }
+        return numbers[i];
+    }
+
+
+    /**
      *
      * @param nums 数组
      * @return 数组中任意个重复的数字
