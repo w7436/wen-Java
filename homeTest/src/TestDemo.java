@@ -77,6 +77,74 @@ class CQueue {
 }
 
 public class TestDemo {
+    /**
+     * 给一非空的单词列表，返回前 k 个出现次数最多的单词。
+     * 返回的答案应该按单词出现频率由高到低排序。如果不同的单词有相同出现频率，按字母顺序排序。
+     *
+     * @param words 字符串数组
+     * @param k
+     * @return
+     *
+     * 输入: ["i", "love", "leetcode", "i", "love", "coding"], k = 2
+     * 输出: ["i", "love"]
+     * 解析: "i" 和 "love" 为出现次数最多的两个单词，均为2次。
+     *     注意，按字母顺序 "i" 在 "love" 之前。
+     */
+    public List<String> topKFrequent(String[] words, int k) {
+        Map<String,Integer> m = new HashMap<>();
+        for(String s:words){
+            m.put(s,m.getOrDefault(s,0)+1);
+        }
+        PriorityQueue<String> p = new PriorityQueue<>(new Comparator<String>(){
+            public int compare(String a,String b){
+                if(m.get(a) == m.get(b)){
+                    return a.compareTo(b);
+                }
+                return m.get(b) - m.get(a);
+            }
+        });
+        //将字符串入队列
+        for(String s : m.keySet()){
+            p.add(s);
+        }
+        List<String> l = new ArrayList<>();
+        for(int i = 0;i < k;i++){
+            l.add(p.poll());
+        }
+        return l;
+    }
+
+    /**
+     * 最小的数
+     */
+    public static void minNum() {
+        Scanner in = new Scanner(System.in);
+        int[] arr = new int[10];
+        for (int i = 0; i < 10; i++) {
+            arr[i] = in.nextInt();
+        }
+        if (arr[0] != 0) {
+            for (int i = 1; i < 10; i++) {
+                if (arr[i] != 0) {
+                    System.out.print(i);
+                    arr[i]--;
+                    break;
+                }
+            }
+        }
+        for (int j = 0; j < 10; j++) {
+            if (arr[j] != 0) {
+                for (int k = 0; k < arr[j]; k++) {
+                    System.out.print(j);
+                }
+            }
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        minNum();
+    }
 
 
     /**
@@ -224,11 +292,12 @@ public class TestDemo {
         }
         return dp[n];
     }
-    public static void main(String[] args) {
-        int n=8;
-        System.out.println(cuttingRope(n));
+//    public static void main(String[] args) {
+//        int n=8;
+//        System.out.println(cuttingRope(n));
+//
+//    }
 
-    }
 }
 
 
