@@ -77,6 +77,36 @@ class CQueue {
 }
 
 public class TestDemo {
+
+    /**
+     * 输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
+     * 输入: [10,2]
+     * 输出: "102"
+     *
+     * 输入: [3,30,34,5,9]
+     * 输出: "3033459"
+     * @param nums
+     * @return
+     */
+    public String minNumber(int[] nums) {
+        String[] str = new String[nums.length];
+        for(int i = 0;i < nums.length;i++){
+            str[i] = nums[i]+"";
+        }
+        Arrays.sort(str,(s1,s2)->(s1+s2).compareTo(s2+s1));
+        String ret = "";
+        for(String s : str){
+            ret+=s;
+        }
+        return ret;
+
+
+    }
+
+
+
+
+
     /**
      * 给一非空的单词列表，返回前 k 个出现次数最多的单词。
      * 返回的答案应该按单词出现频率由高到低排序。如果不同的单词有相同出现频率，按字母顺序排序。
