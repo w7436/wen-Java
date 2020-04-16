@@ -78,6 +78,147 @@ class CQueue {
 
 public class TestDemo {
 
+
+    /**
+     *在显示着数字的坏计算器上，我们可以执行以下两种操作：
+     *
+     * 双倍（Double）：将显示屏上的数字乘 2；
+     * 递减（Decrement）：将显示屏上的数字减 1 。
+     * 最初，计算器显示数字 X。
+     *
+     * 返回显示数字 Y 所需的最小操作数
+     输入：X = 2, Y = 3
+     输出：2
+     解释：先进行双倍运算，然后再进行递减运算 {2 -> 4 -> 3}.
+     * @param Y
+     * @return
+     * 方法：逆向思维
+     * 思路
+     *
+     * 除了对 X 执行乘 2 或 减 1 操作之外，我们也可以对 Y 执行除 2（当 Y 是偶数时）或者加 1 操作。
+     *
+     * 这样做的动机是我们可以总是贪心地执行除 2 操作：
+     *
+     * 当 Y 是偶数，如果先执行 2 次加法操作，再执行 1 次除法操作，我们可以通过先执行 1 次除法操作，
+     * 再执行 1 次加法操作以使用更少的操作次数得到相同的结果 [(Y+2) / 2 vs Y/2 + 1]。
+     *
+     * 当 Y 是奇数，如果先执行 3 次加法操作，再执行 1 次除法操作，
+     * 我们可以将其替代为顺次执行加法、除法、加法操作以使用更少的操作次数得到相同的结果 [(Y+3) / 2 vs (Y+1) / 2 + 1]。
+     *
+     * 算法
+     *
+     * 当 Y 大于 X 时，如果它是奇数，我们执行加法操作，否则执行除法操作。之后，我们需要执行 X - Y 次加法操作以得到 X
+     */
+
+    public int brokenCalc(int X, int Y) {
+        int ans = 0;
+        while (Y > X) {
+            ans++;
+            if (Y % 2 == 1)
+                Y++;
+            else
+                Y /= 2;
+        }
+        return ans + X - Y;
+    }
+
+
+
+
+    /**
+     * 数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
+     * @param nums
+     * @return
+     * 输入: [1, 2, 3, 2, 2, 2, 5, 4, 2]
+     * 输出: 2
+     */
+
+    public int majorityElement(int[] nums) {
+        int x = 0, votes = 0;
+        for(int num : nums){
+            if(votes == 0) x = num;
+            votes += num == x ? 1 : -1;
+        }
+        return x;
+
+        // Map<Integer,Integer> map = new HashMap<>();
+        // int count = 0;
+        // int i=0 ;
+        // for(int x:nums){
+        //     if(map.containsKey(x)){
+        //         map.put(x,map.getOrDefault(x,0)+1);
+        //     }else{
+        //         map.put(x,1);
+        //     }
+        //     count++;
+        // }
+        // for(;i < count;i++){
+        //     if(map.get(nums[i]) > (count>>1)){
+        //         break;
+        //     }
+        // }
+        // return nums[i];
+    }
+
+
+
+    /**
+     * 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词
+     * @param s
+     * @param t
+     * @return
+     * 输入: s = "anagram", t = "nagaram"
+     * 输出: true
+     *
+     */
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length())
+            return false;
+        Map<Character, Integer> charMap1 = new HashMap<>((int) (s.length() / 0.75F + 1.0F));
+        Map<Character, Integer> charMap2 = new HashMap<>((int) (s.length() / 0.75F + 1.0F));
+        for (char c : s.toCharArray())
+            charMap1.put(c, charMap1.getOrDefault(c, 0) + 1);
+        for (char c : t.toCharArray())
+            charMap2.put(c, charMap2.getOrDefault(c, 0) + 1);
+        if (charMap1.size() != charMap2.size())
+            return false;
+        for (char c : s.toCharArray()) {
+            if (!charMap1.get(c).equals(charMap2.getOrDefault(c, 0))) {
+                return false;
+            }
+        }
+        return true;
+
+
+        // if(s.length()==t.length()){
+
+        //     int[] counter = new int[26];
+        //     for(int i = 0;i < s.length();i++){
+        //         counter[s.charAt(i)-'a']++;
+        //         counter[t.charAt(i)-'a']--;
+        //     }
+        //     for(int num:counter){
+        //         if(num != 0){
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+        // return false;
+
+        //    if(s.length()!=t.length())
+        //         return false;
+        //     else{
+        //         char[] s1=s.toCharArray();
+        //         char[] s2=t.toCharArray();
+        //         Arrays.sort(s1);
+        //         Arrays.sort(s2);
+        //         return Arrays.equals(s1,s2);
+        //     }
+    }
+
+
+
     /**
      * 输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
      * 输入: [10,2]
