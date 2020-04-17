@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -77,6 +78,99 @@ class CQueue {
 }
 
 public class TestDemo {
+
+
+    /**
+     * 二维矩阵的旋转
+     * @param matrix
+     */
+    public void rotate(int[][] matrix) {
+        if (matrix == null || matrix.length == 0 ||
+                matrix[0] == null || matrix[0].length == 0)
+            return;
+        int n = matrix.length;
+        for (int i = 0; i < n; ++i) {
+            for (int j = i; j < n; ++j) {
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = tmp;
+            }
+        }
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n/2; ++j) {
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[i][n-1-j];
+                matrix[i][n-1-j] = tmp;
+            }
+        }
+
+    }
+
+
+
+    /**
+     * 字母异位词分组
+     * 输入: ["eat", "tea", "tan", "ate", "nat", "bat"]
+     * 输出:
+     * [
+     *   ["ate","eat","tea"],
+     *   ["nat","tan"],
+     *   ["bat"]
+     * ]
+     * @param s
+     * @return
+     */
+    private static String getKeyBySort(String s){
+        char[] c = s.toCharArray();
+        Arrays.sort(c);
+        return new String(c);
+    }
+    private static String getKeyCount(String s){
+        char[] c = new char[26];
+        for(int i = 0;i < s.length();i++){
+            c[s.charAt(i) - 'a'] ++;
+        }
+        return new String(c);
+    }
+    public static List<List<String>> groupAnagrams(String[] strs){
+        if(strs == null || strs.length ==0){
+            return new ArrayList<>();
+        }
+        Map<String,List<String>> map = new HashMap<>();
+        for(String s:strs){
+            String key = getKeyBySort(s);
+            //如果指定的键尚未与某个值相关联（或映射到 null ），则将其与给定值相关联并返回 null ，否则返回当前值
+            map.putIfAbsent(key,new ArrayList<>());
+            map.get(key).add(s);
+        }
+        return new ArrayList<>(map.values());
+    }
+
+
+
+
+
+    /**
+     * 跳跃游戏
+     * @param nums
+     * @return
+     * max代表最大位置的下标，不断更新max的值
+     */
+    public boolean canJumpToLast(int[] nums){
+        if(nums.length == 0 || nums == null){
+            return false;
+        }
+        int max  = 0;//代表可以跳到的最大位置的下标
+        for(int i = 0;i < nums.length;i++){
+            if(max >= nums.length-1) return true;
+            if(max < i) return false;
+            //更新max位置
+            max = Math.max(max,i+nums[i]);
+        }
+        return false;
+    }
+
+
 
 
     /**
