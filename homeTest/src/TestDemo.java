@@ -80,8 +80,44 @@ class CQueue {
 public class TestDemo {
 
 
+    private static final int[] mapping = new int[256];
+    static {
+        mapping['I'] = 1;
+        mapping['V'] = 5;
+        mapping['X'] = 10;
+        mapping['L'] = 50;
+        mapping['C'] = 100;
+        mapping['D'] = 500;
+        mapping['M'] = 1000;
+    }
+    public static int romanInt(String s){
+        int n = s.length();
+        //从最右边开始
+        int result = mapping[s.charAt(n-1)];
+        for (int i = n-2; i >= 0 ; i--) {
+            int cur = mapping[s.charAt(i)];
+            //左右进行比较（如果右边的数大于左边的，则减去左边的数）
+            int right = mapping[s.charAt(i+1)];
+            if(cur < right){
+                result-=cur;
+            } else{
+                result += cur;
+            }
+        }
+        return result;
+    }
+
+
+
+
+
     /**
      * 二维矩阵的旋转
+     *
+     *
+     *
+     *
+     *
      * @param matrix
      */
     public void rotate(int[][] matrix) {
@@ -486,7 +522,7 @@ public class TestDemo {
 
     /**
      *
-     * @param nums 数组
+     * @param 数组
      * @param k 数组中含的数字个数
      * @return 各个数组中的最大值
      *采用双队列，存储下标，最左侧代表的是最大值的下标
