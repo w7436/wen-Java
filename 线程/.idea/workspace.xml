@@ -31,15 +31,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyTimer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyTimer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Thread7/MyTimer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
+            <state relative-caret-position="1273">
               <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#545#546#0" expanded="true" />
                 <element signature="e#598#599#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExecutorServiceTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Thread7/ExecutorServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,6 +96,7 @@
         <option value="$PROJECT_DIR$/src/Thread7/ThreadPoolExecuteTest.java" />
         <option value="$PROJECT_DIR$/src/Thread7/MyThreadPool.java" />
         <option value="$PROJECT_DIR$/src/Thread7/MyTimer.java" />
+        <option value="$PROJECT_DIR$/src/Thread7/ExecutorServiceTest.java" />
       </list>
     </option>
   </component>
@@ -96,26 +109,31 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="201" />
-    <option name="y" value="105" />
-    <option name="width" value="1443" />
-    <option name="height" value="942" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="124" />
+    <option name="y" value="19" />
+    <option name="width" value="962" />
+    <option name="height" value="629" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="线程" type="b2602c69:ProjectViewProjectNode" />
               <item name="线程" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="线程" type="b2602c69:ProjectViewProjectNode" />
+              <item name="线程" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="线程" type="b2602c69:ProjectViewProjectNode" />
@@ -311,6 +329,9 @@
       <workItem from="1585445828695" duration="21273000" />
       <workItem from="1585569012019" duration="77000" />
       <workItem from="1587209781951" duration="601000" />
+      <workItem from="1587264103849" duration="1488000" />
+      <workItem from="1587268300547" duration="1106000" />
+      <workItem from="1587287975742" duration="598000" />
     </task>
     <servers />
   </component>
@@ -326,10 +347,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90049000" />
+    <option name="totallyTimeSpent" value="93241000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="134" y="70" width="962" height="628" extended-state="1" />
+    <frame x="83" y="13" width="641" height="419" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -339,24 +361,24 @@
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5004042" side_tool="true" weight="0.6672474" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="11" weight="0.29537955" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="11" weight="0.29537955" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3289256" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49196786" visible="true" weight="0.34513274" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49196786" visible="true" weight="0.5591767" />
       <window_info anchor="right" id="Database" order="6" weight="0.32964602" />
       <window_info id="Structure" order="1" sideWeight="0.50803214" side_tool="true" weight="0.34513274" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4947735" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4947735" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.3289256" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32783505" />
     </layout>
@@ -377,27 +399,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Thread3/InterruptThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Thread3/UnsafeThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Thread1/First.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Thread1/First.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -651,12 +652,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Thread7/MyTimer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
+        <state relative-caret-position="1273">
           <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#545#546#0" expanded="true" />
             <element signature="e#598#599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/ScheduledThreadPoolExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="428" column="21" selection-start-line="428" selection-start-column="21" selection-end-line="428" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/Executors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="169" column="34" selection-start-line="169" selection-start-column="34" selection-end-line="169" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Thread7/ExecutorServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -718,6 +743,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

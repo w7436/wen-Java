@@ -77,9 +77,102 @@ class CQueue {
     }
 }
 
+
 public class TestDemo {
+    /**
+     * 数值的整数次方
+     * @param x
+     * @param n
+     * @return
+     */
+    public double myPow(double x, int n) {
+        if(x == 0) return 0;
+        long b = n;//int 变量会因为负数而产生错误，因而转换为long类型
+        double result = 1.0;
+        if(b < 0){
+            x = 1/x;
+            b = -b;
+        }
+        while(b > 0){
+            //利用二进制进行计算
+            if((b & 1) == 1) result*= x;
+            x*=x;
+            b >>= 1;
+        }
+        return result;
+    }
 
 
+
+    /**
+     *
+     * @param s
+     * @param numRows
+     * @return
+     * 将一个给定字符串根据给定的行数，以从上往下、从左到右进行Z字形排列。
+     *
+     * 比如输入字符串为 "LEETCODEISHIRING" 行数为 3 时，排列如下：
+     *
+     * L   C   I   R
+     * E T O E S I I G
+     * E   D   H   N
+     * 之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如："LCIRETOESIIGEDHN"。
+     */
+    public String convert(String s, int numRows) {
+        if(numRows == 1) return s;
+        List<StringBuffer> rows = new ArrayList<>();
+        //新建numRows个StringBuffer()对象
+        for(int i = 0;i < numRows;i++){
+            rows.add(new StringBuffer());
+        }
+        int i = 0,flg = -1;
+        for(char c : s.toCharArray()){
+            rows.get(i).append(c);
+            if(i == 0 || i == numRows-1){
+                flg = -flg;
+            }
+            i+=flg;
+        }
+        StringBuffer res = new StringBuffer();
+        for(StringBuffer str : rows){
+            res.append(str);
+        }
+        return res.toString();
+    }
+
+
+    /**
+     *
+     * @param target
+     * @return
+     * 算法：按照n+ n+1 + n+2 = targer
+     * 最开始按照两个数字的数组进行考虑，依次滴加
+     */
+    public int[][] findContinuousSequence(int target) {
+        List<int[]> list = new ArrayList<>();
+        int i = 1;
+        while(target > 0 ){
+
+            //第一次就是两个数
+            target-=i;
+            i++;
+            if(target > 0 && target % i==0){
+                int[] arr = new int[i];
+                for(int star=target/i,q=0;star<target/i+i;star++,q++) {
+                    arr[q]=star;
+                }
+                list.add(arr);
+            }
+        }
+        Collections.reverse(list);
+        return list.toArray(new int[0][]);
+
+    }
+
+
+    /**
+     * 罗马数字转化为十进制数字
+     */
     private static final int[] mapping = new int[256];
     static {
         mapping['I'] = 1;
@@ -92,17 +185,13 @@ public class TestDemo {
     }
     public static int romanInt(String s){
         int n = s.length();
-        //从最右边开始
         int result = mapping[s.charAt(n-1)];
-        for (int i = n-2; i >= 0 ; i--) {
+
+        for (int i = n-2; i >= 0; --i) {
             int cur = mapping[s.charAt(i)];
-            //左右进行比较（如果右边的数大于左边的，则减去左边的数）
             int right = mapping[s.charAt(i+1)];
-            if(cur < right){
-                result-=cur;
-            } else{
-                result += cur;
-            }
+            if (cur < right) result -= cur;
+            else result += cur;
         }
         return result;
     }
