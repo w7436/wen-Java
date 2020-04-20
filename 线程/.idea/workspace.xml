@@ -109,20 +109,17 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="124" />
-    <option name="y" value="19" />
-    <option name="width" value="962" />
-    <option name="height" value="629" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="271" />
+    <option name="y" value="96" />
+    <option name="width" value="1443" />
+    <option name="height" value="834" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,13 +153,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../homeTest" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -332,6 +332,7 @@
       <workItem from="1587264103849" duration="1488000" />
       <workItem from="1587268300547" duration="1106000" />
       <workItem from="1587287975742" duration="598000" />
+      <workItem from="1587346213792" duration="1297000" />
     </task>
     <servers />
   </component>
@@ -347,10 +348,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93241000" />
+    <option name="totallyTimeSpent" value="94538000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="83" y="13" width="641" height="419" extended-state="0" />
+    <frame x="-7" y="-7" width="1295" height="704" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -366,7 +367,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3289256" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49196786" visible="true" weight="0.5591767" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49196786" weight="0.56911886" />
       <window_info anchor="right" id="Database" order="6" weight="0.32964602" />
       <window_info id="Structure" order="1" sideWeight="0.50803214" side_tool="true" weight="0.34513274" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -374,13 +375,13 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4947735" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.3289256" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.3289256" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32783505" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">

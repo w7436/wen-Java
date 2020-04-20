@@ -77,8 +77,77 @@ class CQueue {
     }
 }
 
-
+class Student{
+    String name;
+    int score;
+    public Student(String name,int score){
+        this.name = name;
+        this.score = score;
+    }
+}
 public class TestDemo {
+
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        while (in.hasNext()) {
+            int num = in.nextInt();
+            int style = in.nextInt();
+            List<Student> l = new ArrayList<>();
+            for (int i = 0; i < num; i++) {
+                String name = in.next();
+                int score = in.nextInt();
+                l.add(new Student(name, score));
+            }
+            //升序
+            if (style == 0) {
+                Collections.sort(l, new Comparator<Student>() {
+                    public int compare(Student o1, Student o2) {
+                        return o2.score - o1.score;
+                    }
+                });
+            }
+            //降序
+            if (style == 1) {
+                Collections.sort(l, new Comparator<Student>() {
+                    public int compare(Student o1, Student o2) {
+                        return o1.score - o2.score;
+                    }
+                });
+            }
+            for (int i = 0; i < l.size(); i++) {
+                System.out.println(l.get(i).name + " " + l.get(i).score);
+            }
+        }
+    }
+
+
+    /**
+     *
+     * 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。
+     * 如果是则返回 true，否则返回 false。假设输入的数组的任意两个数字都互不相同。
+     * @param postorder
+     * @return
+     */
+    public boolean verifyPostorder(int[] postorder) {
+        Stack<Integer> s = new Stack<>();
+        int root = Integer.MAX_VALUE;
+        //从数组最后面进行访问
+        for(int i = postorder.length-1; i>=0; i--){
+            if(postorder[i] > root){
+                return false;
+            }
+            while(!s.isEmpty() && s.peek() > postorder[i] ){
+                root = s.pop();
+            }
+            s.push(postorder[i]);
+        }
+        return true;
+    }
+
+
+
     /**
      * 数值的整数次方
      * @param x
@@ -353,30 +422,30 @@ public class TestDemo {
      */
 
     public int majorityElement(int[] nums) {
-        int x = 0, votes = 0;
-        for(int num : nums){
-            if(votes == 0) x = num;
-            votes += num == x ? 1 : -1;
-        }
-        return x;
+//        int x = 0, votes = 0;
+//        for(int num : nums){
+//            if(votes == 0) x = num;
+//            votes += num == x ? 1 : -1;
+//        }
+//        return x;
 
-        // Map<Integer,Integer> map = new HashMap<>();
-        // int count = 0;
-        // int i=0 ;
-        // for(int x:nums){
-        //     if(map.containsKey(x)){
-        //         map.put(x,map.getOrDefault(x,0)+1);
-        //     }else{
-        //         map.put(x,1);
-        //     }
-        //     count++;
-        // }
-        // for(;i < count;i++){
-        //     if(map.get(nums[i]) > (count>>1)){
-        //         break;
-        //     }
-        // }
-        // return nums[i];
+         Map<Integer,Integer> map = new HashMap<>();
+         int count = 0;
+         int i=0 ;
+         for(int x:nums){
+             if(map.containsKey(x)){
+                 map.put(x,map.getOrDefault(x,0)+1);
+             }else{
+                 map.put(x,1);
+             }
+             count++;
+         }
+         for(;i < count;i++){
+             if(map.get(nums[i]) > (count>>1)){
+                 break;
+             }
+         }
+         return nums[i];
     }
 
 
@@ -532,9 +601,9 @@ public class TestDemo {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        minNum();
-    }
+//    public static void main(String[] args) {
+//        minNum();
+//    }
 
 
     /**
