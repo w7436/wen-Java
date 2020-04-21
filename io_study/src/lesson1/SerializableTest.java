@@ -1,5 +1,7 @@
 package lesson1;
 
+import org.junit.Test;
+
 import java.io.*;
 
 /**
@@ -9,6 +11,7 @@ import java.io.*;
  * @Data 2020/4/20 15:48
  * @Version 1.0
  **/
+
 public class SerializableTest {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {

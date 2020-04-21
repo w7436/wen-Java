@@ -36,6 +36,12 @@ public class MyTimer {
         private long next;
         private  long period;
 
+        /**
+         *
+         * @param task 需要执行的任务
+         * @param next 从当前时间延迟多少ms
+         * @param period 间隔时间：《=0 就忽略掉，>0需要每间隔给定时间，就执行任务
+         */
         public MyTimerTask(Runnable task, long next,long period) {
             this.task = task;
             this.next = next;

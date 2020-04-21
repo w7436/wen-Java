@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -88,39 +87,104 @@ class Student{
 public class TestDemo {
 
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+//    public static void main(String[] args) {
+//        Scanner in = new Scanner(System.in);
+//
+//        while (in.hasNext()) {
+//            int num = in.nextInt();
+//            int style = in.nextInt();
+//            List<Student> l = new ArrayList<>();
+//            for (int i = 0; i < num; i++) {
+//                String name = in.next();
+//                int score = in.nextInt();
+//                l.add(new Student(name, score));
+//            }
+//            //升序
+//            if (style == 0) {
+//                Collections.sort(l, new Comparator<Student>() {
+//                    public int compare(Student o1, Student o2) {
+//                        return o2.score - o1.score;
+//                    }
+//                });
+//            }
+//            //降序
+//            if (style == 1) {
+//                Collections.sort(l, new Comparator<Student>() {
+//                    public int compare(Student o1, Student o2) {
+//                        return o1.score - o2.score;
+//                    }
+//                });
+//            }
+//            for (int i = 0; i < l.size(); i++) {
+//                System.out.println(l.get(i).name + " " + l.get(i).score);
+//            }
+//        }
+//    }
 
-        while (in.hasNext()) {
-            int num = in.nextInt();
-            int style = in.nextInt();
-            List<Student> l = new ArrayList<>();
-            for (int i = 0; i < num; i++) {
-                String name = in.next();
-                int score = in.nextInt();
-                l.add(new Student(name, score));
-            }
-            //升序
-            if (style == 0) {
-                Collections.sort(l, new Comparator<Student>() {
-                    public int compare(Student o1, Student o2) {
-                        return o2.score - o1.score;
-                    }
-                });
-            }
-            //降序
-            if (style == 1) {
-                Collections.sort(l, new Comparator<Student>() {
-                    public int compare(Student o1, Student o2) {
-                        return o1.score - o2.score;
-                    }
-                });
-            }
-            for (int i = 0; i < l.size(); i++) {
-                System.out.println(l.get(i).name + " " + l.get(i).score);
-            }
+
+
+    private static List<String> res = new LinkedList<>();
+    private static char[] c;
+    protected static String[] permutation(String s) {
+        c = s.toCharArray();
+        dfs(0);
+        return res.toArray(new String[res.size()]);
+    }
+
+    private static void dfs(int x) {
+        if(x == c.length - 1) {
+            res.add(String.valueOf(c)); // 添加排列方案
+            return;
+        }
+        HashSet<Character> set = new HashSet<>();
+        for(int i = x; i < c.length; i++) {
+            if(set.contains(c[i])) continue; // 重复，因此剪枝
+            set.add(c[i]);
+            swap(i, x); // 交换，将 c[i] 固定在第 x 位
+            dfs(x + 1); // 开启固定第 x + 1 位字符
+            swap(i, x); // 恢复交换
         }
     }
+    private static void swap(int a, int b) {
+        char tmp = c[a];
+        c[a] = c[b];
+        c[b] = tmp;
+    }
+
+    public static void  main(String[] args) {
+        String s ="abc";
+        String[] arr = permutation( s);
+    }
+
+
+
+    /**
+     *数字以0123456789101112131415…的格式序列化到一个字符序列中。在这个序列中，第5位（从下标0开始计数）是5，第13位是1，第19位是4，等等。
+     输入：n = 11
+     输出：0
+     * @param n
+     * @return
+     * 1.确定目标数是几位数
+     * 2.确定目标数的数值
+     * 3.确定返回目标数中的第几位
+     */
+    public int findNthDigit(int n) {
+        if(n < 10){
+            return n ;
+        }
+        n--;
+        int num = 1;//位数
+        long first  = 1;
+        //寻找当前范围的第n位数
+        while(n > 9*first*num){
+            n -= 9*first*num;
+            num++;
+            first*=10;
+        }
+        return String.valueOf(first+n/num).charAt(n%num)-'0';
+    }
+
+
 
 
     /**

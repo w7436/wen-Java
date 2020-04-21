@@ -70,8 +70,8 @@
       <file leaf-file-name="TestDemo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="443" column="47" lean-forward="true" selection-start-line="443" selection-start-column="47" selection-end-line="443" selection-end-column="47" />
+            <state relative-caret-position="300">
+              <caret line="154" selection-start-line="154" selection-end-line="154" />
             </state>
           </provider>
         </entry>
@@ -88,7 +88,7 @@
       <file leaf-file-name="Collections.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Collections.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7087">
+            <state relative-caret-position="6346">
               <caret line="373" column="23" selection-start-line="373" selection-start-column="23" selection-end-line="373" selection-end-column="23" />
             </state>
           </provider>
@@ -130,29 +130,53 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="30" />
-    <option name="y" value="9" />
-    <option name="width" value="1620" />
-    <option name="height" value="1755" />
+    <option name="x" value="270" />
+    <option name="y" value="96" />
+    <option name="width" value="1443" />
+    <option name="height" value="834" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="homeTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="homeTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="homeTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../io_study/lib" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\bit\github\wen-Java\homeTest" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -166,7 +190,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.EverdayTestDemo">
+  <component name="RunManager" selected="Application.TestDemo">
     <configuration name="EverdayTestDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EverdayTestDemo" />
       <module name="homeTest" />
@@ -179,6 +203,23 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="TestDemo.dfs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="homeTest" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDemo" />
+      <option name="METHOD_NAME" value="dfs" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -221,11 +262,13 @@
     <list>
       <item itemvalue="Application.TestDemo" />
       <item itemvalue="Application.EverdayTestDemo" />
+      <item itemvalue="JUnit.TestDemo.dfs" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EverdayTestDemo" />
         <item itemvalue="Application.TestDemo" />
+        <item itemvalue="JUnit.TestDemo.dfs" />
+        <item itemvalue="Application.EverdayTestDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -276,17 +319,27 @@
       <workItem from="1587288074970" duration="3066000" />
       <workItem from="1587346234328" duration="3378000" />
       <workItem from="1587385165022" duration="763000" />
+      <workItem from="1587436468132" duration="3055000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TestDemo_dfs - 2020.04.21 at 11h 12m 23s.xml">
+      <configuration name="TestDemo.dfs" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDemo_dfs - 2020.04.21 at 11h 16m 13s.xml">
+      <configuration name="TestDemo.dfs" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64972000" />
+    <option name="totallyTimeSpent" value="68027000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3292683" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -298,22 +351,21 @@
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3292683" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4974093" weight="0.1904762" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4974093" visible="true" weight="0.18997575" />
       <window_info anchor="right" id="Database" order="6" weight="0.32983023" />
       <window_info id="Structure" order="1" sideWeight="0.50259066" side_tool="true" weight="0.18755053" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.2497979" />
       <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.50259066" side_tool="true" weight="0.18755053" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.39721254" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.42857143" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="6" />
       <window_info active="true" anchor="bottom" id="Database Console" order="12" visible="true" weight="0.3292683" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.3292683" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +376,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -697,7 +749,7 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7087">
+        <state relative-caret-position="6346">
           <caret line="373" column="23" selection-start-line="373" selection-start-column="23" selection-end-line="373" selection-end-column="23" />
         </state>
       </provider>
@@ -711,14 +763,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="443" column="47" lean-forward="true" selection-start-line="443" selection-start-column="47" selection-end-line="443" selection-end-column="47" />
+        <state relative-caret-position="300">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -742,8 +818,21 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>homeTest</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
