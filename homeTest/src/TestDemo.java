@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 /**
@@ -84,7 +85,85 @@ class Student{
         this.score = score;
     }
 }
+
+ class TreeNode {
+     int val;
+     TreeNode left;
+     TreeNode right;
+     TreeNode(int x) {
+         val = x;
+     }
+ }
 public class TestDemo {
+
+    /**373
+     * 给定两个以升序排列的整形数组 nums1 和 nums2, 以及一个整数 k。
+     *
+     * 定义一对值 (u,v)，其中第一个元素来自 nums1，第二个元素来自 nums2。
+     *
+     * 找到和最小的 k 对数字 (u1,v1), (u2,v2) ... (uk,vk)。
+     输入: nums1 = [1,7,11], nums2 = [2,4,6], k = 3
+     输出: [1,2],[1,4],[1,6]
+     解释: 返回序列中的前 3 对数：
+     [1,2],[1,4],[1,6],[7,2],[7,4],[11,2],[7,6],[11,4],[11,6]
+     * @param nums2
+     * @param k
+     * @return
+     */
+    public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
+        // 大顶堆，比较器使用lambda表达式，更简洁
+        PriorityQueue<List<Integer>> queue = new PriorityQueue<>(k, (o1, o2)->{
+            return (o2.get(0) + o2.get(1)) - (o1.get(0) + o1.get(1));
+        });
+
+        // 遍历所有可能的集合
+        for(int i = 0; i < Math.min(nums1.length, k); i++){
+            for(int j = 0; j < Math.min(nums2.length, k); j++){
+                // 剪枝，如果当前的两个数之和超过了堆顶元素，由于数组已经排序，后面的元素只会更大，因此无需继续遍历
+                if(queue.size() == k && nums1[i]+nums2[j] > queue.peek().get(0) + queue.peek().get(1)){
+                    break;
+                }
+
+                // 若比堆顶小，则弹出堆顶元素，把当前数对加入
+                if(queue.size() == k){
+                    queue.poll();
+                }
+                List<Integer> pair = new ArrayList<>();
+                pair.add(nums1[i]);
+                pair.add(nums2[j]);
+                queue.add(pair);
+            }
+        }
+
+        // 最后将元素弹出，倒序插入数组即可
+        List<List<Integer>> res = new LinkedList<>();
+        for(int i =0; i < k && !queue.isEmpty(); i++){
+            res.add(0, queue.poll());
+        }
+        return res;
+
+
+    public TreeNode mirrorTree(TreeNode root) {
+//        if(root == null) return root;
+//        TreeNode tmp = root.left;
+//        root.left = mirrorTree(root.right);
+//        root.right = mirrorTree(tmp);
+//        return root;
+
+        //辅助栈法
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()){
+            TreeNode node = stack.pop();
+            if(node.left != null) stack.push(node.left);
+            if(node.right != null) stack.push(node.right);
+            TreeNode tmp1 = node.left;
+            node.left = node.right;
+            node.right = tmp1;
+        }
+        return root;
+
+    }
 
 
 //    public static void main(String[] args) {
@@ -151,10 +230,10 @@ public class TestDemo {
         c[b] = tmp;
     }
 
-    public static void  main(String[] args) {
-        String s ="abc";
-        String[] arr = permutation( s);
-    }
+//    public static void  main(String[] args) {
+//        String s ="abc";
+//        String[] arr = permutation( s);
+//    }
 
 
 

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -131,12 +133,34 @@ import java.util.Scanner;
 //    }
 public class EverdayTestDemo {
     public static void main(String[] args) {
-        int i = 5;
-        int s = (i++)+(++i)+(i--)+(--i);
-        System.out.println(s);
+
+            Scanner in = new Scanner(System.in);
+
+                String s1 = in.nextLine();
+                String s2 = in.nextLine();
+
+                Map<Character,Integer> map= new HashMap<>();
+                for(char c :s1.toCharArray()){
+                    map.put(c,map.getOrDefault(c,0)+1);
+                }
+
+                int count = 0;//代表缺的珠子
+                for(char s:s2.toCharArray()){
+                    int len = map.getOrDefault(s,0);
+                    if(len <= 0)
+                        count++;
+                    map.put(s,len-1);
+
+                }
+                if(count == 0){
+                    System.out.println("YES"+" " +(s1.length()-s2.length()));
+                }else{
+                    System.out.println("NO" + " "+count);
+                }
 
     }
 }
+
 
 
 
