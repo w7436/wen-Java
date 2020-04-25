@@ -96,6 +96,63 @@ class Student{
  }
 public class TestDemo {
 
+    /**
+     * 我们把只包含因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 n 个丑数。
+     * @param n
+     * @return
+     * 输入: n = 10
+     * 输出: 12
+     * 解释: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 是前 10 个丑数。
+     */
+    public static int nthUglyNumber(int n) {
+        int[] dp = new int[n];
+        dp[0] = 1;
+        int i = 1;
+        int a = 0,b = 0, c = 0;
+        while(i < n){
+            int n2 = dp[a]*2;
+            int n3 = dp[b]*3;
+            int n5 = dp[c]*5;
+            dp[i] = Math.min(Math.min(n2,n3),n5);
+            if(dp[i] == n2) a++;
+            if(dp[i] == n3) b++;
+            if(dp[i] == n5) c++;
+            i++;
+        }
+        return dp[n-1];
+    }
+
+    public static void main(String[] args) {
+        System.out.println(nthUglyNumber(10));
+    }
+
+
+    /**输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。
+     * 假设压入栈的所有数字均不相等。例如，序列 {1,2,3,4,5} 是某栈的压栈序列，
+     * 序列 {4,5,3,2,1} 是该压栈序列对应的一个弹出序列，但 {4,3,5,1,2} 就不可能是该压栈序列的弹出序列
+     *输入：pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+     * 输出：true
+     *
+      * @param pushed
+     * @param popped
+     * @return
+     */
+    public boolean validateStackSequences(int[] pushed, int[] popped) {
+        //创建一个栈来模拟
+        Stack<Integer> stack = new Stack<>();
+        int i = 0;
+        for(int num:pushed){
+            stack.push(num);
+            while(!stack.isEmpty() && stack.peek()==popped[i]){
+                stack.pop();
+                i++;
+            }
+        }
+        return stack.isEmpty();
+    }
+
+
+
     /**373
      * 给定两个以升序排列的整形数组 nums1 和 nums2, 以及一个整数 k。
      *
@@ -110,40 +167,40 @@ public class TestDemo {
      * @param k
      * @return
      */
-    public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
-        // 大顶堆，比较器使用lambda表达式，更简洁
-        PriorityQueue<List<Integer>> queue = new PriorityQueue<>(k, (o1, o2)->{
-            return (o2.get(0) + o2.get(1)) - (o1.get(0) + o1.get(1));
-        });
+//    public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
+//        // 大顶堆，比较器使用lambda表达式，更简洁
+//        PriorityQueue<List<Integer>> queue = new PriorityQueue<>(k, (o1, o2)->{
+//            return (o2.get(0) + o2.get(1)) - (o1.get(0) + o1.get(1));
+//        });
+//
+//        // 遍历所有可能的集合
+//        for(int i = 0; i < Math.min(nums1.length, k); i++){
+//            for(int j = 0; j < Math.min(nums2.length, k); j++){
+//                // 剪枝，如果当前的两个数之和超过了堆顶元素，由于数组已经排序，后面的元素只会更大，因此无需继续遍历
+//                if(queue.size() == k && nums1[i]+nums2[j] > queue.peek().get(0) + queue.peek().get(1)){
+//                    break;
+//                }
+//
+//                // 若比堆顶小，则弹出堆顶元素，把当前数对加入
+//                if(queue.size() == k){
+//                    queue.poll();
+//                }
+//                List<Integer> pair = new ArrayList<>();
+//                pair.add(nums1[i]);
+//                pair.add(nums2[j]);
+//                queue.add(pair);
+//            }
+//        }
+//
+//        // 最后将元素弹出，倒序插入数组即可
+//        List<List<Integer>> res = new LinkedList<>();
+//        for(int i =0; i < k && !queue.isEmpty(); i++){
+//            res.add(0, queue.poll());
+//        }
+//        return res;
 
-        // 遍历所有可能的集合
-        for(int i = 0; i < Math.min(nums1.length, k); i++){
-            for(int j = 0; j < Math.min(nums2.length, k); j++){
-                // 剪枝，如果当前的两个数之和超过了堆顶元素，由于数组已经排序，后面的元素只会更大，因此无需继续遍历
-                if(queue.size() == k && nums1[i]+nums2[j] > queue.peek().get(0) + queue.peek().get(1)){
-                    break;
-                }
 
-                // 若比堆顶小，则弹出堆顶元素，把当前数对加入
-                if(queue.size() == k){
-                    queue.poll();
-                }
-                List<Integer> pair = new ArrayList<>();
-                pair.add(nums1[i]);
-                pair.add(nums2[j]);
-                queue.add(pair);
-            }
-        }
-
-        // 最后将元素弹出，倒序插入数组即可
-        List<List<Integer>> res = new LinkedList<>();
-        for(int i =0; i < k && !queue.isEmpty(); i++){
-            res.add(0, queue.poll());
-        }
-        return res;
-
-
-    public TreeNode mirrorTree(TreeNode root) {
+//    public TreeNode mirrorTree(TreeNode root) {
 //        if(root == null) return root;
 //        TreeNode tmp = root.left;
 //        root.left = mirrorTree(root.right);
@@ -151,19 +208,19 @@ public class TestDemo {
 //        return root;
 
         //辅助栈法
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        while(!stack.isEmpty()){
-            TreeNode node = stack.pop();
-            if(node.left != null) stack.push(node.left);
-            if(node.right != null) stack.push(node.right);
-            TreeNode tmp1 = node.left;
-            node.left = node.right;
-            node.right = tmp1;
-        }
-        return root;
-
-    }
+//        Stack<TreeNode> stack = new Stack<>();
+//        stack.push(root);
+//        while(!stack.isEmpty()){
+//            TreeNode node = stack.pop();
+//            if(node.left != null) stack.push(node.left);
+//            if(node.right != null) stack.push(node.right);
+//            TreeNode tmp1 = node.left;
+//            node.left = node.right;
+//            node.right = tmp1;
+//        }
+//        return root;
+//
+//    }
 
 
 //    public static void main(String[] args) {
@@ -202,33 +259,33 @@ public class TestDemo {
 
 
 
-    private static List<String> res = new LinkedList<>();
-    private static char[] c;
-    protected static String[] permutation(String s) {
-        c = s.toCharArray();
-        dfs(0);
-        return res.toArray(new String[res.size()]);
-    }
-
-    private static void dfs(int x) {
-        if(x == c.length - 1) {
-            res.add(String.valueOf(c)); // 添加排列方案
-            return;
-        }
-        HashSet<Character> set = new HashSet<>();
-        for(int i = x; i < c.length; i++) {
-            if(set.contains(c[i])) continue; // 重复，因此剪枝
-            set.add(c[i]);
-            swap(i, x); // 交换，将 c[i] 固定在第 x 位
-            dfs(x + 1); // 开启固定第 x + 1 位字符
-            swap(i, x); // 恢复交换
-        }
-    }
-    private static void swap(int a, int b) {
-        char tmp = c[a];
-        c[a] = c[b];
-        c[b] = tmp;
-    }
+//    private static List<String> res = new LinkedList<>();
+//    private static char[] c;
+//    protected static String[] permutation(String s) {
+//        c = s.toCharArray();
+//        dfs(0);
+//        return res.toArray(new String[res.size()]);
+//    }
+//
+//    private static void dfs(int x) {
+//        if(x == c.length - 1) {
+//            res.add(String.valueOf(c)); // 添加排列方案
+//            return;
+//        }
+//        HashSet<Character> set = new HashSet<>();
+//        for(int i = x; i < c.length; i++) {
+//            if(set.contains(c[i])) continue; // 重复，因此剪枝
+//            set.add(c[i]);
+//            swap(i, x); // 交换，将 c[i] 固定在第 x 位
+//            dfs(x + 1); // 开启固定第 x + 1 位字符
+//            swap(i, x); // 恢复交换
+//        }
+//    }
+//    private static void swap(int a, int b) {
+//        char tmp = c[a];
+//        c[a] = c[b];
+//        c[b] = tmp;
+//    }
 
 //    public static void  main(String[] args) {
 //        String s ="abc";
@@ -823,8 +880,8 @@ public class TestDemo {
 
     /**
      *
-     * @param 数组
-     * @param k 数组中含的数字个数
+     * @param
+     * @param  数组中含的数字个数
      * @return 各个数组中的最大值
      *采用双队列，存储下标，最左侧代表的是最大值的下标
      * /

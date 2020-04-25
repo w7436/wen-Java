@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="" />
+    <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../wen-13/maven-test/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wen-13/maven-test/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestDemo.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +105,7 @@
       <recent name="D:\bit\github\wen-Java\homeTest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EverdayTestDemo">
+  <component name="RunManager" selected="Application.TestDemo">
     <configuration name="EverdayTestDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EverdayTestDemo" />
       <module name="homeTest" />
@@ -157,8 +162,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EverdayTestDemo" />
         <item itemvalue="Application.TestDemo" />
+        <item itemvalue="Application.EverdayTestDemo" />
         <item itemvalue="JUnit.TestDemo.dfs" />
       </list>
     </recent_temporary>
@@ -213,7 +218,9 @@
       <workItem from="1587436468132" duration="3055000" />
       <workItem from="1587614084832" duration="7030000" />
       <workItem from="1587646098181" duration="667000" />
-      <workItem from="1587708656950" duration="600000" />
+      <workItem from="1587708656950" duration="1198000" />
+      <workItem from="1587776139619" duration="1606000" />
+      <workItem from="1587815651383" duration="3146000" />
     </task>
     <servers />
   </component>
@@ -233,42 +240,50 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1587639069839" />
-    <state width="1237" height="165" key="GridCell.Tab.0.bottom" timestamp="1587639124207">
+    <state width="1237" height="223" key="GridCell.Tab.0.bottom" timestamp="1587820131456">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="165" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1587639124207" />
-    <state width="1237" height="165" key="GridCell.Tab.0.center" timestamp="1587639124207">
+    <state width="1237" height="223" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
+    <state width="1237" height="223" key="GridCell.Tab.0.center" timestamp="1587820131456">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="165" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1587639124207" />
-    <state width="1237" height="165" key="GridCell.Tab.0.left" timestamp="1587639124207">
+    <state width="1237" height="223" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
+    <state width="1237" height="223" key="GridCell.Tab.0.left" timestamp="1587820131456">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="165" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1587639124207" />
-    <state width="1237" height="165" key="GridCell.Tab.0.right" timestamp="1587639124207">
+    <state width="1237" height="223" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
+    <state width="1237" height="223" key="GridCell.Tab.0.right" timestamp="1587820131456">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="165" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1587639124207" />
-    <state width="1237" height="223" key="GridCell.Tab.1.bottom" timestamp="1587639124202">
+    <state width="1237" height="223" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
+    <state width="1237" height="223" key="GridCell.Tab.1.bottom" timestamp="1587820131456">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1587639124202" />
-    <state width="1237" height="223" key="GridCell.Tab.1.center" timestamp="1587639124202">
+    <state width="1237" height="223" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
+    <state width="1237" height="223" key="GridCell.Tab.1.center" timestamp="1587820131456">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1587639124202" />
-    <state width="1237" height="223" key="GridCell.Tab.1.left" timestamp="1587639124202">
+    <state width="1237" height="223" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
+    <state width="1237" height="223" key="GridCell.Tab.1.left" timestamp="1587820131456">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1587639124202" />
-    <state width="1237" height="223" key="GridCell.Tab.1.right" timestamp="1587639124202">
+    <state width="1237" height="223" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
+    <state width="1237" height="223" key="GridCell.Tab.1.right" timestamp="1587820131456">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1587639124202" />
+    <state width="1237" height="223" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
     <state x="412" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1587635198382">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="412" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.689@0.0.1280.689" timestamp="1587635198382" />
+    <state x="28" y="0" key="new project wizard" timestamp="1587778323012">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="28" y="0" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1587778323012" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1587815858082">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1587815858082" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
