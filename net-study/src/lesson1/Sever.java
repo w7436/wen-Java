@@ -42,8 +42,8 @@ public class Sever {
         public void run() {
             try {
 
-                BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-                PrintWriter out = new PrintWriter(client.getOutputStream(),true);
+                BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));//从客户端读取的数据（客户端发送给服务端）
+                PrintWriter out = new PrintWriter(client.getOutputStream(),true);//发送给客户端的数据
 
                 String str;
                 //阻塞等待
