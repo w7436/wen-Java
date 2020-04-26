@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../wen-13/maven-test/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../wen-13/maven-test/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../net-study/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EverdayTestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EverdayTestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../net-study/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../net-study/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../net-study/src/lesson1/Sever.java" beforeDir="false" afterPath="$PROJECT_DIR$/../net-study/src/lesson1/Sever.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +87,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../net-study" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -105,7 +106,7 @@
       <recent name="D:\bit\github\wen-Java\homeTest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestDemo">
+  <component name="RunManager" selected="Application.EverdayTestDemo">
     <configuration name="EverdayTestDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EverdayTestDemo" />
       <module name="homeTest" />
@@ -162,8 +163,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestDemo" />
         <item itemvalue="Application.EverdayTestDemo" />
+        <item itemvalue="Application.TestDemo" />
         <item itemvalue="JUnit.TestDemo.dfs" />
       </list>
     </recent_temporary>
@@ -221,6 +222,7 @@
       <workItem from="1587708656950" duration="1198000" />
       <workItem from="1587776139619" duration="1606000" />
       <workItem from="1587815651383" duration="3146000" />
+      <workItem from="1587867073494" duration="3971000" />
     </task>
     <servers />
   </component>
@@ -236,26 +238,26 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1587639069839">
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1587867569767">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1587639069839" />
-    <state width="1237" height="223" key="GridCell.Tab.0.bottom" timestamp="1587820131456">
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1587867569767" />
+    <state width="1237" height="165" key="GridCell.Tab.0.bottom" timestamp="1587896023307">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
-    <state width="1237" height="223" key="GridCell.Tab.0.center" timestamp="1587820131456">
+    <state width="1237" height="165" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1587896023307" />
+    <state width="1237" height="165" key="GridCell.Tab.0.center" timestamp="1587896023307">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
-    <state width="1237" height="223" key="GridCell.Tab.0.left" timestamp="1587820131456">
+    <state width="1237" height="165" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1587896023307" />
+    <state width="1237" height="165" key="GridCell.Tab.0.left" timestamp="1587896023305">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
-    <state width="1237" height="223" key="GridCell.Tab.0.right" timestamp="1587820131456">
+    <state width="1237" height="165" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1587896023305" />
+    <state width="1237" height="165" key="GridCell.Tab.0.right" timestamp="1587896023307">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
+    <state width="1237" height="165" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1587896023307" />
     <state width="1237" height="223" key="GridCell.Tab.1.bottom" timestamp="1587820131456">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

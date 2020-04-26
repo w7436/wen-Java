@@ -133,30 +133,62 @@ import java.util.Scanner;
 //    }
 public class EverdayTestDemo {
     public static void main(String[] args) {
+        //false
+        Integer i = new Integer(1);
+        Integer j= new Integer(1);
+        System.out.println(i==j);
 
-            Scanner in = new Scanner(System.in);
+        //true
+        //java在编译Integer i1 = 1时，会翻译成Integer i1 = Integer.valueOf(1)
+        Integer o1 = 1;
+        Integer o2 = 1;
+        System.out.println(o1==o2);
 
-                String s1 = in.nextLine();
-                String s2 = in.nextLine();
+        //false（Integer类型范围值-128 ~127 ，如果超过这个区间，就会创建新的类型）
+        Integer o3 = 128;
+        Integer o4 = 128;
+        System.out.println(o3==o4);
 
-                Map<Character,Integer> map= new HashMap<>();
-                for(char c :s1.toCharArray()){
-                    map.put(c,map.getOrDefault(c,0)+1);
-                }
+        //false
+        Integer i1= 127;
+        Integer j1= new Integer(127);
+        System.out.println(i1==j1);
 
-                int count = 0;//代表缺的珠子
-                for(char s:s2.toCharArray()){
-                    int len = map.getOrDefault(s,0);
-                    if(len <= 0)
-                        count++;
-                    map.put(s,len-1);
+        //true
+        Integer i5 = 127;
+        int  j5 = 127;
+        System.out.println(i5==j5);
 
-                }
-                if(count == 0){
-                    System.out.println("YES"+" " +(s1.length()-s2.length()));
-                }else{
-                    System.out.println("NO" + " "+count);
-                }
+        //true
+        //包装类Integer变量在与基本数据类型int变量比较时，Integer会自动拆包装为int，
+        // 然后进行比较，实际上就是两个int变量进行比较
+        Integer i2 = 128;
+        int j2 = 128;
+        System.out.println(i2 == j2);
+
+//            Scanner in = new Scanner(System.in);
+//
+//                String s1 = in.nextLine();
+//                String s2 = in.nextLine();
+//
+//                Map<Character,Integer> map= new HashMap<>();
+//                for(char c :s1.toCharArray()){
+//                    map.put(c,map.getOrDefault(c,0)+1);
+//                }
+//
+//                int count = 0;//代表缺的珠子
+//                for(char s:s2.toCharArray()){
+//                    int len = map.getOrDefault(s,0);
+//                    if(len <= 0)
+//                        count++;
+//                    map.put(s,len-1);
+//
+//                }
+//                if(count == 0){
+//                    System.out.println("YES"+" " +(s1.length()-s2.length()));
+//                }else{
+//                    System.out.println("NO" + " "+count);
+//                }
 
     }
 }
