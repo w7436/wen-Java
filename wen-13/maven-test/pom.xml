@@ -10,11 +10,11 @@
     <packaging>war</packaging>
 
     <dependencies>
-        <!-- MySQL数据库JDBC驱动包 -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.38</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

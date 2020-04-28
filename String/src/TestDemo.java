@@ -188,6 +188,7 @@ public class TestDemo {
     public static void main2(String[] args) {
         String str="abcdef";
         String str2=new String("abcdef");
+
         char[] array={'a','b','c','d','f'};
         String str3=new String(array);
         String str4="abc"+"def";//编译期间已经确定"abcdef"

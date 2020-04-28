@@ -1,6 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @ClassName EverdayTestDemo
@@ -133,6 +131,7 @@ import java.util.Scanner;
 //    }
 public class EverdayTestDemo {
     public static void main(String[] args) {
+
         //false
         Integer i = new Integer(1);
         Integer j= new Integer(1);
@@ -159,9 +158,9 @@ public class EverdayTestDemo {
         int  j5 = 127;
         System.out.println(i5==j5);
 
-        //true
-        //包装类Integer变量在与基本数据类型int变量比较时，Integer会自动拆包装为int，
-        // 然后进行比较，实际上就是两个int变量进行比较
+//        true
+//        包装类Integer变量在与基本数据类型int变量比较时，Integer会自动拆包装为int，
+//         然后进行比较，实际上就是两个int变量进行比较
         Integer i2 = 128;
         int j2 = 128;
         System.out.println(i2 == j2);
