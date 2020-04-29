@@ -95,6 +95,49 @@ class Student{
      }
  }
 public class TestDemo {
+    //圆圈中最后剩下的数字，约瑟夫环问题
+    public int lastRemaining(int n, int m) {
+        List<Integer> list = new ArrayList<>(n);
+        for (int i = 0; i < n; i++) {
+            list.add(i);
+        }
+        int idx = 0;
+        while (n > 1) {
+            idx = (idx + m - 1) % n;
+            list.remove(idx);
+            n--;
+        }
+        return list.get(0);
+
+    }
+
+    /**
+     * 假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
+     * @param prices
+     * @return输入: [7, 1, 5, 3, 6, 4]
+     * 输出: 5
+     * 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     *      注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格
+     */
+    public int maxProfit(int[] prices) {
+        int cost = Integer.MAX_VALUE, profit = 0;
+        for(int price : prices) {
+            cost = Math.min(cost, price);
+            profit = Math.max(profit, price - cost);
+        }
+        return profit;
+
+        // if(prices.length == 0) return 0;
+        // int[] dp = new int[prices.length];
+        // int min = prices[0];//保存最小的值
+        // dp[0]=0;
+        // for(int i = 1;i < prices.length;i++){
+        //     min = Math.min(min,prices[i]);
+        //     dp[i] =Math.max(dp[i-1],prices[i] - min);
+        // }
+        // return dp[prices.length-1];
+
+    }
 
     /**
      * 我们把只包含因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 n 个丑数。
