@@ -95,6 +95,74 @@ class Student{
      }
  }
 public class TestDemo {
+
+    /**
+     * 请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。
+     * @param s
+     * @return
+     * 输入: "abcabcbb"
+     * 输出: 3
+     * 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+     */
+    public int lengthOfLongestSubstring(String s) {
+        
+        //滑动窗口
+        Set<Character> set = new HashSet<>();
+        int left =0,right = 0,max = 0;
+        while(right < s.length()){
+            while(set.contains(s.charAt(right))){
+                set.remove(s.charAt(left));
+                left++;
+            }
+            set.add(s.charAt(right));
+            right++;
+            max = Math.max(right-left,max);//寻找最大滑动窗口
+        }
+        return max;
+    }
+
+
+    /**
+     * 快乐数「快乐数」定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，
+     * 然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。如果 可以变为  1，那么这个数就是快乐数
+     输入：19
+     输出：true
+     解释：
+     12 + 92 = 82
+     82 + 22 = 68
+     62 + 82 = 100
+     12 + 02 + 02 = 1
+     * @param n
+     * @return
+     */
+    private int getNext(int n) {
+        int totalSum = 0;
+        while (n > 0) {
+            int d = n % 10;
+            n = n / 10;
+            totalSum += d * d;
+        }
+        return totalSum;
+    }
+    public boolean isHappy(int n) {
+        //利用链表找环
+        int slow = n, fast = getNext(n);
+        while (fast != 1 && slow != fast){
+            slow = getNext(slow);
+            fast = getNext(getNext(fast));
+        };
+        return fast == 1;
+
+        // Set<Integer> seen = new HashSet<>();
+        // while (n != 1 && !seen.contains(n)) {
+        //     seen.add(n);
+        //     n = getNext(n);
+        // }
+        // return n == 1;
+    }
+
+
+
     //圆圈中最后剩下的数字，约瑟夫环问题
     public int lastRemaining(int n, int m) {
         List<Integer> list = new ArrayList<>(n);
@@ -108,7 +176,6 @@ public class TestDemo {
             n--;
         }
         return list.get(0);
-
     }
 
     /**
