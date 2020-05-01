@@ -95,6 +95,32 @@ class Student{
      }
  }
 public class TestDemo {
+    /**
+     * 统计一个数字在排序数组中出现的次数。
+     * 输入: nums = [5,7,7,8,8,10], target = 8
+     * 输出: 2
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int search(int[] nums, int target) {
+        int left = 0,right = nums.length-1;
+        while(left <= right){
+            int mid=(left+right)>>1;
+            if(nums[mid] <= target) left = mid+1;
+            else right = mid-1;
+        }
+        int end = left;
+        left=0;
+        right = nums.length-1;
+        while(left<=right){
+            int m = (left+right)>>1;
+            if(nums[m] <target) left=m+1;
+            else right = m-1;
+        }
+        int start = right;
+        return end - start - 1;
+    }
 
     /**
      * 请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。

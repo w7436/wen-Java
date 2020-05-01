@@ -93,7 +93,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wen-13" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -232,7 +232,8 @@
       <workItem from="1587956714878" duration="1703000" />
       <workItem from="1587969562259" duration="641000" />
       <workItem from="1588150313650" duration="2034000" />
-      <workItem from="1588217101447" duration="2583000" />
+      <workItem from="1588217101447" duration="2587000" />
+      <workItem from="1588311508703" duration="3617000" />
     </task>
     <servers />
   </component>
@@ -244,10 +245,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="3" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1587956964335" />
-    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1588152835461">
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1588321691516">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1588152835461" />
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1588321691516" />
     <state width="1237" height="165" key="GridCell.Tab.0.bottom" timestamp="1587896023307">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -288,6 +289,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="28" y="0" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1587778323012" />
+    <state x="297" y="153" key="run.anything.popup" timestamp="1588258378612">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1588258378612" />
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1587815858082">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
