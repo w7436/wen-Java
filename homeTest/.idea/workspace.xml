@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../对象的比较/对象的比较.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Map-Set/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Map-Set/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../String/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../String/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../String/String.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../String/String.iml" afterDir="false" />
@@ -75,6 +76,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -91,6 +93,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../wen-13" />
@@ -108,13 +112,27 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\bit\github\wen-Java\homeTest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EverdayTestDemo">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="EverdayTestDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EverdayTestDemo" />
+      <module name="homeTest" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="homeTest" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -166,9 +184,11 @@
       <item itemvalue="Application.TestDemo" />
       <item itemvalue="Application.EverdayTestDemo" />
       <item itemvalue="JUnit.TestDemo.dfs" />
+      <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.EverdayTestDemo" />
         <item itemvalue="Application.TestDemo" />
         <item itemvalue="JUnit.TestDemo.dfs" />
@@ -234,6 +254,7 @@
       <workItem from="1588150313650" duration="2034000" />
       <workItem from="1588217101447" duration="2587000" />
       <workItem from="1588311508703" duration="3617000" />
+      <workItem from="1588377119027" duration="6970000" />
     </task>
     <servers />
   </component>
@@ -245,50 +266,70 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="3" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1587956964335" />
-    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1588321691516">
+    <state x="396" y="52" key="#xdebugger.evaluate" timestamp="1588389318180">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1588321691516" />
-    <state width="1237" height="165" key="GridCell.Tab.0.bottom" timestamp="1587896023307">
+    <state x="396" y="52" key="#xdebugger.evaluate/0.0.1280.689@0.0.1280.689" timestamp="1588389318180" />
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1588377365800">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="165" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1587896023307" />
-    <state width="1237" height="165" key="GridCell.Tab.0.center" timestamp="1587896023307">
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1588377365800" />
+    <state width="1237" height="223" key="GridCell.Tab.-1.bottom" timestamp="1588389334597">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="165" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1587896023307" />
-    <state width="1237" height="165" key="GridCell.Tab.0.left" timestamp="1587896023305">
+    <state width="1237" height="223" key="GridCell.Tab.-1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588389334597" />
+    <state width="1237" height="223" key="GridCell.Tab.-1.center" timestamp="1588389334596">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="165" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1587896023305" />
-    <state width="1237" height="165" key="GridCell.Tab.0.right" timestamp="1587896023307">
+    <state width="1237" height="223" key="GridCell.Tab.-1.center/0.0.1280.689@0.0.1280.689" timestamp="1588389334596" />
+    <state width="1237" height="336" key="GridCell.Tab.-1.left" timestamp="1588390737455">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="165" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1587896023307" />
-    <state width="1237" height="223" key="GridCell.Tab.1.bottom" timestamp="1587820131456">
+    <state width="1237" height="336" key="GridCell.Tab.-1.left/0.0.1280.689@0.0.1280.689" timestamp="1588390737455" />
+    <state width="1237" height="336" key="GridCell.Tab.-1.right" timestamp="1588390737483">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
-    <state width="1237" height="223" key="GridCell.Tab.1.center" timestamp="1587820131456">
+    <state width="1237" height="336" key="GridCell.Tab.-1.right/0.0.1280.689@0.0.1280.689" timestamp="1588390737483" />
+    <state width="1237" height="336" key="GridCell.Tab.0.bottom" timestamp="1588420957636">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
-    <state width="1237" height="223" key="GridCell.Tab.1.left" timestamp="1587820131456">
+    <state width="1237" height="336" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588420957636" />
+    <state width="1237" height="336" key="GridCell.Tab.0.center" timestamp="1588420957635">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
-    <state width="1237" height="223" key="GridCell.Tab.1.right" timestamp="1587820131456">
+    <state width="1237" height="336" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1588420957635" />
+    <state width="1237" height="336" key="GridCell.Tab.0.left" timestamp="1588420957635">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="223" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1587820131456" />
-    <state x="412" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1587635198382">
+    <state width="1237" height="336" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1588420957635" />
+    <state width="1237" height="336" key="GridCell.Tab.0.right" timestamp="1588420957635">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="412" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.689@0.0.1280.689" timestamp="1587635198382" />
-    <state x="28" y="0" key="new project wizard" timestamp="1587778323012">
+    <state width="1237" height="336" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1588420957635" />
+    <state width="1237" height="223" key="GridCell.Tab.1.bottom" timestamp="1588389330258">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="28" y="0" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1587778323012" />
+    <state width="1237" height="223" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588389330258" />
+    <state width="1237" height="223" key="GridCell.Tab.1.center" timestamp="1588389330257">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1588389330257" />
+    <state width="1237" height="223" key="GridCell.Tab.1.left" timestamp="1588389330257">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1588389330257" />
+    <state width="1237" height="223" key="GridCell.Tab.1.right" timestamp="1588389330258">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1588389330258" />
+    <state x="412" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1588388778106">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="412" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.689@0.0.1280.689" timestamp="1588388778106" />
+    <state x="28" y="0" key="new project wizard" timestamp="1588377410336">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="28" y="0" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1588377410336" />
     <state x="297" y="153" key="run.anything.popup" timestamp="1588258378612">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -302,6 +343,8 @@
     <watches-manager>
       <configuration name="Application">
         <watch expression="arr" language="JAVA" />
+        <watch expression="left" language="JAVA" />
+        <watch expression="right" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -311,36 +354,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/homeTest$TestDemo.ic" NAME="TestDemo Coverage Results" MODIFIED="1587614162198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="watch">
-      <expression>
-        <expression-string>arr</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>test</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>javax.print.attribute.TextSyntax</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>last</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>count</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>charAt(i)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
   <component name="masterDetails">
     <states>
