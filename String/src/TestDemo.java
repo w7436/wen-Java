@@ -1,7 +1,11 @@
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.util.Arrays;
+
 //javap -c TestDemo//反编译
 /**
  * @ClassName TestDemo
@@ -11,6 +15,20 @@ import java.util.Arrays;
  * @Version 1.0
  **/
 public class TestDemo {
+
+    public static void main2(String[] args) {
+
+
+        String str = "Hello";
+
+        String str2 = new String("Hello");
+
+        char[] array = {'a', 'b', 'c'};
+        String str3 = new String(array);
+
+
+
+    }
 
     //字符串的拆分
     public static void main13(String[] args) {
@@ -178,29 +196,31 @@ public class TestDemo {
         str="hello";
         System.out.println(str2);//"abcdef"
     }
-    public static void main3(String[] args) {
+    public static void main(String[] args) {
         String str1="def";
         String str="abc"+"def"+str1;//两个对象
 //        int a=10;
 //        String str="abc"+"def"+360;//"abcdef360"//一个对象
     }
 
-    public static void main2(String[] args) {
-        String str="abcdef";
+    public  static void main18(String[] args) {
+        String str1="abcdef";
         String str2=new String("abcdef");
-
         char[] array={'a','b','c','d','f'};
         String str3=new String(array);
         String str4="abc"+"def";//编译期间已经确定"abcdef"
         String str5="abc"+new String("def");
-        System.out.println(str==str2);//false
-        System.out.println(str==str3);//false
-        System.out.println(str==str4);//true
-        System.out.println(str==str5);//false
+
+        System.out.println(str1==str2);//false
+        System.out.println(str1==str3);//false
+        System.out.println(str1==str4);//true
+        System.out.println(str1==str5);//false
+
         String str6="abc";
         String str7="def";
         String str8=str6+str7;
-        System.out.println(str==str8);//false
+
+        System.out.println(str1==str8);//false
 
     }
     public static void main1(String[] args) {//运行时参数

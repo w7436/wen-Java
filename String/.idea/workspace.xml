@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfdb71d5-f7ff-4e70-996d-3659bc9dbb26" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../List/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../List/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../List/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../List/src/TestDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../线程/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Map-Set/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Map-Set/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/String.iml" beforeDir="false" afterPath="$PROJECT_DIR$/String.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/String/TestDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/String/TestDemo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../homeTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../homeTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homeTest/out/production/homeTest/EverdayTestDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../homeTest/out/production/homeTest/EverdayTestDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homeTest/src/EverdayTestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homeTest/src/EverdayTestDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/maven-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/maven-test/maven-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/maven-test/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/maven-test/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/maven-test/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test.war" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/maven-test/target/test.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test/WEB-INF/lib/mysql-connector-java-5.1.38.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/maven-test/target/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../集合框架/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../集合框架/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homeTest/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homeTest/src/TestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../线程/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../线程/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../线程/out/production/线程/Thread7/MyTimer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../线程/out/production/线程/Thread7/MyTimer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../线程/out/production/线程/Thread7/MyTimer$MyTimerTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/../线程/out/production/线程/Thread7/MyTimer$MyTimerTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../线程/out/production/线程/Thread7/MyTimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../线程/out/production/线程/Thread7/MyTimer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../集合框架" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wen-13" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,11 +47,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.TestDemo1">
+  <component name="RunManager" selected="Application.TestDemo">
     <configuration name="TestDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestDemo" />
       <module name="String" />
@@ -75,6 +70,17 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDemo.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="String" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDemo" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -98,11 +104,13 @@
     <list>
       <item itemvalue="Application.TestDemo" />
       <item itemvalue="Application.TestDemo1" />
+      <item itemvalue="JUnit.TestDemo.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestDemo1" />
         <item itemvalue="Application.TestDemo" />
+        <item itemvalue="JUnit.TestDemo.test" />
+        <item itemvalue="Application.TestDemo1" />
       </list>
     </recent_temporary>
   </component>
@@ -123,6 +131,7 @@
       <workItem from="1575275384718" duration="9372000" />
       <workItem from="1578383424882" duration="720000" />
       <workItem from="1587954371262" duration="2141000" />
+      <workItem from="1588152838533" duration="6709000" />
     </task>
     <servers />
   </component>
@@ -130,47 +139,29 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1587955110672">
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1588155612003">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1587955110672" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1588155612003" />
+    <state width="1237" height="166" key="GridCell.Tab.0.bottom" timestamp="1588170035082">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="166" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588170035082" />
+    <state width="1237" height="166" key="GridCell.Tab.0.center" timestamp="1588170035082">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="166" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1588170035082" />
+    <state width="1237" height="166" key="GridCell.Tab.0.left" timestamp="1588170035081">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="166" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1588170035081" />
+    <state width="1237" height="166" key="GridCell.Tab.0.right" timestamp="1588170035082">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="166" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1588170035082" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1588155369604">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1588155369604" />
   </component>
 </project>
