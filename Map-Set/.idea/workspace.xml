@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c43fab6-8704-4da8-9864-98adb0037011" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../多态/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BSTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BSTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homeTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../homeTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../多态/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../多态/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../多态/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../多态/src/TestDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../homeTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -334,6 +339,7 @@
       <workItem from="1587639073532" duration="4441000" />
       <workItem from="1588074730911" duration="5510000" />
       <workItem from="1588149695422" duration="615000" />
+      <workItem from="1588468130893" duration="5826000" />
     </task>
     <servers />
   </component>

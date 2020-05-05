@@ -7,29 +7,29 @@
  **/
 public class TestDemo {
     //构造方法可以发生运行时绑定
-    public static void main(String[] args) {
+    public static void main5(String[] args) {
         Cat cat =new Cat();
         cat.eat();
         //打印两次Cat::eat()
     }
 
     //向下转型
-    public static void main5(String[] args) {
+    public static void main(String[] args) {
         Animal animal=new Bird();
         animal.eat();
-        if (animal instanceof Cat){
-            Cat cat=(Cat) animal;
-            cat.jump();
-        }
+        Bird bird = (Bird) animal;
+        bird.fly();
+//        if (animal instanceof Cat){
+//            Cat cat=(Cat) animal;
+//            cat.jump();
+//        }
+
 
 //        Bird bird=(Bird )animal;
 //        bird.fly();
 //
 
     }
-
-
-
     public static Cat func2(){
         Cat cat=new Cat();
         return cat;

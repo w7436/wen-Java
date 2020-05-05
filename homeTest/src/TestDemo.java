@@ -1,4 +1,5 @@
 
+import java.sql.Array;
 import java.util.*;
 
 /**
@@ -94,8 +95,204 @@ class Student{
 //         val = x;
 //     }
 // }
-public class TestDemo {
+class Node {
+    public int val;
+    public Node left;
+    public Node right;
 
+    public Node() {}
+
+    public Node(int _val) {
+        val = _val;
+    }
+
+    public Node(int _val,Node _left,Node _right) {
+        val = _val;
+        left = _left;
+        right = _right;
+    }
+};
+public class TestDemo {
+    /**
+     * 利用中序和前序重建二叉树
+     * @param preorder
+     * @param inorder
+     * @return
+     */
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+
+        if (preorder == null || preorder.length == 0) {
+            return null;
+        }
+        TreeNode root = new TreeNode(preorder[0]);
+        int length = preorder.length;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+        int inorderIndex = 0;
+        for (int i = 1; i < length; i++) {
+            int preorderVal = preorder[i];
+            TreeNode node = stack.peek();
+            if (node.val != inorder[inorderIndex]) {
+                node.left = new TreeNode(preorderVal);
+                stack.push(node.left);
+            } else {
+                while (!stack.isEmpty() && stack.peek().val == inorder[inorderIndex]) {
+                    node = stack.pop();
+                    inorderIndex++;
+                }
+                node.right = new TreeNode(preorderVal);
+                stack.push(node.right);
+            }
+        }
+        return root;
+
+    }
+
+
+
+    /**
+     * 将数字字符串转化位数字
+     * 假设我们的环境只能存储 32 位大小的有符号整数，那么其数值范围为 [−2^31,  2^31 − 1]。
+     * 如果数值超过这个范围，请返回  INT_MAX  或 INT_MIN
+
+     */
+    public int strToInt(String str) {
+        char[] chars = str.trim().toCharArray();
+        int flag = 1;
+        long res = 0;
+        int j = 1;
+        if(chars[0] == '-') flag = -1;
+        else if(chars[0] != '-') j=0;
+        for(int i = j;i < chars.length;i++){
+            if(chars[i] > '9' || chars[i] <'0') break;
+            res = res*10 + (chars[i]-'0');
+            if(res > Integer.MAX_VALUE){
+                return flag == 1 ? Integer.MAX_VALUE:Integer.MIN_VALUE;
+            }
+        }
+        return flag*(int) res;
+    }
+
+
+
+
+
+    /**
+     * 输入一个整数 n ，求1～n这n个整数的十进制表示中1出现的次数。
+     * 例如，输入12，1～12这些整数中包含1 的数字有1、10、11和12，1一共出现了5次
+     */
+    public int countDigitOne(int n){
+        //将其化为字符串
+        String str = new String();
+        str+=n;
+        int high = n;
+        int count = 0;
+        for(int i = 0;i < str.length();i++){
+            int digit = (int)Math.pow(10,i);
+            int tmp = high % 10;
+            high/=10;
+            if(tmp == 0) count += high*digit;
+            else if(tmp == 1) count+=high*digit+n%digit+1;
+            else if(tmp > 1) count+=(high+1)*digit;
+
+        }
+        return count;
+    }
+
+
+
+    /**
+     * 从扑克牌中随机抽5张牌，判断是不是一个顺子，即这5张牌是不是连续的。2～10为数字本身，
+     * A为1，J为11，Q为12，K为13，而大、小王为 0 ，可以看成任意数字。A 不能视为 14。
+     */
+    public boolean isStraight(int[] nums) {
+//        TreeSet<Integer> s = new TreeSet<>();
+//        for(int num:nums){
+//            if(num == 0) continue;
+//            if(s.contains(num)) return false;
+//            s.add(num);
+//        }
+//        return s.last()-s.first() < 5;
+
+
+        int joker = 0;
+        Arrays.sort(nums);
+        for(int i = 0;i < 5;i++){
+            if(nums[i] == 0) joker++;
+            else if(nums[i] == nums[i+1]) return false;
+        }
+        return nums[4] - nums[joker] < 5;
+
+
+    }
+
+
+
+    /**
+     * 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n>1并且m>1）
+     * ，每段绳子的长度记为 k[0],k[1]...k[m] 。请问 k[0]*k[1]*...*k[m] 可能的最大乘积是多少？
+     * 例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。
+     *答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+     * 输入: 10
+     * 输出: 36
+     * 解释: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36
+     */
+    public int cuttingRope1(int n){
+        if(n<=3) return n-1;
+        int res = 1;
+        while( n > 4){
+            res = res * 3 % 1000000007;
+            n -= 3;
+        }
+        return (int)(res*n%1000000007);
+    }
+
+
+    /**
+     * 输入一棵二叉树和一个整数，打印出二叉树中节点值的和为输入整数的所有路径。
+     * 从树的根节点开始往下一直到叶节点所经过的节点形成一条路径。
+     */
+
+    LinkedList<List<Integer>> list = new LinkedList<>();
+    LinkedList<Integer> path = new LinkedList<>();
+    public List<List<Integer>> pathSum(TreeNode root, int sum){
+        recur(root,sum);
+        return list;
+    }
+    void recur(TreeNode root, int tar){
+        if(root == null) return;
+        path.add(root.val);
+        tar -= root.val;
+        if(tar == 0 && root.left == null && root.right == null){
+            list.add(new LinkedList(path));
+        }
+        recur(root.left,tar);
+        recur(root.right,tar);
+        path.pollLast();
+    }
+
+
+    /**
+     * 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的循环双向链表。要求不能创建任何新的节点，只能调整树中节点指针的指向。
+     */
+    Node prev,head;
+    public void BSTree(Node root){
+        if(root == null) return;
+        BSTree(root.left);
+        if(prev!= null) prev.right = root;
+        else head = root;
+        //每次找到结点先改变左指针域
+        root.left = prev;
+        prev = root;
+        BSTree(root.right);
+    }
+    public Node treeToDoublyList(Node root) {
+        if(root == null) return null;
+        BSTree(root);
+        head.left = prev;
+        prev.right = head;
+        return head;
+    }
 
     /**
      * 给定一个数字，我们按照如下规则把它翻译为字符串：0 翻译成 “a” ，1 翻译成 “b”，……，11 翻译成 “l”，……，25 翻译成 “z”。

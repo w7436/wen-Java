@@ -147,29 +147,27 @@ public class BSTree {
         return true;
 
     }
+
     //将二叉搜索树转换双向链表
     public BSTNode  BSTee2DList(){
         if(root == null) return null;
         BSTNode head = root;
-
         //1、找树中最左侧结点，即双向链表的头
         while (null != head.left){
             head = head.left;
         }
-
         //2、修改指向
         //每拿到一个结点只能修改当前结点的左指针域
         //prev标记刚刚遍历过得结点
         BSTNode prev = null;//
         BSTree2(root);
         return head;
-
     }
     BSTNode prev=null;
+
     public void BSTree2(BSTNode root){
         if(root == null) return;
         //中序遍历
-
         BSTree2(root.left);
         root.left = prev;
         if(prev!=null){
@@ -178,6 +176,8 @@ public class BSTree {
         prev = root;
         BSTree2(root.right);
     }
+
+
     public static void main(String[] args) {
         int[] array = {1,4,3,2,6,5,8,7,0,9};
         BSTree t = new BSTree();
