@@ -113,6 +113,50 @@ class Node {
     }
 };
 public class TestDemo {
+
+    /**
+     * 寻找数字最大的数字之和，且不能连续
+     * 动态规划的思想
+     */
+    public int massage(int[] nums) {
+        int n = nums.length;
+        if(n == 0) return 0;
+        if(n == 1) return nums[0];
+        int[] dp = new int[n];
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0],nums[1]);
+        for(int i = 2;i < n;i++){
+            dp[i] = Math.max(dp[i-1],dp[i-2]+nums[i]);
+        }
+        return dp[n-1];
+    }
+    /**
+     *
+     * 确定不会抽自己名字的概率是多少
+     * @param num
+     * @return
+     */
+    //错排
+    public static float count(int num){
+        if(num ==0) return 0;
+        if(num == 1) return 0;
+        if(num == 2) return 1;
+        return (num-1)*(count(num-1)+count(num-2));
+    }
+    public static float fun(int num){
+        if(num == 0) return 1;
+        return num*fun(num-1);
+    }
+    public static void main1(String[] args){
+        Scanner in = new Scanner(System.in);
+        while(in.hasNext()){
+            int num = in.nextInt();
+            float re = (count(num)/fun(num))*100;
+            System.out.println(String.format("%.2f",re)+"%");
+        }
+    }
+
+
     /**
      * 利用中序和前序重建二叉树
      * @param preorder

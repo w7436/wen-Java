@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="" />
+    <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/selevt_blog_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/selevt_blog_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/selevt-blog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blogdemo/.idea/blogdemo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EverdayTestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EverdayTestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/blog/.idea/blogdemo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/blog/blog.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/maven-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/maven-test/maven-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/maven-test/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test/WEB-INF/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test/index.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +112,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blogdemo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -109,7 +137,7 @@
       <recent name="D:\bit\github\wen-Java\homeTest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.EverdayTestDemo">
     <configuration name="EverdayTestDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EverdayTestDemo" />
       <module name="homeTest" />
@@ -175,8 +203,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.EverdayTestDemo" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.TestDemo" />
         <item itemvalue="JUnit.TestDemo.dfs" />
       </list>
@@ -246,6 +274,7 @@
       <workItem from="1588557286695" duration="5349000" />
       <workItem from="1588663492650" duration="1579000" />
       <workItem from="1588760670751" duration="252000" />
+      <workItem from="1588920025206" duration="4231000" />
     </task>
     <servers />
   </component>
@@ -281,22 +310,22 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="336" key="GridCell.Tab.-1.right/0.0.1280.689@0.0.1280.689" timestamp="1588390737483" />
-    <state width="1237" height="336" key="GridCell.Tab.0.bottom" timestamp="1588420957636">
+    <state width="1237" height="436" key="GridCell.Tab.0.bottom" timestamp="1588945254964">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="336" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588420957636" />
-    <state width="1237" height="336" key="GridCell.Tab.0.center" timestamp="1588420957635">
+    <state width="1237" height="436" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588945254964" />
+    <state width="1237" height="436" key="GridCell.Tab.0.center" timestamp="1588945254964">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="336" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1588420957635" />
-    <state width="1237" height="336" key="GridCell.Tab.0.left" timestamp="1588420957635">
+    <state width="1237" height="436" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1588945254964" />
+    <state width="1237" height="436" key="GridCell.Tab.0.left" timestamp="1588945254964">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="336" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1588420957635" />
-    <state width="1237" height="336" key="GridCell.Tab.0.right" timestamp="1588420957635">
+    <state width="1237" height="436" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1588945254964" />
+    <state width="1237" height="436" key="GridCell.Tab.0.right" timestamp="1588945254964">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="336" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1588420957635" />
+    <state width="1237" height="436" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1588945254964" />
     <state width="1237" height="223" key="GridCell.Tab.1.bottom" timestamp="1588389330258">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -331,6 +360,15 @@
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1587815858082" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/EverdayTestDemo.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="arr" language="JAVA" />

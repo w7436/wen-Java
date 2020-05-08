@@ -130,7 +130,26 @@ import java.util.*;
 //        b=a;
 //    }
 public class EverdayTestDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int num = in.nextInt();
+        int sum = in.nextInt();
+        int[] arr = new int[num];
+
+        long[] dp = new long[sum+1];
+        dp[0] = 1;
+        for(int i = 0;i < num;i++){
+            arr[i] = in.nextInt();
+            for(int j = sum;j >= 0;j--){
+                if(j >= arr[i]){
+                    dp[j] += dp[j-arr[i]];
+                }
+            }
+        }
+        System.out.println(dp[sum]);
+    }
+
+    public static void main1(String[] args) {
 
         //false
         Integer i = new Integer(1);

@@ -15,6 +15,26 @@ class TreeNode {
     TreeNode(int x) { val = x; }
 }
 public class Test {
+    /**
+     * 树的子结点
+
+     * @return
+     */
+
+    public boolean isSubStructure(TreeNode A, TreeNode B){
+        if(B == null || A == null) return false;
+        if(isEuql(A,B)) return true;
+        else
+            return isSubStructure(A.left,B)||isSubStructure(A.right,B);
+    }
+    boolean isEuql(TreeNode A,TreeNode B){
+        if(B == null) return true;
+        if(A == null ) return false;
+        if(A.val == B.val){
+            return isEuql(A.left,B.left) && isEuql(A.right,B.right);
+        }
+        else return false;
+    }
     //从根路径到指定结点存储路径上的结点
     public static boolean search(TreeNode root, TreeNode node , List<TreeNode> path ){
         if (root == null) return false;
