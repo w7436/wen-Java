@@ -2,33 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/selevt_blog_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/selevt_blog_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/selevt-blog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blogdemo/.idea/blogdemo.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EverdayTestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EverdayTestDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wen-13/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../wen-13/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wen-13/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wen-13/blog/.idea/blogdemo.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../wen-13/blog/blog.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/maven-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/maven-test/maven-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/maven-test/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test/WEB-INF/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/target/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/maven-test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/selevt-blog.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,6 +264,8 @@
       <workItem from="1588663492650" duration="1579000" />
       <workItem from="1588760670751" duration="252000" />
       <workItem from="1588920025206" duration="4231000" />
+      <workItem from="1588989706725" duration="27000" />
+      <workItem from="1589017008278" duration="1658000" />
     </task>
     <servers />
   </component>
@@ -290,10 +281,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="396" y="52" key="#xdebugger.evaluate/0.0.1280.689@0.0.1280.689" timestamp="1588389318180" />
-    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1588760814708">
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1588989733259">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1588760814708" />
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1588989733259" />
     <state width="1237" height="223" key="GridCell.Tab.-1.bottom" timestamp="1588389334597">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

@@ -115,6 +115,24 @@ class Node {
 public class TestDemo {
 
     /**
+     *求x的平方根
+     * 利用二分法进行查找
+     */
+    public int mySqrt(int x) {
+        int left = 0,right = x,res = -1;
+        while(left <= right){
+            int mid = left+(right - left)>>1;
+            if((long) mid*mid <= x ) {
+                res = mid;
+                left = mid + 1;
+            }else{
+                right = mid - 1;
+            }
+        }
+        return res;
+    }
+
+    /**
      * 寻找数字最大的数字之和，且不能连续
      * 动态规划的思想
      */
