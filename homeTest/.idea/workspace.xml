@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../JavaWeb-Test/JavaWeb-Test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-test/maven-test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wen-13/maven/maven.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/selevt-blog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blogdemo/.idea/blogdemo.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestDemo.java" afterDir="false" />
@@ -17,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/src/main/java/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/src/main/webapp/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/selevt-blog.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,6 +269,7 @@
       <workItem from="1588920025206" duration="4231000" />
       <workItem from="1588989706725" duration="27000" />
       <workItem from="1589017008278" duration="1658000" />
+      <workItem from="1589082545796" duration="2466000" />
     </task>
     <servers />
   </component>
@@ -337,10 +341,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="412" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.689@0.0.1280.689" timestamp="1588388778106" />
-    <state x="28" y="0" key="new project wizard" timestamp="1588377410336">
+    <state x="28" y="0" key="new project wizard" timestamp="1589110264333">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="28" y="0" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1588377410336" />
+    <state x="28" y="0" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1589110264333" />
     <state x="297" y="153" key="run.anything.popup" timestamp="1588258378612">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

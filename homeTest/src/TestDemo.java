@@ -113,6 +113,65 @@ class Node {
     }
 };
 public class TestDemo {
+    /**
+     * 一个机器人位于一个 m x n 网格的左上角
+     * 机器人每次只能向下或者向右移动一步。机器人试图达到网格的最右下
+     * 问总共有多少条不同的路径？
+     */
+    public int uniquePaths(int m, int n) {
+        int[][] dp = new int[m][n];
+        //将第一行置为1
+        for (int i = 0; i < n; i++) dp[0][i] = 1;
+        //将第一列置为1
+        for (int i = 0; i < m; i++) dp[i][0] = 1;
+
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+            }
+        }
+        return dp[m - 1][n - 1];
+    }
+
+    /**
+     * 给定一个包含非负数的数组和一个目标整数 k，编写一个函数来判断该数组是否含有连续的子数组，
+     * 其大小至少为 2，总和为 k 的倍数，即总和为 n*k，其中 n 也是一个整数
+     * 输入: [23,2,4,6,7], k = 6
+     * 输出: True
+     * 解释: [2,4] 是一个大小为 2 的子数组，并且和为 6
+     */
+    public boolean checkSubarraySum(int[] nums, int k) {
+        //暴力解法
+        // int len = nums.length;
+        // int[] sum = new int[len+1];
+        // for(int i = 0;i < len;i++){
+        //     sum[i+1] = sum[i]+nums[i];
+        // }
+        // for(int i = 0;i < len;i++){
+        //     for(int j = i+2;j <= len;j++ ){
+        //         int res = sum[j] - sum[i];
+        //         if(k == 0) {
+        //             if(res == 0) return true;
+        //         }else{
+        //             if(res%k == 0) return true;
+        //         }
+        //     }
+        // }
+        // return false;
+
+        int N = nums.length, cache = 0;
+        int[] sum = new int[N+1];
+        HashSet<Integer> set = new HashSet<>();
+        for (int i = 0; i < N; i++) {
+            sum[i+1] = sum[i] + nums[i];
+            int res = k == 0 ? sum[i+1] : sum[i+1] % k;
+            if (set.contains(res)) return true;
+            set.add(cache);
+            cache = res;
+        }
+
+        return false;
+    }
 
     /**
      *求x的平方根
