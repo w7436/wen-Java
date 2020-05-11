@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="servlet-src">
+    <output-path>$PROJECT_DIR$/out/artifacts/servlet_src</output-path>
+    <root id="archive" name="servlet-src.jar">
+      <element id="dir-copy" path="$PROJECT_DIR$/../../../../software/idea2020/apache-tomcat-8.5.54-src/java" />
+    </root>
+  </artifact>
+</component>
