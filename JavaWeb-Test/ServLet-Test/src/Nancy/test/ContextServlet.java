@@ -8,10 +8,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class ContextServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
-
+    /**
+     * 一个web工程，只有一个ServletContext对象实例
+     *  ServletContext是在web工程部署启动的时候创建，在web停止的时候销毁
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //        a)获取web.xml中配置的上下文参数context-param
         ServletContext context = getServletConfig().getServletContext();

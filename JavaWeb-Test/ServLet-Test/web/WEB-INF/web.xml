@@ -78,6 +78,22 @@
         <servlet-name>ContextServlet</servlet-name>
         <servlet-class>Nancy.test.ContextServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ContextServlet1</servlet-name>
+        <servlet-class>Nancy.test.ContextServlet1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ContestServlet2</servlet-name>
+        <servlet-class>Nancy.test.ContestServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContestServlet2</servlet-name>
+        <url-pattern>/context2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContextServlet1</servlet-name>
+        <url-pattern>/context1</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ContextServlet</servlet-name>
         <url-pattern>/contextServlet</url-pattern>
