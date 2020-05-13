@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../blogdemo/.idea/blogdemo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/artifacts/maven_test_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/blog/.idea/blogdemo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/blog/blog.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/maven-test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wen-13/maven-test/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +86,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JavaWeb-Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -265,6 +253,7 @@
       <workItem from="1589017008278" duration="1658000" />
       <workItem from="1589082545796" duration="2466000" />
       <workItem from="1589160605135" duration="345000" />
+      <workItem from="1589340957713" duration="1241000" />
     </task>
     <servers />
   </component>
