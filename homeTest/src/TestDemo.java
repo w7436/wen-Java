@@ -1,4 +1,5 @@
 
+import java.security.Key;
 import java.sql.Array;
 import java.util.*;
 
@@ -113,6 +114,99 @@ class Node {
     }
 };
 public class TestDemo {
+    /**
+     * 单词拆分
+     * 输入: s = "applepenapple", wordDict = ["apple", "pen"]
+     * 输出: true
+     * 解释: 返回 true 因为 "applepenapple" 可以被拆分成 "apple pen apple"。
+     *      注意你可以重复使用字典中的单词。
+     * <p>
+     * 输入: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
+     * 输出: false
+     * <p>
+     * 利用动态规划的思想，dp[i]表可以拆分为true
+     */
+    public boolean wordBreak(String s, List<String> wordDict) {
+        HashSet<String> set = new HashSet<>(wordDict);
+        boolean[] dp = new boolean[s.length()+1];
+        dp[0] = true;
+        for(int i = 1;i <= s.length();i++ ){
+            for(int j = 0;j < i;j++){
+                if(dp[j]==true && set.contains(s.substring(j,i))){
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[s.length()];
+    }
+
+
+    /**
+     * 视频拼接
+     *
+     * 输入：clips = [[0,2],[4,6],[8,10],[1,9],[1,5],[5,9]], T = 10
+     * 输出：3
+     * 解释：
+     * 我们选中 [0,2], [8,10], [1,9] 这三个片段。
+     * 然后，按下面的方案重制比赛片段：
+     * 将 [1,9] 再剪辑为 [1,2] + [2,8] + [8,9] 。
+     * 现在我们手上有 [0,2] + [2,8] + [8,10]，而这些涵盖了整场比赛 [0, 10]。
+     *
+     * 思想：贪心算法
+     */
+    public int videoStitching(int[][] clips, int T) {
+        int count = 0;//代表个数
+        int minleft = T;
+        while(minleft!= 0){
+            //寻找最小的minleft
+            for(int i=0;i < clips.length;i++){
+                int[] arr = clips[i];
+                if(arr[0] < minleft && arr[1] >= T){
+                    minleft = arr[0];
+                }
+            }
+            if(minleft == T) return  -1;
+            if(minleft < T){
+                count++;
+                T = minleft;
+            }
+        }
+        return count;
+
+    }
+
+
+    /**
+     * 最长等差数列
+     * 输入：[3,6,9,12]
+     * 输出：4
+     * 解释：
+     * 整个数组是公差为 3 的等差数列。
+     */
+    public int longestArithSeqLength(int[] A) {
+        Map<Integer,Integer>[] dp = new HashMap[A.length];
+        for(int i = 0;i < A.length;i++){
+            dp[i] = new HashMap<>();
+        }
+        int max = 0;
+        //key代表差值，value代表长度
+        for(int i = 1;i < A.length;i++){
+            for(int j = 0;j < i;j++) {
+                int diff = A[i] - A[j];//差值
+                if (!dp[j].containsKey(diff)) {
+                    dp[i].put(diff, 2);
+                } else {
+                    dp[i].put(diff, dp[j].get(diff) + 1);
+                }
+                max = Math.max(max, dp[i].get(diff));
+            }
+        }
+        return max;
+    }
+
+
+
     /**
      * 一个机器人位于一个 m x n 网格的左上角
      * 机器人每次只能向下或者向右移动一步。机器人试图达到网格的最右下
