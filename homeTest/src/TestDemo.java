@@ -114,6 +114,34 @@ class Node {
     }
 };
 public class TestDemo {
+
+    /**
+     *     最大子序和53
+     */
+    public int maxSubArray(int[] nums) {
+        int len = nums.length;
+        int[] dp = new int[len];
+        dp[0] = nums[0];
+        for(int i = 1;i <len;i++){
+            dp[i] = Math.max(dp[i-1]+nums[i],nums[i]);
+        }
+        int max = Integer.MIN_VALUE;
+        for(int i = 0;i < dp.length;i++){
+            if(max < dp[i]){
+                max = dp[i];
+            }
+        }
+        return max;
+    }
+
+
+
+
+
+
+
+
+
     /**
      * 单词拆分
      * 输入: s = "applepenapple", wordDict = ["apple", "pen"]
@@ -233,25 +261,36 @@ public class TestDemo {
      * 输入: [23,2,4,6,7], k = 6
      * 输出: True
      * 解释: [2,4] 是一个大小为 2 的子数组，并且和为 6
+     *
+     * 思想一：
+     * 暴力解法，我们可以将问题转换为数组中是否存在大于2的子数组，
+     *其中的所有数可以被k整除
+     *
+     * 思想二：
+     * 在思想一中，我们要判断的是 (sum[j]−sum[i])%k 是否等于 0
+     * 根据性质我们可以判断sum[j]%k == sum[i]%k
+     * 但是我们要控制数组的长度大于二，因而每次计算出来的余数值不应该直接加入set中
      */
     public boolean checkSubarraySum(int[] nums, int k) {
         //暴力解法
-        // int len = nums.length;
-        // int[] sum = new int[len+1];
-        // for(int i = 0;i < len;i++){
-        //     sum[i+1] = sum[i]+nums[i];
-        // }
-        // for(int i = 0;i < len;i++){
-        //     for(int j = i+2;j <= len;j++ ){
-        //         int res = sum[j] - sum[i];
-        //         if(k == 0) {
-        //             if(res == 0) return true;
-        //         }else{
-        //             if(res%k == 0) return true;
-        //         }
-        //     }
-        // }
-        // return false;
+//         int len = nums.length;
+//         int[] sum = new int[len+1];
+//         //当前位置前面所有数的和（包括当前位置）
+//         for(int i = 0;i < len;i++){
+//             sum[i+1] = sum[i]+nums[i];
+//         }
+//
+//         for(int i = 0;i < len;i++){
+//             for(int j = i+2;j <= len;j++ ){
+//                 int res = sum[j] - sum[i];//差值
+//                 if(k == 0) {
+//                     if(res == 0) return true;
+//                 }else{
+//                     if(res%k == 0) return true;
+//                 }
+//             }
+//         }
+//         return false;
 
         int N = nums.length, cache = 0;
         int[] sum = new int[N+1];
@@ -263,7 +302,6 @@ public class TestDemo {
             set.add(cache);
             cache = res;
         }
-
         return false;
     }
 
@@ -286,10 +324,14 @@ public class TestDemo {
     }
 
     /**
-     * 寻找数字最大的数字之和，且不能连续
+     * 连续的子数组求和
+
      * 动态规划的思想
      */
     public int massage(int[] nums) {
+
+
+
         int n = nums.length;
         if(n == 0) return 0;
         if(n == 1) return nums[0];
@@ -674,15 +716,15 @@ public class TestDemo {
         }
         return profit;
 
-        // if(prices.length == 0) return 0;
-        // int[] dp = new int[prices.length];
-        // int min = prices[0];//保存最小的值
-        // dp[0]=0;
-        // for(int i = 1;i < prices.length;i++){
-        //     min = Math.min(min,prices[i]);
-        //     dp[i] =Math.max(dp[i-1],prices[i] - min);
-        // }
-        // return dp[prices.length-1];
+//         if(prices.length == 0) return 0;
+//         int[] dp = new int[prices.length];
+//         int min = prices[0];//保存最小的值
+//         dp[0]=0;
+//         for(int i = 1;i < prices.length;i++){
+//             min = Math.min(min,prices[i]);
+//             dp[i] =Math.max(dp[i-1],prices[i] - min);
+//         }
+//         return dp[prices.length-1];
 
     }
 
