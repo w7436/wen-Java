@@ -28,9 +28,9 @@ public class ArticleDetailServlet extends AbstractBaseServlet{
         } catch (NumberFormatException e) {
             throw new ClientException("001","请求参数错误：[id="+id+"]");
         }
-        if(articleId == 1){
-            int i = 10/0;
-        }
+//        if(articleId == 1){
+//            int i = 10/0;
+//        }
         return testData();//测试代码，根据文章id查询文章
     }
 

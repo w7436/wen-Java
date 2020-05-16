@@ -72,9 +72,19 @@ public abstract class AbstractBaseServlet extends HttpServlet  {
             MAP.put(path,count);
         }
 
-
-
+        //方法二
+        String path = req.getServletPath();
+        AtomicInteger count = MAP2.putIfAbsent(path,new AtomicInteger(1));
+        if (count!=null)  count.getAndIncrement();
     }
 
     public abstract Object process(HttpServletRequest req, HttpServletResponse resp) throws Exception;
+
+    public static ConcurrentMap<String, Integer> getMAP() {
+        return MAP;
+    }
+
+    public static ConcurrentMap<String, AtomicInteger> getMAP2() {
+        return MAP2;
+    }
 }
