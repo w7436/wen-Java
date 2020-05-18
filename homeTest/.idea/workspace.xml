@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="" />
+    <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/db/blog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/db/blog.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/java/Nancy/modol/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/java/Nancy/modol/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/java/Nancy/servlet/ArticleAddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/java/Nancy/servlet/ArticleAddServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/java/Nancy/servlet/ArticleDeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/java/Nancy/servlet/ArticleDeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/java/Nancy/servlet/ArticleDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/java/Nancy/servlet/ArticleDetailServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/java/Nancy/servlet/ArticleUpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/java/Nancy/servlet/ArticleUpdateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/resources/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/resources/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/webapp/static/ueditor/ueditor.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/src/main/webapp/static/ueditor/ueditor.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/WEB-INF/classes/Nancy/servlet/ArticleAddServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/WEB-INF/classes/Nancy/servlet/ArticleAddServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/WEB-INF/classes/Nancy/servlet/ArticleDeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/WEB-INF/classes/Nancy/servlet/ArticleDeleteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/WEB-INF/classes/Nancy/servlet/ArticleDetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/WEB-INF/classes/Nancy/servlet/ArticleDetailServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/WEB-INF/classes/Nancy/servlet/ArticleUpdateServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/WEB-INF/classes/Nancy/servlet/ArticleUpdateServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/WEB-INF/classes/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/WEB-INF/classes/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/static/ueditor/ueditor.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/blog/static/ueditor/ueditor.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/classes/Nancy/servlet/ArticleAddServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/classes/Nancy/servlet/ArticleAddServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/classes/Nancy/servlet/ArticleDeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/classes/Nancy/servlet/ArticleDeleteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/classes/Nancy/servlet/ArticleDetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/classes/Nancy/servlet/ArticleDetailServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/classes/Nancy/servlet/ArticleUpdateServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/classes/Nancy/servlet/ArticleUpdateServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/selevt-blog/target/classes/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/selevt-blog/target/classes/config.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +106,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wen-13" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -96,7 +118,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -256,6 +278,7 @@
       <workItem from="1589504102887" duration="4345000" />
       <workItem from="1589552352505" duration="11000" />
       <workItem from="1589590900331" duration="60000" />
+      <workItem from="1589767805681" duration="4915000" />
     </task>
     <servers />
   </component>
@@ -323,6 +346,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="223" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1588389330258" />
+    <state x="157" y="0" key="SettingsEditor" timestamp="1589772999146">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="157" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1589772999146" />
     <state x="412" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1588388778106">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

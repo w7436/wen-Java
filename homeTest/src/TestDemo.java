@@ -114,6 +114,124 @@ class Node {
     }
 };
 public class TestDemo {
+    /**打家劫舍
+     * 这个地方所有的房屋都围成一圈，这意味着第一个房屋和最后一个房屋是紧挨着的。
+     * 同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警
+     *
+     * 这个问题我们区分的就是 偷第一家 和 不偷第一家
+     */
+    public int rob2(int[] nums) {
+        //我们分别考虑偷第一个房子和不偷第一个房子
+        if(nums.length == 0) return 0;
+        if(nums.length == 1) return nums[0];
+        if(nums.length == 2) return Math.max(nums[0],nums[1]);
+        int[] dp1 = new int[nums.length];//偷第一个房子
+        int[] dp2 = new int[nums.length];//不偷第一个房子
+        dp1[0] = nums[0];
+        dp2[1] = nums[1];
+        dp1[1] = Math.max(nums[0],nums[1]);
+        dp2[2] = Math.max(nums[1],nums[2]);
+        for(int i = 2;i < nums.length-1;i++){
+            dp1[i] = Math.max(dp1[i-2]+nums[i],dp1[i-1]);
+        }
+        for(int i = 3;i < nums.length;i++){
+            dp2[i] = Math.max(dp2[i-2]+nums[i],dp2[i-1]);
+        }
+        return Math.max(dp1[nums.length-2],dp2[nums.length-1]);
+    }
+
+    /**
+     * 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+     * 设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）
+     */
+    public int maxProfit1(int[] prices) {
+        //遍历整个股票交易日价格列表 price，策略是所有上涨交易日都买卖（赚到所有利润）
+        // 所有下降交易日都不买卖（永不亏钱）
+        int profit = 0;//利润
+        for (int i = 1; i < prices.length; i++) {
+            int tmp = prices[i] - prices[i - 1];
+            if (tmp > 0) profit += tmp;
+        }
+        return profit;
+    }
+
+
+    /**
+     * 假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
+     * @param prices
+     * @return输入: [7, 1, 5, 3, 6, 4]
+     * 输出: 5
+     * 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     *      注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格
+     */
+    public int maxProfit(int[] prices) {
+        int cost = Integer.MAX_VALUE, profit = 0;
+        for(int price : prices) {
+            cost = Math.min(cost, price);//最低价格
+            profit = Math.max(profit, price - cost);//最大利润
+        }
+        return profit;
+
+//         if(prices.length == 0) return 0;
+//         int[] dp = new int[prices.length];
+//         int min = prices[0];//保存最小的值
+//         dp[0]=0;
+//         for(int i = 1;i < prices.length;i++){
+//             min = Math.min(min,prices[i]);
+//             dp[i] =Math.max(dp[i-1],prices[i] - min);
+//         }
+//         return dp[prices.length-1];
+
+    }
+
+    /**打家劫舍
+     * 如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警（也就是说不能偷相邻的两家）
+     * 输入: [1,2,3,1]
+     * 输出: 4
+     * 解释: 偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。
+     *      偷窃到的最高金额 = 1 + 3 = 4 。
+     *
+     * 利用动态规划的思想，dp[i]表示当前位置最大的金额
+     * dp[i] = Math.max(dp[i-2]+nums[i],dp[i-1])
+     */
+
+    public int rob(int[] nums) {
+        int[] dp = new int[nums.length];
+        if(nums.length == 0) return 0;
+        if(nums.length == 1) return nums[0];
+        if(nums.length == 2) return Math.max(nums[0],nums[1]);
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0],nums[1]);
+        for(int i = 2;i < nums.length;i++){
+            dp[i] = Math.max(dp[i-2]+nums[i],dp[i-1]);
+        }
+        return dp[nums.length - 1];
+    }
+
+
+    /**
+     * 乘积最大子数组,连续的子数组
+     * 动态规划的思想，不过这里我们要考虑当前位置是正数还是负数的
+     * [-3,4,-3]
+     */
+    public int maxProduct(int[] nums) {
+        int[] dpMax = new int[nums.length];
+        int[] dpMin = new int[nums.length];
+        dpMax[0] = nums[0];
+        dpMin[0] = nums[0];
+        int result = dpMax[0];
+        for(int i = 0;i < nums.length;i++){
+            if(nums[i] >= 0){
+                dpMax[i] = Math.max(nums[i],dpMax[i-1]*nums[i]);
+                dpMin[i] = Math.min(nums[i],dpMax[i-1]*nums[i]);
+            }else{
+                dpMax[i] = Math.max(nums[i],dpMin[i-1]*nums[i]);
+                dpMin[i] = Math.min(nums[i],dpMax[i-1]*nums[i]);
+            }
+            result = result > dpMax[i] ? result : dpMax[i];
+        }
+        return result;
+    }
 
     /**
      *     最大子序和53
@@ -700,33 +818,6 @@ public class TestDemo {
         return list.get(0);
     }
 
-    /**
-     * 假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
-     * @param prices
-     * @return输入: [7, 1, 5, 3, 6, 4]
-     * 输出: 5
-     * 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
-     *      注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格
-     */
-    public int maxProfit(int[] prices) {
-        int cost = Integer.MAX_VALUE, profit = 0;
-        for(int price : prices) {
-            cost = Math.min(cost, price);
-            profit = Math.max(profit, price - cost);
-        }
-        return profit;
-
-//         if(prices.length == 0) return 0;
-//         int[] dp = new int[prices.length];
-//         int min = prices[0];//保存最小的值
-//         dp[0]=0;
-//         for(int i = 1;i < prices.length;i++){
-//             min = Math.min(min,prices[i]);
-//             dp[i] =Math.max(dp[i-1],prices[i] - min);
-//         }
-//         return dp[prices.length-1];
-
-    }
 
     /**
      * 我们把只包含因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 n 个丑数。
