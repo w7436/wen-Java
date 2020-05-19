@@ -114,6 +114,70 @@ class Node {
     }
 };
 public class TestDemo {
+    /**
+     * 分割等和子集
+     * 输入: [1, 5, 11, 5]
+     * 输出: true
+     * 解释: 数组可以分割成 [1, 5, 5] 和 [11]
+     *
+     * 背包问题
+     * dp[i]表示的是当前存储的最大价值的数
+     */
+
+    private boolean knapSack(int[] nums,int sum){
+        int size = nums.length;
+        boolean[] dp = new boolean[sum + 1];
+        //也就是从上到下，从右往左
+        //只有第一个nums[0]这个价值的数，如果这个价值和dp[i]中的i相等，则将ture存储在dp[i]中
+        for (int i = 0;i <= sum;i ++){
+            dp[i] = i == nums[0];
+        }
+        for (int i = 1;i < size;i++){
+            for (int j = sum;j >= nums[i];j--){
+                dp[j] = dp[j] || dp[j-nums[i]];
+            }
+        }
+        return dp[sum];
+    }
+    public boolean canPartition(int[] nums) {
+        int sum = 0;
+        for (int item : nums){
+            sum += item;
+        }
+        //如果数组元素和不是2的倍数，直接返回false
+        if (sum % 2 != 0)
+            return false;
+        return knapSack(nums,sum/2);
+    }
+
+    /**
+     * 验证回文字符串
+     *
+     * 给定一个非空字符串 s，最多删除一个字符。判断是否能成为回文字符串
+     * 输入: "abca"
+     * 输出: True
+     * 解释: 你可以删除c字符
+     */
+    public boolean validPalindrome(String s) {
+        for(int i = 0, j = s.length()-1; i < j ; i++, j--){
+            if(s.charAt(i) != s.charAt(j)){
+                //分两种情况，一是右边减一，二是左边加一
+                return isPalindrome(s,i,j-1) || isPalindrome(s, i+1, j);
+            }
+        }
+        return true;
+    }
+    //判断是否为回文字符串
+    public boolean isPalindrome(String s, int i, int j) {
+        while (i < j) {
+            if (s.charAt(i++) != s.charAt(j--)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
     /**打家劫舍
      * 这个地方所有的房屋都围成一圈，这意味着第一个房屋和最后一个房屋是紧挨着的。
      * 同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警

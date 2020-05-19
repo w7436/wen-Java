@@ -1,5 +1,7 @@
 package Nancy.servlet;
 
+import Nancy.dao.ArticleDAO;
+import Nancy.exception.BusinessException;
 import Nancy.modol.Article;
 import Nancy.util.JSONUtil;
 
@@ -28,6 +30,10 @@ public class ArticleAddServlet extends AbstractBaseServlet {
         Article article = JSONUtil.deserialize(is,Article.class);
         //模拟数据库插入数据
         System.out.println(" 0------- -----"+article);
+        int num = ArticleDAO.insert(article);
+        if(num != 1){
+            throw new BusinessException("001","文章插入异常");
+        }
         return null;
     }
 }

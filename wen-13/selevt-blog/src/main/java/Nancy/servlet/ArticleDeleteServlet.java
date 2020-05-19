@@ -1,5 +1,8 @@
 package Nancy.servlet;
 
+import Nancy.dao.ArticleDAO;
+import Nancy.exception.BusinessException;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +20,12 @@ public class ArticleDeleteServlet extends AbstractBaseServlet {
     public Object process(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         String idsString = req.getParameter("ids");
         int[] ids = paraIds(idsString);
+
+        int num = ArticleDAO.delete(ids);
+        if(num == 0){
+            throw new BusinessException("005","文章删除出错");
+        }
+
         //将ids传回数据库做删除操作
         return null;
     }

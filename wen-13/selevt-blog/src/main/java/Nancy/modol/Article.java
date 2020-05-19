@@ -28,4 +28,6 @@ public class Article {
 
     //新增文章时
     private String userAccout;
+
+
 }

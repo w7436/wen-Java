@@ -1,5 +1,7 @@
 package Nancy.servlet;
 
+import Nancy.dao.ArticleDAO;
+import Nancy.exception.BusinessException;
 import Nancy.modol.Article;
 import Nancy.util.JSONUtil;
 
@@ -23,6 +25,12 @@ public class ArticleUpdateServlet extends AbstractBaseServlet{
         InputStream is = req.getInputStream();
         Article article = JSONUtil.deserialize(is,Article.class);
         System.out.println("--------"+article);
+
+        int number = ArticleDAO.update(article);
+        if(number != 1){
+            throw new BusinessException("004","文章修改错误");
+
+        }
         return  null;
 
     }
