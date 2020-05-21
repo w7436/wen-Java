@@ -21,7 +21,7 @@ public class JVMStackLook {
         node.next = new Node("B");
         node = new Node("C");
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) {//A B
         Node node = new Node("A");
         test(node);
         System.out.println(node.name);
