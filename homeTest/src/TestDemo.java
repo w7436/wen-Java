@@ -115,6 +115,43 @@ class Node {
 };
 public class TestDemo {
     /**
+     * 最后一块石头的重量
+     * 每一回合，从中选出两块 最重的 石头，然后将它们一起粉碎。假设石头的重量分别为 x 和 y，且 x <= y。那么粉碎的可能结果如下：
+     *
+     * 如果 x == y，那么两块石头都会被完全粉碎；
+     * 如果 x != y，那么重量为 x 的石头将会完全粉碎，而重量为 y 的石头新重量为 y-x
+     * 输入：[2,7,4,1,8,1]
+     * 输出：1
+     * 解释：
+     * 先选出 7 和 8，得到 1，所以数组转换为 [2,4,1,1,1]，
+     * 再选出 2 和 4，得到 2，所以数组转换为 [2,1,1,1]，
+     * 接着是 2 和 1，得到 1，所以数组转换为 [1,1,1]，
+     * 最后选出 1 和 1，得到 0，最终数组转换为 [1]，这就是最后剩下那块石头的重量
+     *
+     * 思想：利用队列，将其进行排序，每次取其中最大的两个，进行相减操作，直到长度为0
+     */
+    public int lastStoneWeight(int[] stones) {
+
+        Queue<Integer> q = new PriorityQueue<Integer>(stones.length,  Collections.reverseOrder());//自然排序的相反
+
+        for (int i = 0; i < stones.length; i ++){
+            q.add(stones[i]);
+        }
+
+        while (q.size() > 0){
+            if (q.size() == 1){
+                return q.poll();
+            }
+            int x = q.poll(), y = q.poll();
+            if (x != y){
+                q.add(x - y);
+            }
+        }
+
+        return 0;
+    }
+
+    /**
      * 分割等和子集
      * 输入: [1, 5, 11, 5]
      * 输出: true

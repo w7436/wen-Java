@@ -14,6 +14,33 @@ import java.util.TreeMap;
  **/
 public class Main {
     /**
+     * 划分数组为连续数字的集合
+     * 输入：nums = [1,2,3,3,4,4,5,6], k = 4
+     * 输出：true
+     * 解释：数组可以分成 [1,2,3,4] 和 [3,4,5,6]
+     *
+     * 输入：nums = [1,2,3,4], k = 3
+     * 输出：false
+     * 解释：数组不能分成几个大小为 3 的子数组
+     */
+    public boolean isPossibleDivide(int[] nums, int k) {
+        if (nums.length % k != 0) return false;
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        while (!map.isEmpty()) {
+            int firstKey = map.firstKey();//key
+            for (int i = firstKey; i < firstKey + k; i++) {
+                int v = map.getOrDefault(i, 0);
+                if (v == 0) return false;
+                if (v - 1 == 0) map.remove(i);
+                else map.put(i, v - 1);
+            }
+        }
+        return true;
+    }
+    /**
      * 请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，
      * 每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。
      * 例如，在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用加粗标出）
