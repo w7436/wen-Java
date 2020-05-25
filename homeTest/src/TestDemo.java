@@ -1,6 +1,4 @@
 
-import java.security.Key;
-import java.sql.Array;
 import java.util.*;
 
 /**
@@ -114,6 +112,67 @@ class Node {
     }
 };
 public class TestDemo {
+    /**
+     * LRU缓存机制
+     */
+    public int capacity;
+    LinkedHashMap<Integer,Integer> cache;
+    public void LRUCache(int capacity) {
+        this.capacity = capacity;
+        //accessOrder - 订购模式 - true的访问顺序， false的插入顺序
+        cache = new LinkedHashMap<Integer,Integer> (capacity,0.75f,true){
+            @Override
+            protected boolean removeEldestEntry(Map.Entry eldest){
+                return cache.size() > capacity;
+            }
+        };
+    }
+    public int get(int key) {
+        return cache.getOrDefault(key, -1);
+    }
+
+    public void put(int key, int value) {
+        cache.put(key, value);
+    }
+
+    /**
+     * 求和：
+     * 两个整数，m,n
+     * 从数列1,2,3，，n中取出几个数数字，使得之和为m，将所有的可能列举出来
+     *
+     * 思想：深度优先搜索
+     */
+    public static List<ArrayList<Integer>> res = new ArrayList<>();
+    public static ArrayList<Integer> l = new ArrayList<>();
+    public static void back(int start,int sum,int target,int n){
+        if(sum >= target){
+            if(sum == target) res.add(new ArrayList<>(l));
+            return;
+        }
+        for(int i = start ;i  <= n; i++){
+            if(i > target) continue;
+            l.add(i);
+            back(i+1,sum+i,target,n);
+            l.remove(l.size()-1);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        back(1,0,m,n);
+        for(ArrayList<Integer> l:res){
+            for(int i = 0;i < l.size();i++){
+                System.out.print(l.get(i));
+                if(i != l.size()-1){
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
     /**
      * 最后一块石头的重量
      * 每一回合，从中选出两块 最重的 石头，然后将它们一起粉碎。假设石头的重量分别为 x 和 y，且 x <= y。那么粉碎的可能结果如下：
@@ -946,7 +1005,7 @@ public class TestDemo {
         return dp[n-1];
     }
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         System.out.println(nthUglyNumber(10));
     }
 

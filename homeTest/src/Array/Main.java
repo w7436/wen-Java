@@ -1,9 +1,6 @@
 package Array;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * @ClassName Main
@@ -13,6 +10,52 @@ import java.util.TreeMap;
  * @Version 1.0
  **/
 public class Main {
+    /**
+     * 和为k的子数组
+     * 给定一个整数数组和一个整数 k，你需要找到该数组中和为 k 的连续的子数组的个数。
+     *
+     * 输入:nums = [1,1,1], k = 2
+     * 输出: 2 , [1,1] 与 [1,1] 为两种不同的情况。
+     */
+    public int subarraySum(int[] nums, int k) {
+        int count = 0, pre = 0;
+        HashMap< Integer, Integer > mp = new HashMap < > ();
+        mp.put(0, 1);
+        for (int i = 0; i < nums.length; i++) {
+            pre += nums[i];
+            if (mp.containsKey(pre - k))
+                count += mp.get(pre - k);
+            mp.put(pre, mp.getOrDefault(pre, 0) + 1);
+        }
+        return count;
+    }
+    /**
+     * 统计优美子数组
+     *
+     *给你一个整数数组 nums 和一个整数 k。
+     *如果某个 连续 子数组中恰好有 k 个奇数数字，我们就认为这个子数组是「优美子数组」。
+     *请返回这个数组中「优美子数组」的数目
+     * 输入：nums = [1,1,2,1,1], k = 3
+     * 输出：2
+     * 解释：包含 3 个奇数的子数组是 [1,1,2,1] 和 [1,2,1,1]
+     *
+     */
+    public int numberOfSubarrays(int[] nums, int k) {
+        // 数组 prefixCnt 的下标是前缀和（即当前奇数的个数），值是前缀和的个数。
+        int[] prefixCnt = new int[nums.length + 1];
+        prefixCnt[0] = 1;
+        // 遍历原数组，计算当前的前缀和，统计到 prefixCnt 数组中，
+        // 并且在 res 中累加上与当前前缀和差值为 k 的前缀和的个数。
+        int res = 0, sum = 0;
+        for (int num: nums) {
+            sum += num & 1;
+            prefixCnt[sum]++;
+            if (sum >= k) {
+                res += prefixCnt[sum - k];
+            }
+        }
+        return res;
+    }
     /**
      * 划分数组为连续数字的集合
      * 输入：nums = [1,2,3,3,4,4,5,6], k = 4
