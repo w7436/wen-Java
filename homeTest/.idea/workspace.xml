@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../类和接口/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Array/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Array/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TreeNode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TreeNode/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../类和接口/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../类和接口/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../类和接口/out/production/类和接口/TestDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../类和接口/out/production/类和接口/TestDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../类和接口/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../类和接口/src/TestDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +93,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Reflect" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -267,6 +272,7 @@
       <workItem from="1590155570887" duration="511000" />
       <workItem from="1590195375281" duration="5114000" />
       <workItem from="1590369988175" duration="8641000" />
+      <workItem from="1590465952885" duration="3539000" />
     </task>
     <servers />
   </component>

@@ -112,6 +112,26 @@ class Node {
     }
 };
 public class TestDemo {
+
+
+    /**
+     * 汉诺塔
+     *  输入：A = [2, 1, 0], B = [], C = []
+     *  输出：C = [2, 1, 0]
+     */
+    public void hanota(List<Integer> A, List<Integer> B, List<Integer> C) {
+        move(A.size(),A, B, C);
+    }
+    public void move(int n, List<Integer> A, List<Integer> B, List<Integer> C){
+        if(n == 1){
+            C.add(A.remove(A.size() - 1));
+            //注意：题目给的盘子是从大到小给的，所以这里remove的是【A.size() - 1】
+            return;
+        }
+        move(n-1,A,C,B);
+        C.add(A.remove(A.size() - 1));
+        move(n - 1, B, A, C);
+    }
     /**
      * LRU缓存机制
      */
