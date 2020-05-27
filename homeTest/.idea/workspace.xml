@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../类和接口/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wen-13/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Array/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Array/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TreeNode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TreeNode/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../类和接口/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../类和接口/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../类和接口/out/production/类和接口/TestDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../类和接口/out/production/类和接口/TestDemo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../类和接口/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../类和接口/src/TestDemo.java" afterDir="false" />
@@ -273,6 +271,8 @@
       <workItem from="1590195375281" duration="5114000" />
       <workItem from="1590369988175" duration="8641000" />
       <workItem from="1590465952885" duration="3539000" />
+      <workItem from="1590541778146" duration="1018000" />
+      <workItem from="1590582328677" duration="2060000" />
     </task>
     <servers />
   </component>
@@ -288,11 +288,11 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="396" y="52" key="#xdebugger.evaluate/0.0.1280.689@0.0.1280.689" timestamp="1588389318180" />
-    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1590407390854">
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1590545340344">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1589590918207" />
-    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1590407390854" />
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1590545340344" />
     <state width="1237" height="223" key="GridCell.Tab.-1.bottom" timestamp="1588389334597">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

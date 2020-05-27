@@ -11,6 +11,26 @@ import java.util.*;
  **/
 public class Main {
     /**
+     * 是否所有1都至少相隔k个元素
+     * 输入：nums = [1,0,0,0,1,0,0,1], k = 2
+     * 输出：true
+     * 解释：每个 1 都至少相隔 2 个元素。
+     */
+    public boolean kLengthApart(int[] nums, int k) {
+        int count = k;
+        for(int i=0; i<nums.length; i++){
+            if(nums[i]==1){
+                if(count<k)
+                    return false;
+                count = 0;
+            }
+            else{
+                count++;
+            }
+        }
+        return true;
+    }
+    /**
      * 硬币：
      * 硬币。给定数量不限的硬币，币值为25分、10分、5分和1分，
      * 编写代码计算n分有几种表示法。(结果可能会很大，你需要将结果模上1000000007)
