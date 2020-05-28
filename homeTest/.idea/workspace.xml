@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../wen-13/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Array/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Array/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../类和接口/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../类和接口/.idea/workspace.xml" afterDir="false" />
@@ -91,7 +90,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wen-13" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -273,6 +272,7 @@
       <workItem from="1590465952885" duration="3539000" />
       <workItem from="1590541778146" duration="1018000" />
       <workItem from="1590582328677" duration="2060000" />
+      <workItem from="1590636554953" duration="3797000" />
     </task>
     <servers />
   </component>
@@ -288,11 +288,11 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="396" y="52" key="#xdebugger.evaluate/0.0.1280.689@0.0.1280.689" timestamp="1588389318180" />
-    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1590545340344">
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1590654436488">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1589590918207" />
-    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1590545340344" />
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1590654436488" />
     <state width="1237" height="223" key="GridCell.Tab.-1.bottom" timestamp="1588389334597">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -365,11 +365,11 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1588258378612" />
-    <state x="303" y="10" width="672" height="679" key="search.everywhere.popup" timestamp="1589893152973">
+    <state x="303" y="10" width="672" height="679" key="search.everywhere.popup" timestamp="1590639626540">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1589506975807" />
-    <state x="303" y="10" width="672" height="679" key="search.everywhere.popup/0.0.1280.690@0.0.1280.690" timestamp="1589893152973" />
+    <state x="303" y="10" width="672" height="679" key="search.everywhere.popup/0.0.1280.690@0.0.1280.690" timestamp="1590639626540" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
