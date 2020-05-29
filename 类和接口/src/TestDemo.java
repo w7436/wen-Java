@@ -58,69 +58,77 @@ public class TestDemo {
 */
 
 
-/*
+
 //Object类  是所有类的基类
-
-class  Book{}
-class Person{
-    public void Print(){
-        System.out.println("你好，南夕");
-    }
-}
-class MyArrayList{
-    Object[] array;
-    int capacity;//空间的总大小
-    int size;//空间存储有效元素的个数
-
-    public MyArrayList(int capacity) {
-        this.array = new Object[capacity];
-        this.capacity = capacity;
-        this.size = 0;
-    }
-    void add(Object e){
-        array[size++]=e;
-    }
-    int size(){
-        return size;
-    }
-    Object get(int index){
-        //检测index不能越界
-        return array[index];
-    }
-    boolean isEmpty(){
-        return 0==size;
-    }
-}
-public class TestDemo {
-    public static void main(String[] args) {
+//
+//class  Book{}
+//class Person{
+//    public void Print(){
+//        System.out.println("你好，南夕");
+//    }
+//}
+//
+//
+//class MyArrayList{
+//    Object[] array;
+//    int capacity;//空间的总大小
+//    int size;//空间存储有效元素的个数
+//
+//    public MyArrayList(int capacity) {
+//        this.array = new Object[capacity];
+//        this.capacity = capacity;
+//        this.size = 0;
+//    }
+//    void add(Object e){
+//        array[size++]=e;
+//    }
+//    int size(){
+//        return size;
+//    }
+//    Object get(int index){
+//        //检测index不能越界
+//        return array[index];
+//    }
+//    boolean isEmpty(){
+//        return 0==size;
+//    }
+//}
+//
+//
+//public class TestDemo {
+//    public static void main(String[] args) {
 //        MyArrayList L1=new MyArrayList(10);
 //        L1.add(new Person());
-//        L1.add(new Person());
-//        L1.add(new Person());
+//        L1.add(new Book());
+//
 //
 //        //向下转型:不安全
 //        Person p=(Person)L1.get(0);
-//        p.Print();
+//        Person pp=(Person) L1.get(1);//error
+//        System.out.println(p);
+//        System.out.println(pp);
 //
-        MyArrayList L2=new MyArrayList(10);
-        L2.add(new Book());
-        L2.add(new Book());
-        L2.add(new Book());
-
-        Book b=(Book)L2.get(0);//返回类型Object---->Book
-
-        Person pp=(Person) L2.get(0);//error
-        pp.Print();
-    }
-}
-*/
-
-
-
+//
+//
+////        MyArrayList L2=new MyArrayList(10);
+////        L2.add(new Book());
+////        L2.add(new Book());
+////        L2.add(new Book());
+////
+////        Book b=(Book)L2.get(0);//返回类型Object---->Book
+////
+////
+////        pp.Print();
+//    }
+//}
 
 
 
-/*
+
+
+
+
+
 //泛型类
 class  Book{}
 class Person{
@@ -157,9 +165,9 @@ public class TestDemo {
         MyArrayList<Person> L1 = new MyArrayList<>(10);
         L1.add(new Person());
         L1.add(new Person());
-        //L1.add(new Book());//在编译阶段，发现类型不匹配，编译器报错
+//        L1.add(new Book());//在编译阶段，发现类型不匹配，编译器报错
         Person p = L1.get(0);
-        // Book b = (Book)L1.get(0); // 在编译阶段，发现类型不匹配，强转也不行
+  //       Book b = (Book)L1.get(0); // 在编译阶段，发现类型不匹配，强转也不行
 
         MyArrayList<Book> L2=new MyArrayList<>(10);
         L2.add(new Book());
@@ -170,7 +178,7 @@ public class TestDemo {
         //MyArrayList<int> L3=new MyArrayList<int>(10);//int为基本类型，没有对象的存在
     }
 }
-*/
+
 
 
 /*
@@ -201,28 +209,28 @@ public class TestDemo {
 }
 */
 
-import java.util.List;
-import java.util.ArrayList;
-public class TestDemo {
-    public static void main(String[] args) {
-        List<Integer> L1=new ArrayList<>();
-        L1.add(10);
-        L1.add(20);
-        L1.set(0,0);
-        L1.set(1,1);
-        L1.set(2,2);//代码崩溃，2号位置没有元素 越界
-        L1.set(3,3);
-
-    }
-    public static void main1(String[] args) {
-        List<Integer> L1=new ArrayList<>();//一维的动态数组
-        List<Integer> L2=new ArrayList<>();//一维的动态数组
-        List<Integer> L3=new ArrayList<>();//一维的动态数组
-
-        List<List<Integer>> L=new ArrayList<>();
-        L.add(L1);
-        L.add(L2);
-        L.add(L3);
-
-    }
-}
+//import java.util.List;
+//import java.util.ArrayList;
+//public class TestDemo {
+//    public static void main(String[] args) {
+//        List<Integer> L1=new ArrayList<>();
+//        L1.add(10);
+//        L1.add(20);
+//        L1.set(0,0);
+//        L1.set(1,1);
+//        L1.set(2,2);//代码崩溃，2号位置没有元素 越界
+//        L1.set(3,3);
+//
+//    }
+//    public static void main1(String[] args) {
+//        List<Integer> L1=new ArrayList<>();//一维的动态数组
+//        List<Integer> L2=new ArrayList<>();//一维的动态数组
+//        List<Integer> L3=new ArrayList<>();//一维的动态数组
+//
+//        List<List<Integer>> L=new ArrayList<>();
+//        L.add(L1);
+//        L.add(L2);
+//        L.add(L3);
+//
+//    }
+//}
