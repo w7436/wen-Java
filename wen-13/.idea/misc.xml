@@ -3,6 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/blog" />
     <file type="web" url="file://$PROJECT_DIR$/maven-test" />
+    <file type="web" url="file://$PROJECT_DIR$/order-system" />
     <file type="web" url="file://$PROJECT_DIR$/selevt-blog" />
   </component>
   <component name="MavenProjectsManager">
@@ -10,6 +11,8 @@
       <list>
         <option value="$PROJECT_DIR$/selevt-blog/pom.xml" />
         <option value="$PROJECT_DIR$/JVM-study/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../wen-Java/wen-13/order-system/pom.xml" />
+        <option value="$PROJECT_DIR$/order-system/pom.xml" />
       </list>
     </option>
   </component>

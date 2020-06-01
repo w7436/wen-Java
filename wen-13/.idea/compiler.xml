@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Order-system" />
         <module name="selevt-blog" />
+        <module name="order-system" />
         <module name="JVM-study" />
       </profile>
     </annotationProcessing>
@@ -14,6 +16,8 @@
       <module name="blog" target="1.8" />
       <module name="JVM-study" target="1.8" />
       <module name="maven-test" target="1.5" />
+      <module name="order-system" target="1.5" />
+      <module name="Order-system" target="1.8" />
       <module name="selevt-blog" target="1.8" />
     </bytecodeTargetLevel>
   </component>
