@@ -1,5 +1,11 @@
 package TreeNode;
 
+
+import javax.print.attribute.standard.Sides;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /**
  * @ClassName Main
  * @Description TODO
@@ -13,7 +19,81 @@ class TreeNode {
      TreeNode right;
      TreeNode(int x) { val = x; }
  }
+class ListNode {
+     int val;
+     ListNode next;
+     ListNode(int x) { val = x; }
+}
 public class Main {
+    /**
+     * 层序遍历
+     * [
+     *   [3],
+     *   [9,20],
+     *   [15,7]
+     * ]
+     * 利用队列先进先出的特点
+     */
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> list = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        if(root == null) return list;
+        q.add(root);
+        while(!q.isEmpty()){
+
+            int size = q.size();
+            List<Integer> l = new LinkedList<>();
+            for(int i = 0; i < size;i++) {
+                TreeNode node = q.poll();
+                l.add(node.val);
+                if (node.left != null) {
+                    q.add(node);
+                }
+                if (node.right != null) {
+                    q.add(node);
+                }
+            }
+            list.add(l);
+        }
+        return list;
+
+
+    }
+    /**
+     *给你一棵以 root 为根的二叉树和一个 head 为第一个节点的链表。
+     * 如果在二叉树中，存在一条一直向下的路径，且每个点的数值恰好一一对应以 head 为首的链表中每个节点的值，
+     * 那么请你返回 True ，否则返回 False 。
+     * 一直向下的路径的意思是：从树中某个节点开始，一直连续向下的路径
+     *输入：head = [4,2,8], root = [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
+     * 输出：true
+     * 利用深度优先搜索
+     * 1、链表是当前树的子结构
+     * 2、链表是当前树左子树的子结构
+     * 3、链表是当前树右子树的子结构
+     */
+    public boolean isSubPath(ListNode head, TreeNode root) {
+        if(root == null) return true;
+        if(head == null) return false;
+        //找到链表头结点和根节点相同的结点
+        if(head.val == root.val){
+            //进行判断，往下递归
+            return isHeadPath(head.next,root.left)||isHeadPath(head.next,root.right)
+                    ||isSubPath(head,root.left)||isSubPath(head,root.right);//继续左子树，右子树进行判断
+        }else{
+            return isSubPath(head,root.right)||isSubPath(head,root.left);
+        }
+    }
+    //进行路径的判断
+    private boolean isHeadPath(ListNode next, TreeNode node) {
+        if (next == null) return true;
+        if (node == null) return false;
+        if(next.val != node.val){
+            return false;
+        }else{
+            return isHeadPath(next.next,node.left)||isHeadPath(next.next,node.right);
+        }
+    }
+
 
     /**
      *     节点与其祖先之间的最大差值
