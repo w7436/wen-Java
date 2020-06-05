@@ -22,6 +22,7 @@ public class CallableTest {
                 return 123;
             }
         };
+
         //Thread使用Callable
         FutureTask<Integer> task = new FutureTask(c);
         new Thread(task).start();
