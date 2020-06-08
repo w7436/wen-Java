@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../TestThread/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestThread/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../线程/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../线程/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Array/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Array/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/thread-adv-study/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/thread-adv-study/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wen-13/thread-adv-study/thread-adv-study.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../wen-13/thread-adv-study/thread-adv-study.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../多态/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../多态/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +90,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wen-13" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JavaEE-study" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -100,7 +102,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -273,6 +275,9 @@
       <workItem from="1590636554953" duration="3797000" />
       <workItem from="1591177563974" duration="2882000" />
       <workItem from="1591235752668" duration="1419000" />
+      <workItem from="1591458387577" duration="718000" />
+      <workItem from="1591492173191" duration="8000" />
+      <workItem from="1591592236824" duration="9108000" />
     </task>
     <servers />
   </component>
@@ -284,15 +289,19 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="3" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1587956964335" />
+    <state x="420" y="212" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1591592327695">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="420" y="212" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1280.690@0.0.1280.690" timestamp="1591592327695" />
     <state x="396" y="52" key="#xdebugger.evaluate" timestamp="1588389318180">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="396" y="52" key="#xdebugger.evaluate/0.0.1280.689@0.0.1280.689" timestamp="1588389318180" />
-    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1591235821590">
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1591612200926">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1589590918207" />
-    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1591235821590" />
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1591612200926" />
     <state width="1237" height="223" key="GridCell.Tab.-1.bottom" timestamp="1588389334597">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -349,10 +358,10 @@
     </state>
     <state width="1237" height="223" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1588389330258" />
     <state width="1237" height="265" key="GridCell.Tab.1.right/0.0.1280.690@0.0.1280.690" timestamp="1590407392632" />
-    <state x="157" y="0" key="SettingsEditor" timestamp="1589772999146">
+    <state x="157" y="0" key="SettingsEditor" timestamp="1591593912383">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state x="157" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1589772999146" />
+    <state x="157" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1591593912383" />
     <state x="412" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591177758019">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
@@ -373,15 +382,6 @@
     <state x="303" y="10" width="672" height="679" key="search.everywhere.popup/0.0.1280.690@0.0.1280.690" timestamp="1591177860003" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/EverdayTestDemo.java</url>
-          <line>134</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="arr" language="JAVA" />
@@ -397,80 +397,5 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/homeTest$TestDemo.ic" NAME="TestDemo Coverage Results" MODIFIED="1587614162198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>homeTest</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>lib</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

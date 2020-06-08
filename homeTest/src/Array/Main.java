@@ -61,6 +61,59 @@ public class Main {
         return true;
     }
     /**
+     * 有n物品和大小的背包m。给定的数组A表示每个项目的大小，数组V表示每个项目的值。
+     * 思想：0-1背包问题
+     * F（i，j）代表前i个商品放入大小为j个背包中所获得的最大值
+     * 1）放不下，F（i-1,j）
+     * 2)放的下，Math.max(F(i-1,j),F(i-1,j-A[i])+v[i])
+     * 我们记得初始化
+     *
+     * 优化算法，我们可以看到计算本行的一个数据，只用到上一行的数据，我们可以将二维数组简化为一维数组
+     * f[m] =Math.max(f[m],f[m-A[i]]+V[i])
+     * */
+    public int backPackII(int m, int[] A, int[] V) {
+        int len = A.length; //物品的种类个数
+        int dp[][] = new int[len+1][m+1];
+        //初始化操作
+        for(int i = 0;i <= len;i++){
+            dp[i][0] = 0;
+        }
+        for(int j = 1;j <= m;j++){
+            dp[0][j] = 0;
+        }
+        for(int i = 1;i <= len;i++){
+            for(int j = 1;j <= m;j++){
+                //表示不能装下
+               if(j < A[i]){
+                   dp[i][j] = dp[i-1][j];
+               }else{
+                   int value = dp[i-1][j-A[i]]+V[i];
+                   dp[i][j] = Math.max(dp[i-1][j],value);
+               }
+            }
+        }
+        return dp[len][m];
+    }
+    public int backPackII2(int m, int[] A, int[] V) {
+        int num = A.length;
+        if(m == 0 || num == 0) return 0;
+        //多加一列用于设置初始化条件
+        int[] dp = new int[m+1];
+        for(int i = 0;i <= m;i++){
+            dp[i] = 0;
+        }
+        for(int i = 1;i <= num;i++){
+            //从后往前进行计算，当前i的状态只是和i-1个状态的值相关，我们的一维数组仅仅是保留上一个状态的值，
+            //如果我们按顺序进行计算，上一个状态的值会被我们更改，这样就会产生问题
+            for(int j = m;j>=0;j--){
+                if(A[i-1] <= j)
+                    dp[i] = Math.max(dp[i],dp[i-A[i-1]]+V[i-1]);
+            }
+        }
+        return dp[m];
+    }
+
+    /**
      * 硬币：
      * 硬币。给定数量不限的硬币，币值为25分、10分、5分和1分，
      * 编写代码计算n分有几种表示法。(结果可能会很大，你需要将结果模上1000000007)
@@ -105,6 +158,45 @@ public class Main {
             mp.put(pre, mp.getOrDefault(pre, 0) + 1);
         }
         return count;
+    }
+    /**
+     *回文串的分割
+     * 思想：利用动态规划
+     * f[i]：到第i个字符需要分割的最小次数
+     *依次类推
+     * f[i]=min(f(i),f(j)+1) when j<i && j+1，i是回文串
+     
+     * */
+    //判断是否为回文串
+    public boolean isPal(String s, int start, int end) {
+        while(start < end){
+            if(s.charAt(start)!=s.charAt(end)){
+                return false;
+            }else{
+                start++;
+                end--;
+            }
+        }
+        return true;
+    }
+    public int minCut(String s) {
+        int len = s.length();
+        if(len == 0){
+            return 0;
+        }
+        int[] dp = new int[len+1];
+        //dp[i]初始化，2个字符最大分割1次，3个字符最大分割2次，依次类推
+        for(int i = 0;i <= len;i++){
+            dp[i] = i - 1;
+        }
+        for(int i = 1;i <= len;i++){
+            for(int j = 0;j < i;j++){
+                if(isPal(s,j,i-1)){
+                    dp[i] = Math.min(dp[i],dp[j]+1);
+                }
+            }
+        }
+        return dp[len];
     }
     /**
      * 统计优美子数组
