@@ -11,9 +11,13 @@ import java.io.IOException;
  * @Data 2020/5/10 19:33
  * @Version 1.0
  **/
+/*
+手动实现servlet程序：
+1、编写一个类去实现Servlet接口
+2、实现service方法，处理请求，并且响应数据
+3、到web.xml文件中去配置servlet程序的访问地址
+ */
 public class HelloServLet implements Servlet {
-
-
     //第一次调用的时候访问
 
     @Override
@@ -40,11 +44,12 @@ public class HelloServLet implements Servlet {
      * @throws ServletException
      * @throws IOException
      */
+
     //每次访问都会调用
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         System.out.println("Hello被访问了");
-        HttpServletRequest httpServlet =(HttpServletRequest) servletRequest;
+        HttpServletRequest httpServlet =(HttpServletRequest) servletRequest;//向下转型
         String menthod = httpServlet.getMethod();
         if("GET".equals(menthod)){
             System.out.println("get()");

@@ -41,10 +41,10 @@
     </servlet>
     <!--    给servlet程序配置访问地址-->
     <servlet-mapping>
-        <!--        当前配置的地址的给那个servlet程序使用-->
+        <!--当前配置的地址的给那个servlet程序使用-->
         <servlet-name>HelloServLet</servlet-name>
-        <!--        配置的访问地址
-                    / 在服务器解析的时候，表示的地址http://localhost:8080/ServLet/
+        <!--配置的访问地址
+            / 在服务器解析的时候，表示的地址http://localhost:8080/ServLet
         -->
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>

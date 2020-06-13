@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        //传入参数为函数时，在文档加载完成后执行这个函数
+        //传入参数为HTML字符串时，根据这个字符串创建元素节点对象
+        //传入参数为选择器字符串时,根据这个字符串查找元素节点对象
+        //传入字符串为DOM对象时，将DOM对象包装成jQuery对象返回
+        $(function () {
+            alert("页面加载完成之后，自动调用");
+            $("<div>\n" +
+                "    <span>hello1</span>" +
+                "    <span>hello2</span>" +
+                "</div>").appendTo("body");
+            alert($("button").length);
+
+            var btnId = document.getElementById("btnId");
+            // alert(btnId);
+            alert($(btnId));
+        });
+    </script>
+</head>
+<body>
+    <button id="btnId">按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+
+
+</body>
+</html>

@@ -18,7 +18,7 @@ public class ContextServlet extends HttpServlet {
      * @throws IOException
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //        a)获取web.xml中配置的上下文参数context-param
+        //  a)获取web.xml中配置的上下文参数context-param
         ServletContext context = getServletConfig().getServletContext();
         String username = context.getInitParameter("username");
         String password = context.getInitParameter("password");

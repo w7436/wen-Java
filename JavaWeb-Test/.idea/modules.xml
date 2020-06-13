@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Frontend-Test/Frontend-Test.iml" filepath="$PROJECT_DIR$/Frontend-Test/Frontend-Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HttpServlet-test/HttpServlet-test.iml" filepath="$PROJECT_DIR$/HttpServlet-test/HttpServlet-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServLet-Test/ServLet-Test.iml" filepath="$PROJECT_DIR$/ServLet-Test/ServLet-Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jQuery-Test/jQuery-Test.iml" filepath="$PROJECT_DIR$/jQuery-Test/jQuery-Test.iml" />
     </modules>
   </component>
 </project>
