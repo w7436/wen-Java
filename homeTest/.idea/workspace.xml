@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../JavaEE-study/ee-study/ee-study.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JavaWeb-Test/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JavaWeb-Test/Frontend-Test/Frontend-Test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JavaWeb-Test/HttpServlet-test/HttpServlet-test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaWeb-Test/.idea/artifacts/Jsp_Test_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaWeb-Test/Jsp-Test/Jsp-Test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaWeb-Test/Jsp-Test/web/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaWeb-Test/jQuery-Test/jsp-test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaWeb-Test/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaWeb-Test/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/src/Nancy/test/ContextServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/src/Nancy/test/ContextServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/src/Nancy/test/ContextServlet1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/src/Nancy/test/ContextServlet1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/src/Nancy/test/HelloServLet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/src/Nancy/test/HelloServLet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/src/Nancy/test/HelloServLet2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/src/Nancy/test/HelloServLet2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/web/b.html" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaWeb-Test/ServLet-Test/web/b.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EverdayTestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EverdayTestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaWeb-Test/jQuery-Test/Demo/nancy1/DOM对象和jQuery对象.html" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaWeb-Test/jQuery-Test/Demo/nancy1/DOM对象和jQuery对象.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Array/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Array/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,6 +281,7 @@
       <workItem from="1591492173191" duration="8000" />
       <workItem from="1591592236824" duration="9108000" />
       <workItem from="1591961928254" duration="2134000" />
+      <workItem from="1592201771972" duration="6221000" />
     </task>
     <servers />
   </component>

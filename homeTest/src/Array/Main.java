@@ -10,6 +10,45 @@ import java.util.*;
  * @Version 1.0
  **/
 public class Main {
+    //深度优先搜索
+    /**
+     * 有一幅以二维整数数组表示的图画，每一个整数表示该图画的像素值大小，
+     * 数值在 0 到 65535 之间。
+     * 给你一个坐标 (sr, sc) 表示图像渲染开始的像素值（行 ，列）和一个新的颜色值 newColor，让你重新上色这幅图像
+     *
+     * 进行搜索我们需要注意位置是否越界。对其进行判断
+     */
+    int[][] position = {{0,1},{1,0},{-1,0},{0,-1}};//四个方向
+    public void dfs(int[][] image,int row,int col,int[][] book,int sr,int sc,int oldColor,int newColor){
+        //对当前位置进行上色，并且标记
+        image[sr][sc] = newColor;
+        book[sr][sc] = 1;
+        //对每一个方向进行检索
+        for(int i = 0;i < 4;i++){
+            int newSr = sr+position[i][0];
+            int newSc = sc+position[i][1];
+
+            //对其新位置进行判断是否越界
+            if(newSr >= row || newSr < 0 || newSc >= col || newSc < 0){
+                continue;
+            }
+            //对新位置进行染色，并且确保没有标记过,继续渲染
+            if(image[newSr][newSc] == oldColor && book[newSr][newSc] == 0){
+                dfs(image,row, col, book,newSr,newSc,oldColor,newColor);
+            }
+        }
+    }
+    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+        int row = image.length;
+        int col = image[0].length;
+        int oldColor = image[sr][sc];
+        int[][] book = new int[row][col];//标记
+        dfs(image,row,col,book,sr,sc,oldColor,newColor);
+        return image;
+    }
+
+
+
     /**
      * 机器人运动范围
      * 地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。
@@ -60,6 +99,87 @@ public class Main {
         }
         return true;
     }
+    /**
+     *给定两个单词word1和word2，请计算将word1转换为word2至少需要多少步操作。
+     * 你可以对一个单词执行以下3种操作：
+     * a）在单词中插入一个字符
+     * b）删除单词中的一个字符
+     * c）替换单词中的一个字符
+     *
+     * 动态规划:F(i,j):word1的前i个字符于word2的前j个字符的编辑距离
+     * F(i,j) = min { F(i-1,j）+1, F(i,j-1) +1, F(i-1,j-1) +(w1[i]==w2[j]?0:1) }
+     * 分别代表删除，插入，替换，这些删除是对于当前的字符串而言的
+     */
+    public int minDistance(String word1, String word2) {
+        // word与空串之间的编辑距离为word的长度
+        if(word1.isEmpty() || word2.isEmpty())
+            return Math.max(word1.length(), word2.length());
+        int len1 = word1.length();
+        int len2 = word2.length();
+        int[][] dp = new int[len1][len2];
+        //初始化操作
+        for(int i = 0;i <= len1;i++){
+            dp[i][0] = i;
+        }
+        for(int i = 0;i <= len2;i++){
+            dp[0][i] = i;
+        }
+        for(int i = 0;i <= len1;i++){
+            for(int j = 0;j <= len2;j++){
+                dp[i][j] = Math.min(
+                        Math.min(dp[i][j-1]+1,dp[i-1][j]+1)//插入，删除
+                        ,dp[i-1][j-1]+(word1.charAt(i-1)==word2.charAt(j-1)?0:1));//替换
+            }
+        }
+        return dp[len1][len2];
+    }
+
+
+    /**
+     * 给定一个字符串S和一个字符串T，计算S中的T的不同子序列的个数(S中有几个子串与T相同)
+     * 字符串的子序列是由原来的字符串删除一些字符（也可以不删除）在不改变相对位置的情况下的剩余字符
+     * （例如，"ACE"is a subsequence of"ABCDE"但是"AEC"不是）
+     * 例如：
+     * S ="rabbbit", T ="rabbit"
+     *
+     * 动态规划：
+     * S[1:m]中的子串与T[1:n]相同的个数
+     * 由S的前m个字符组成的子串与T的前n个字符相同的个数
+     * F(i,j): S[1:i]中的子串与T[1:j]相同的个数
+     *
+     * 状态的递推：F(i,j)我们需要考虑的是S[i-1]是否等于T(j-1)这两种情况
+     * if(S[i-1] == T[j-1])
+     *     S[i-1]匹配T[i-1] 不匹配两种情况
+     * else{
+     *     退化为F(i,j) = F(i-1,j)
+     * }
+     */
+    public int numDistinct(String S, String T) {
+        int len1 = S.length();
+        int len2 = T.length();
+        int[][] dp = new int[len1+1][len2+1];
+        dp[0][0] = 1;//空串和空串相等
+        //初始化行
+        for(int i = 1;i <= len2;i++){
+            dp[0][i] = 0;
+        }
+        for(int i = 1;i <= len1;i++){
+            dp[i][0] = 1;//S的子串（存在空串）与空串也相等
+        }
+        for(int i = 1;i <= len1;i++){
+            for(int j = 1;j <= len2;j++){
+                //S的第i个字符和T的第j个字符相等
+                if(S.charAt(i-1) == T.charAt(j-1)){
+                    dp[i][j] = dp[i-1][j-1]+dp[i-1][j];
+                }else{
+                    dp[i][j] = dp[i-1][j];//退化为之前
+                }
+            }
+        }
+        return dp[len1][len2];
+    }
+
+
     /**
      * 有n物品和大小的背包m。给定的数组A表示每个项目的大小，数组V表示每个项目的值。
      * 思想：0-1背包问题

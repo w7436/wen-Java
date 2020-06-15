@@ -4,8 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Frontend-Test/Frontend-Test.iml" filepath="$PROJECT_DIR$/Frontend-Test/Frontend-Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/HttpServlet-test/HttpServlet-test.iml" filepath="$PROJECT_DIR$/HttpServlet-test/HttpServlet-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Jsp-Test/Jsp-Test.iml" filepath="$PROJECT_DIR$/Jsp-Test/Jsp-Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServLet-Test/ServLet-Test.iml" filepath="$PROJECT_DIR$/ServLet-Test/ServLet-Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/jQuery-Test/jQuery-Test.iml" filepath="$PROJECT_DIR$/jQuery-Test/jQuery-Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jQuery-Test/jsp-test.iml" filepath="$PROJECT_DIR$/jQuery-Test/jsp-test.iml" />
     </modules>
   </component>
 </project>

@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+<!--        jQuery对象是dom对象数组+一系列功能函数-->
+        $(function () {
+            var arr = [12,"ad",true];
+            var $btn = $("button");
+            for(var i = 0;i  < $btn.length;i++){
+                alert($btn[i]);
+            }
+        })
+    </script>
 </head>
 <body>
-
+    <div id = "testDiv">Good</div>
+    <button id="dom1dom">使用Dom对象调用Dom方法</button>
+    <button id="dom1jQuery">使用Dom对象调用jQuery方法</button>
+    <button id="jQuery1jQuery">使用jQuery对象调用jQuery方法</button>
+    <button id="jQuery1Dom">使用jQuery对象调用Dom对象</button>
 </body>
 </html>
