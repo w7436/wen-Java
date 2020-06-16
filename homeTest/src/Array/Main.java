@@ -1,5 +1,6 @@
 package Array;
 
+import javax.swing.text.Position;
 import java.util.*;
 
 /**
@@ -10,7 +11,130 @@ import java.util.*;
  * @Version 1.0
  **/
 public class Main {
+    
     //深度优先搜索
+    /**
+     给定一个二维的矩阵，包含 'X' 和 'O'（字母 O）。
+     找到所有被 'X' 围绕的区域，并将这些区域里所有的 'O' 用 'X' 填充。
+
+     X X X X
+     X O O X
+     X X O X
+     X O X X
+
+     X X X X
+     X X X X
+     X X X X
+     X O X X
+     1、从每一个边开始寻找o，如果没有就表示所有的o都被包围
+     2、对于边上的每一个o进行边缘扩散，先将每一个o用字符进行标示，
+     3、把他和相邻的o替换为特殊字符，每一个位置都进行操作
+     4、扩散那之后，将特殊字符标记为o，剩下的都为x
+     */
+    public int[][] position2 ={{1,0},{0,1},{-1,0},{0,-1}};
+    private void dfs2(char[][] board, int row, int col, int i, int j) {
+        //对当前位置进行标记
+        board[i][j] = '*';
+        //对每一个位置进行判断
+        for(int k = 0;k < 4;k++){
+            int nx = i + position2[k][0];
+            int ny = j + position2[k][1];
+            //越界问题
+            if(nx >= row || nx < 0 || ny >=col || ny < 0){
+                continue;
+            }
+            //对符合条件的再次进行深搜
+            if(board[nx][ny] != '*' && board[nx][ny] != 'O' ){
+                dfs2(board,row,col,nx,ny);
+            }
+        }
+    }
+    public void solve(char[][] board) {
+        if(board.length == 0) return;
+        int row = board.length;
+        int col = board[0].length;
+        //对第一行和最后一行的o进行深度优先搜索
+        for(int i = 0;i < col;i++){
+            if(board[0][i] == 'O'){
+                dfs2(board,row,col,0,i);
+            }
+            if(board[row-1][i] == '0'){
+                dfs2(board,row,col,row-1,i);
+            }
+        }
+        //对第一列和最后一列进行深度搜索
+        for(int j = 0;j < row;j++){
+            if(board[j][0] == 'O'){
+                dfs2(board,row,col,j,0);
+            }
+            if(board[j][col-1] == 'O'){
+                dfs2(board,row,col,j,0);
+            }
+        }
+        //深度搜索完成之后，将所有*换为o
+        for(int i = 0;i < row;i++ ){
+            for(int j = 0;j < col;j++){
+                if(board[i][j] == '*'){
+                    board[i][j] = 'O';
+                }else if(board[i][j] == 'O'){
+                    board[i][j] = 'X';
+                }
+            }
+        }
+    }
+
+    /**
+     * 给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
+     * 岛屿总是被水包围，并且每座岛屿只能由水平方向或竖直方向上相邻的陆地连接形成
+     *
+     * 11000
+     * 11000
+     * 00100
+     * 00011
+     *
+     * 输出: 3
+     */
+
+    public int[][] position1 ={{1,0},{0,1},{-1,0},{0,-1}};
+    private void dfs1(char[][] grid, int row, int col, int[][] book, int i, int j) {
+        //处理当前位置的数,对其进行标记
+        book[i][j] = 1;
+        //对每一个位置进行判断
+        for(int k = 0;k < 4;k++){
+            int nx = i + grid[k][0];
+            int ny = j + grid[k][1];
+            //对每一个位置进行越界判断
+            if(nx >= row || nx < 0 || ny >= col || ny < 0){
+                continue;
+            }
+            //对符合条件的在进行标记渲染
+            if(grid[nx][ny] == '1' && book[nx][ny] == 0){
+                dfs1(grid,row,col,book,nx,ny);
+            }
+        }
+    }
+    public int numIslands(char[][] grid) {
+        if(grid.length == 0) return 0;
+        int count = 0;
+        int row = grid.length;
+        int col = grid[0].length;
+        int[][] book = new int[row][col];//标记函数
+        //对每一个点进行遍历
+        for(int i = 0;i < row;i++){
+            for(int j = 0;j < col;j++){
+                //对符合条件的进行加一操作
+                if(grid[i][j] == '1' && book[i][j] == 0){
+                    count++;
+                    dfs1(grid,row,col,book,i,j);
+                }
+
+            }
+        }
+        return count;
+    }
+
+
+
     /**
      * 有一幅以二维整数数组表示的图画，每一个整数表示该图画的像素值大小，
      * 数值在 0 到 65535 之间。
@@ -38,6 +162,7 @@ public class Main {
             }
         }
     }
+//------------------------------------------------------------------------------------------------------------------
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
         int row = image.length;
         int col = image[0].length;
