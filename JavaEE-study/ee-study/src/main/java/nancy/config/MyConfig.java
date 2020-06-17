@@ -1,6 +1,7 @@
 package nancy.config;
 
 import nancy.model.User;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -35,7 +36,8 @@ public class MyConfig implements WebMvcConfigurer {
         return user;
     }
     @Bean
-    public User user2(){
+    public User user2(@Qualifier("user1") User user1){
+        System.out.println(user1);
         User user= new User();
         user.setName("小绿2");
         user.setPassword("123");

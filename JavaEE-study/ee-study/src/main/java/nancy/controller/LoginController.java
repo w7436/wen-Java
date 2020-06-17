@@ -31,11 +31,12 @@ public class LoginController {
     private LoginService loginService;
 
     @Autowired//Spring的一个注解
-    @Qualifier("user1")
+    @Qualifier("user1")//引入名称为user1的对象
     private User user1;
 
     @Resource(name="user2")//jdk的注解，是一个规范，Spring实现了这个规范
     private User user2;
+
     /**
      * 两个页面，login.html和login.html，哪些url几种方法进行访问，哪些是转发
      * @return
@@ -49,6 +50,9 @@ public class LoginController {
     //@RequestMapping可以使用在类上和方法上，表示客户端请求的配置（包括uri，请求方法，数据类型）
     @RequestMapping("/login")
     public String login(Integer i){
+        System.out.println(loginService);
+        System.out.println(user1);
+        System.out.println(user2);
         if(i == 1){
             return "redirect:/index.html";//重定向
         }else{

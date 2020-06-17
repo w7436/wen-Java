@@ -1,0 +1,19 @@
+package nancy.mapper;
+
+import nancy.model.User2;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
+
+@Mapper//接口类加上注解
+public interface User2Mapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(User2 record);
+
+    User2 selectByPrimaryKey(Integer id);
+
+    List<User2> selectAll();
+
+    int updateByPrimaryKey(User2 record);
+}
