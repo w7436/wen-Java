@@ -1,6 +1,7 @@
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Stack;
 
 /**
  * @ClassName MySignalList
@@ -36,6 +37,7 @@ public class MySignalList {
     public MySignalList(){
         this.head=null;
     }
+
     //头插
     public void addFirst(int data){
         ListNode node=new ListNode(data);
@@ -314,6 +316,34 @@ public class MySignalList {
 
     //回文
     public boolean chkPalindrome() {
+        //2、将链表的前半部分放入栈中
+//        Stack<Integer> stack = new Stack<Integer>();
+//        ListNode p = A;
+//        int count = 0;
+//        while(p!=null){
+//            count++;
+//            p = p.next;
+//        }
+//        int half = count>>1;
+//        p = A;
+//        while(half > 0){
+//            stack.push(p.val);
+//            p = p.next;
+//            half--;
+//        }
+//        //如果长度为奇数，则跳过中间元素
+//        if(count % 2 == 1){
+//            p = p.next;
+//        }
+//        while(!stack.empty()){
+//            int num = stack.pop();
+//            if(num != p.val){
+//                return false;
+//            }
+//            p = p.next;
+//        }
+//        return true;
+
         ListNode fast = this.head;
         ListNode slow = this.head;
 

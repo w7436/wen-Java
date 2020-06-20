@@ -19,7 +19,6 @@ class MyArrayList {
         this.elem = new int[CAPACITY];
     }
     //判断是否需要扩容
-
     private void judge(){
         int i=0;
         if(this.usedSize==elem.length){
