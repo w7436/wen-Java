@@ -91,7 +91,6 @@ public class MyPriorityQueue {
         swap(0,size-1);
         size--;
         shifDown(0);
-
         return 0;
     }
     boolean isEmpty(){
@@ -132,7 +131,7 @@ public class MyPriorityQueue {
         }
     }
 
-
+//向上调整
     public void shiftUp(int child){
         int parent = (child-1)>>1;
         while (parent>=0) {
@@ -146,6 +145,7 @@ public class MyPriorityQueue {
             }
         }
     }
+
     private void swap(int parent ,int child){
         int tmp = array[parent];
         array[parent] = array[child];
