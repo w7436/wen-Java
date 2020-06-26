@@ -7,6 +7,7 @@ package Menu;
  * @Data 2020/6/2 15:25
  * @Version 1.0
  **/
+
 import factory.foodFactory;
 import food.*;
 
@@ -32,6 +33,10 @@ public class customer {
     }
     private ArrayList<String> billList = new ArrayList<String>();
 
+    public static ArrayList<Double> moneys  = new ArrayList<Double>();
+
+
+
     //打印小票文件
     public void showBill() throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter("D://text.txt", true));
@@ -39,11 +44,11 @@ public class customer {
         bw.write("             **欢迎光临**             \r\n");
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         bw.write("订餐时间："+df.format(new Date())+"\r\n");// new Date()为获取当前系统时间
-        bw.write("名称    \t\t单价\t数量\t价格\r\n");
+        bw.write("名称 \t\t单价\t数量\t价格\r\n");
         for(String str:billList){
             bw.write(str);
-            bw.newLine();
-            bw.flush();
+            bw.newLine();//一行分割符
+            bw.flush();//刷新流
         }
     }
     //显示订单
@@ -59,6 +64,7 @@ public class customer {
         hamburg = f.createHamburgers(choose,num);
         System.out.print(hamburg.print());
         billList.add(hamburg.print());
+
         return hamburg.totalPrice();
     }
 
@@ -69,6 +75,7 @@ public class customer {
         beverage = f.createDrinkings(choose,num);
         System.out.print(beverage.print());
         billList.add(beverage.print());
+
         return beverage.totalPrice();
     }
 
@@ -78,6 +85,7 @@ public class customer {
         chicken = f.createChickens(choose,num);
         System.out.print(chicken.print());
         billList.add(chicken.print());
+
         return chicken.totalPrice();
     }
     //薯条
@@ -86,6 +94,7 @@ public class customer {
         fires = f.createFrenchFries(choose,num);
         System.out.print(fires.print());
         billList.add(fires.print());
+
         return fires.totalPrice();
     }
     //米饭
@@ -94,6 +103,7 @@ public class customer {
         rices = f.createRices(choose,num);
         System.out.print(rices.print());
         billList.add(rices.print());
+
         return rices.totalPrice();
     }
 
@@ -114,6 +124,7 @@ public class customer {
             billList.add(drink.print());
             billList.add(chicken.print());
             money = Math.round(0.9 * (hamburg.totalPrice() + drink.totalPrice() + chicken.totalPrice()) * num);
+
             return money;
         } else if (2 == choose) {
             hamburg = f.createHamburgers(2, 1);
@@ -125,6 +136,7 @@ public class customer {
             billList.add(chicken.print());
             billList.add(rices.print());
             money = Math.round(0.9 * (hamburg.totalPrice() + drink.totalPrice() + chicken.totalPrice() + rices.totalPrice()) * num);
+
             return money;
         } else {
             System.out.println("没有该套餐！！！");

@@ -16,7 +16,7 @@ public class foodFactory1 implements foodFactory{
         //香辣鸡腿堡
         if(1==kind)
             return new Hamburgers_1(num);
-            //烤鸡腿堡
+        //烤鸡腿堡
         else if(2==kind)
             return new Hamburgers_2(num);
         else
@@ -34,7 +34,7 @@ public class foodFactory1 implements foodFactory{
         //吮指原味鸡
         if(1==kind)
             return new Chicken_1(num);
-            //香辣鸡翅
+        //香辣鸡翅
         else if(2==kind)
             return new Chicken_2(num);
         else
@@ -46,7 +46,7 @@ public class foodFactory1 implements foodFactory{
         //可乐
         if(1==kind)
             return new Drinkings_1(num);
-            //九珍果汁饮料
+        //九珍果汁饮料
         else if(2==kind)
             return new Drinkings_2(num);
         else

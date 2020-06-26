@@ -12,6 +12,30 @@ public abstract class foodBaseInfo {
     public int num;      //数量
     public double price;  //价格
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     //计算餐品总价
     public double totalPrice(){
         //return this.num * this.price;

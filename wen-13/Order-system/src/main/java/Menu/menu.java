@@ -169,7 +169,7 @@ public class menu {
     //获得总金额
     public double getMoney(){
         sumMoney = hamburgMoney+RicesMoneny+DrinkMoney+FrenchFiresMoney+ChickenMoney+setMealMoney;
-        SUM+=sumMoney;
+        SUM = sumMoney;
         return sumMoney;
     }
 

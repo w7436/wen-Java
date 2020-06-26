@@ -22,10 +22,12 @@ public class Main {
         customer cust = new customer(fact);
         while(flag){
             new menu(fact,cust).Menu();
+
+
             double m = menu.SUM;
-            total t = new total(m);
+            total t = new total();
             t.setMoney(m);
-            DaoTest.inserttotal(t);
+            DaoTest.insert(t);
             System.out.println("订餐选择y,完成订餐选择n");
             if("n".equals(new Scanner(System.in).next())){
                 flag = false;

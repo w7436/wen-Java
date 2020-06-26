@@ -2,17 +2,18 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Order-system" />
         <module name="ee-test" />
-        <module name="selevt-blog" />
+        <module name="thread-adv-study" />
+        <module name="order-system" />
         <module name="JVM-study" />
         <module name="Design-Test" />
-        <module name="order-system" />
-        <module name="thread-adv-study" />
+        <module name="selevt-blog" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
