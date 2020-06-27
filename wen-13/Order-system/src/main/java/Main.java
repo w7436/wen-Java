@@ -22,8 +22,6 @@ public class Main {
         customer cust = new customer(fact);
         while(flag){
             new menu(fact,cust).Menu();
-
-
             double m = menu.SUM;
             total t = new total();
             t.setMoney(m);

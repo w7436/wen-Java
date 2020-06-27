@@ -34,44 +34,12 @@ public class DaoTest {
             ps = c.prepareStatement(sql);
             ps.setTimestamp(1,timestamp);
             ps.setDouble(2,t.getMoney());
-
-             ps.executeUpdate();
-
+            ps.executeUpdate();
         } catch (SQLException e) {
             throw new SystemException(e,"插入商品信息出错");
         }finally {
             DBUtil.close(c,ps);
         }
     }
-
-
-//
-//    public static void inserttotal(total t){
-//        //获取数据源
-//        Connection connection=null;
-//        PreparedStatement preparedStatement=null;
-//
-//        try {
-//            connection =getDatasource().getConnection();
-//            String sql="insert into total values(?)";
-//            preparedStatement=connection.prepareStatement(sql);
-//            preparedStatement.setDouble(1,t.getMoney());
-//            preparedStatement.execute();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                if (preparedStatement!=null){
-//                    preparedStatement.close();
-//                }
-//                if (connection!=null){
-//                    connection.close();
-//                }
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//    }
 
 }

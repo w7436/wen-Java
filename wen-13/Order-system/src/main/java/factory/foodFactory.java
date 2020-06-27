@@ -9,7 +9,8 @@ import food.*;
  * @Data 2020/6/2 10:22
  * @Version 1.0
  **/
-//工厂接口
+
+//工厂的方法模式，定义产品的生产接口
 public interface foodFactory {
     public Hamburgers createHamburgers(int kind, int num);  //根据不同的kind参数确定不同的汉堡种类，生产汉堡
     public FrenchFries createFrenchFries(int kind, int num);  //生产薯条

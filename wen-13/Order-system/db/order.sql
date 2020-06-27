@@ -5,6 +5,7 @@ drop database orderdemo;
 drop table total;
 
 create table total(
+    id int primary key auto_increment,
     datetime Timestamp,
     money double
 );
@@ -54,5 +55,5 @@ create table orderDatil(
 );
 
 
-drop table orders;
+drop table total;
 select * from total;

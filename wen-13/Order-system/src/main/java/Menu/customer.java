@@ -44,7 +44,7 @@ public class customer {
         bw.write("             **欢迎光临**             \r\n");
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         bw.write("订餐时间："+df.format(new Date())+"\r\n");// new Date()为获取当前系统时间
-        bw.write("名称 \t\t单价\t数量\t价格\r\n");
+        bw.write("名称\t单价\t数量\r\n");
         for(String str:billList){
             bw.write(str);
             bw.newLine();//一行分割符

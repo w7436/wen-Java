@@ -9,6 +9,7 @@ import food.*;
  * @Data 2020/6/2 10:23
  * @Version 1.0
  **/
+
 public class foodFactory1 implements foodFactory{
 
 
