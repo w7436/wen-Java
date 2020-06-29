@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Design-Test/Design-Test.iml" filepath="$PROJECT_DIR$/Design-Test/Design-Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/JVM-study/JVM-study.iml" filepath="$PROJECT_DIR$/JVM-study/JVM-study.iml" />
+      <module fileurl="file://$PROJECT_DIR$/book-sys/book-sys.iml" filepath="$PROJECT_DIR$/book-sys/book-sys.iml" />
       <module fileurl="file://$PROJECT_DIR$/ee-test/ee-test.iml" filepath="$PROJECT_DIR$/ee-test/ee-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-system/order-system.iml" filepath="$PROJECT_DIR$/order-system/order-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/selevt-blog/selevt-blog.iml" filepath="$PROJECT_DIR$/selevt-blog/selevt-blog.iml" />

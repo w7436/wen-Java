@@ -9,15 +9,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Order-system" />
         <module name="ee-test" />
-        <module name="thread-adv-study" />
         <module name="order-system" />
         <module name="JVM-study" />
         <module name="Design-Test" />
         <module name="selevt-blog" />
+        <module name="book-sys" />
+        <module name="thread-adv-study" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="blog" target="1.8" />
+      <module name="book-sys" target="1.8" />
       <module name="Design-Test" target="1.5" />
       <module name="ee-test" target="1.8" />
       <module name="JVM-study" target="1.8" />

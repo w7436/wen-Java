@@ -2,6 +2,8 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/blog" />
+    <file type="web" url="file://$PROJECT_DIR$/book-sys" />
+    <file type="web" url="file://$PROJECT_DIR$/Design-Test" />
     <file type="web" url="file://$PROJECT_DIR$/maven-test" />
     <file type="web" url="file://$PROJECT_DIR$/order-system" />
     <file type="web" url="file://$PROJECT_DIR$/selevt-blog" />
@@ -16,6 +18,7 @@
         <option value="$PROJECT_DIR$/ee-test/pom.xml" />
         <option value="$PROJECT_DIR$/thread-adv-study/pom.xml" />
         <option value="$PROJECT_DIR$/Design-Test/pom.xml" />
+        <option value="$PROJECT_DIR$/book-sys/pom.xml" />
       </list>
     </option>
   </component>

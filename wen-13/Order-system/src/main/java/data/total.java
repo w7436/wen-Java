@@ -1,7 +1,5 @@
 package data;
 
-import Menu.customer;
-
 /**
  * @ClassName money
  * @Description TODO
@@ -12,10 +10,6 @@ import Menu.customer;
 
 public class total {
     public double money;
-
-    static public double other(){
-        return customer.moneys.get(0);
-    }
 
 
     public double getMoney() {

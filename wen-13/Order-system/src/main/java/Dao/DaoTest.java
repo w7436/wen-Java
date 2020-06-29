@@ -21,8 +21,8 @@ import java.util.Date;
 public class DaoTest {
     //插入数据
     public static void insert(total t) {
-        Connection c = DBUtil.getConnection();
-        PreparedStatement ps = null;
+        Connection c = DBUtil.getConnection();//获取连接对象
+        PreparedStatement ps = null;//获取语句对象
         String sql ="insert into total(datetime,money) values (?,?)";
 
         Date date = new Date();//生成日期对象
