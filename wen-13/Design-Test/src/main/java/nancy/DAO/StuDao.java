@@ -45,6 +45,7 @@ public class StuDao {
         Connection c = DBUtil.getConnection();
         PreparedStatement ps = null;
         String sql ="update stu set name = ?,score = ? where id = ?";
+
         try {
             ps = c.prepareStatement(sql);
             ps.setString(1,student.getName());

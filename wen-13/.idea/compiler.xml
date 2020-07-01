@@ -9,12 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Order-system" />
         <module name="ee-test" />
-        <module name="order-system" />
+        <module name="thread-adv-study" />
+        <module name="selevt-blog" />
         <module name="JVM-study" />
         <module name="Design-Test" />
-        <module name="selevt-blog" />
+        <module name="sys" />
         <module name="book-sys" />
-        <module name="thread-adv-study" />
+        <module name="order-system" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -27,6 +28,7 @@
       <module name="order-system" target="1.5" />
       <module name="Order-system" target="1.8" />
       <module name="selevt-blog" target="1.8" />
+      <module name="sys" target="1.5" />
       <module name="thread-adv-study" target="1.8" />
     </bytecodeTargetLevel>
   </component>

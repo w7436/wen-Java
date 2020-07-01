@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/ee-test/ee-test.iml" filepath="$PROJECT_DIR$/ee-test/ee-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-system/order-system.iml" filepath="$PROJECT_DIR$/order-system/order-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/selevt-blog/selevt-blog.iml" filepath="$PROJECT_DIR$/selevt-blog/selevt-blog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys/sys.iml" filepath="$PROJECT_DIR$/sys/sys.iml" />
       <module fileurl="file://$PROJECT_DIR$/thread-adv-study/thread-adv-study.iml" filepath="$PROJECT_DIR$/thread-adv-study/thread-adv-study.iml" />
     </modules>
   </component>
