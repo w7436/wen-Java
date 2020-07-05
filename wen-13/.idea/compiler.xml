@@ -9,14 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Order-system" />
         <module name="ee-test" />
-        <module name="thread-adv-study" />
         <module name="order-system" />
         <module name="JVM-study" />
         <module name="Design-Test" />
+        <module name="selevt-blog" />
         <module name="sys" />
         <module name="book-sys" />
         <module name="JSON-Test" />
-        <module name="selevt-blog" />
+        <module name="thread-adv-study" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,7 +24,7 @@
       <module name="book-sys" target="1.8" />
       <module name="Design-Test" target="1.5" />
       <module name="ee-test" target="1.8" />
-      <module name="JSON-Test" target="1.5" />
+      <module name="JSON-Test" target="1.8" />
       <module name="JVM-study" target="1.8" />
       <module name="maven-test" target="1.5" />
       <module name="order-system" target="1.5" />
@@ -36,6 +36,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="JSON-Test" options="-parameters" />
       <module name="ee-test" options="-parameters" />
     </option>
   </component>
