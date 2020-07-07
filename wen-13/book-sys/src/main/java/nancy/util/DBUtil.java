@@ -44,7 +44,7 @@ public class DBUtil {
         try {
             return getDataSource().getConnection();
         } catch (SQLException e) {
-            throw new SystemExcption("001",e,"数据库连接失败");
+            throw new SystemExcption("001","数据库连接失败",e);
         }
 
     }
@@ -67,7 +67,7 @@ public class DBUtil {
                 r.close();
             }
         } catch (SQLException e) {
-            throw new SystemExcption("002",e,"释放数据库资源失败");
+            throw new SystemExcption("002","释放数据库资源失败",e);
 
         }
     }

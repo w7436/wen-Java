@@ -1,6 +1,5 @@
 package nancy.util;
 
-import jdk.internal.util.xml.impl.Input;
 import nancy.model.responseResult;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,10 +14,18 @@ import java.io.InputStream;
  * @Version 1.0
  **/
 public class JSONUtilTeat {
+
     @Test
-    public void teatRead(){
-        InputStream in = getClass().getResourceAsStream().getClass();
+    public void testRead(){
+        InputStream in = getClass().getClassLoader().getResourceAsStream("response.json");
+        responseResult r = JsonUtil.read(in,responseResult.class);
+        System.out.println(r);
+        Assert.assertNotNull(r);
+
     }
+
+
+
 
     @Test
     public void testWrite(){

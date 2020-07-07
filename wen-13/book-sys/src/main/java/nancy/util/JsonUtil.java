@@ -21,19 +21,22 @@ public class JsonUtil {
         MAPPER = new ObjectMapper();
         MAPPER.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
     }
+
+
     //读取输入流的json数据，反序列化为对象
     public static <T> T read(InputStream in,Class<T> clazz){
         try {
             return MAPPER.readValue(in,clazz);
         } catch (IOException e) {
-            throw new SystemExcption("003",e,"http请求，解析json数据出错");
+            throw new SystemExcption("003","http请求，解析json数据出错",e);
         }
     }
+
     public static String write(Object o){
         try {
             return MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(o);
         } catch (JsonProcessingException e) {
-            throw new SystemExcption("004",e,"json序列化对象失败");
+            throw new SystemExcption("004","json序列化对象失败",e);
         }
     }
 }

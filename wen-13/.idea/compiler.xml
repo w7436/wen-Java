@@ -9,14 +9,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Order-system" />
         <module name="ee-test" />
+        <module name="thread-adv-study" />
         <module name="order-system" />
         <module name="JVM-study" />
         <module name="Design-Test" />
-        <module name="selevt-blog" />
+        <module name="item-book" />
         <module name="sys" />
         <module name="book-sys" />
         <module name="JSON-Test" />
-        <module name="thread-adv-study" />
+        <module name="selevt-blog" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,8 @@
       <module name="book-sys" target="1.8" />
       <module name="Design-Test" target="1.5" />
       <module name="ee-test" target="1.8" />
+      <module name="item-book" target="1.8" />
+      <module name="items" target="1.5" />
       <module name="JSON-Test" target="1.8" />
       <module name="JVM-study" target="1.8" />
       <module name="maven-test" target="1.5" />

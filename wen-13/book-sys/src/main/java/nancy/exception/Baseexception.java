@@ -2,6 +2,7 @@ package nancy.exception;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @ClassName Baseexception
@@ -12,14 +13,17 @@ import lombok.Setter;
  **/
 @Setter
 @Getter
+@ToString
 public class Baseexception extends RuntimeException{
     protected  String code;
 
-    public Baseexception(String code,String message) {
-        this(code,null,message);
+    public Baseexception(String message, String code) {
+        super(message);
+        this.code = code;
     }
-    public Baseexception(String code,Throwable cause,String message) {
-        super(message,cause);
+
+    public Baseexception( String code,String message, Throwable cause) {
+        super(message, cause);
         this.code = code;
     }
 }

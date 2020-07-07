@@ -40,7 +40,7 @@
                 contentType:"application/json",//请求的数据格式
                 data:JSON.stringify(data),//发送的请求数据，将JS对象转化为JSON字符串
                 dataType:"json",//响应的数据格式
-                success:function (r) {
+                success:function (r) {//r代表响应 的数据
                     alert(JSON.stringify(r))
                 },error:function (jq) {
                     alert("状态码："+jq.status+",错误消息："+jq.statusText)

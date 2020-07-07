@@ -4,6 +4,8 @@
     <file type="web" url="file://$PROJECT_DIR$/blog" />
     <file type="web" url="file://$PROJECT_DIR$/book-sys" />
     <file type="web" url="file://$PROJECT_DIR$/Design-Test" />
+    <file type="web" url="file://$PROJECT_DIR$/item-book" />
+    <file type="web" url="file://$PROJECT_DIR$/items" />
     <file type="web" url="file://$PROJECT_DIR$/JSON-Test" />
     <file type="web" url="file://$PROJECT_DIR$/maven-test" />
     <file type="web" url="file://$PROJECT_DIR$/order-system" />
@@ -22,6 +24,7 @@
         <option value="$PROJECT_DIR$/book-sys/pom.xml" />
         <option value="$PROJECT_DIR$/sys/pom.xml" />
         <option value="$PROJECT_DIR$/JSON-Test/pom.xml" />
+        <option value="$PROJECT_DIR$/item-book/pom.xml" />
       </list>
     </option>
   </component>

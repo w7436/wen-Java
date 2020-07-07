@@ -8,10 +8,12 @@ package nancy.exception;
  * @Version 1.0
  **/
 public class SystemExcption extends Baseexception{
-    public SystemExcption(String code,String message) {
-        this(code,null,message);
+
+    public SystemExcption(String message, String code) {
+        super("SYS"+code,"服务端错误"+message);
     }
-    public SystemExcption(String code,Throwable cause,String message) {
-       super("SYS"+code,cause,"系统异常"+message);
+
+    public SystemExcption(String code, String message, Throwable cause) {
+        super("SYS"+code, "服务端错误"+message, cause);
     }
 }

@@ -9,11 +9,12 @@ package nancy.exception;
  **/
 public class ClientException extends Baseexception{
 
-    public ClientException( String code,String message) {
-        this(code,null,message);
+
+    public ClientException(String message, String code) {
+        super("CLI"+code,"客户端错误"+message);
     }
 
-    public ClientException(String code,Throwable cause,String message) {
-        super("CLI="+code, cause, "客户端异常"+message);
+    public ClientException(String code, String message, Throwable cause) {
+        super("CLI"+code, "客户端错误"+message, cause);
     }
 }
