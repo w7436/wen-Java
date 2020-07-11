@@ -2,6 +2,7 @@ package TreeNode;
 
 
 import javax.print.attribute.standard.Sides;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -25,6 +26,76 @@ class ListNode {
      ListNode(int x) { val = x; }
 }
 public class Main {
+    /**
+     * 给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径,将符合的路径打印出来
+     *
+     */
+    private List<List<Integer>> res = new ArrayList<>();
+    private List<Integer> cur = new ArrayList<>();
+    private void dfs1(TreeNode root,int sum){
+        if(root == null) return;
+        cur.add(root.val);
+        if(root.left == null && root.right == null) {
+            if(sum == root.val) {
+                List<Integer> l = new ArrayList<>(cur);
+                res.add(l);
+            }
+        }
+        dfs(root.left,sum - root.val);
+        dfs(root.right,sum - root.val);
+        cur.remove(cur.size()-1);
+    }
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+        dfs(root,sum);
+        return res;
+    }
+
+    /**
+     * 路径总和：给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，
+     * 这条路径上所有节点值相加等于目标和
+     *
+     * 思想一：利用递归的思想，先序遍历
+     * 思想二：；利用队列的思想
+     */
+    boolean flg = false;
+    private void dfs(TreeNode root,int sum){
+        if(root == null) return;
+        //判断是否为叶子结点，只有在叶子结点才能进行判断
+        if(root.left == null && root.right == null) {
+            if(sum == root.val) flg = true;
+        }
+        dfs(root.left,sum - root.val);
+        dfs(root.right,sum - root.val);
+    }
+    public boolean hasPathSum1(TreeNode root, int sum) {
+        if(root == null) return false;
+        dfs(root,sum);
+        return flg;
+    }
+    public boolean hasPathSum2(TreeNode root, int sum) {
+        if(root == null ) return false;
+        Queue<TreeNode> q1 = new LinkedList<TreeNode>();
+        Queue<Integer> q2 = new LinkedList<>();
+        q1.add(root);
+        q2.add(root.val);
+        while(!q1.isEmpty()) {
+            TreeNode node = q1.poll();
+            int val = q2.poll();
+            if(node.left == null && node.right == null) {
+                if(val == sum) return true;
+            }
+            if(root.left != null){
+                q1.add(root.left);
+                q2.add(val+root.left.val);
+            }
+            if(root.right != null) {
+                q1.add(root.right);
+                q2.add(val+root.right.val);
+            }
+        }
+        return false;
+    }
+
     /**
      * 层序遍历
      * [

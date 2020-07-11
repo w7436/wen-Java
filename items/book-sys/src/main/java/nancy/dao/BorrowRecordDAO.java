@@ -7,9 +7,7 @@ import nancy.model.Classes;
 import nancy.model.Student;
 import nancy.util.DBUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -179,5 +177,72 @@ public class BorrowRecordDAO {
         }
         return br;
 
+    }
+
+    public static int insert(BorrowRecord br) {
+        Connection c = null;
+        PreparedStatement p = null;
+        try {
+            c = DBUtil.getConnection();
+            String sql = "insert  borrow_record(book_id,student_id,start_time,end_time) values (?,?,?,?)";
+
+            p = c.prepareStatement(sql);
+            p.setInt(1,br.getBookId());
+            p.setInt(2,br.getStudentId());
+            p.setTimestamp(3,new Timestamp(br.getStartTime().getTime()));
+            p.setTimestamp(4,new Timestamp(br.getEndTime().getTime()));
+            return p.executeUpdate();
+        } catch (SQLException e) {
+            throw new SystemExcption("0008","插入图书借阅信息详情出错",e);
+        } finally {
+            DBUtil.close(c,p);
+        }
+
+    }
+
+    public static int update(BorrowRecord br) {
+        Connection c = null;
+        PreparedStatement p = null;
+        try {
+            c = DBUtil.getConnection();
+            String sql = "update borrow_record set book_id = ?,student_id = ?,start_time = ?,end_time = ? where id = ?";
+
+            p = c.prepareStatement(sql);
+            p.setInt(1,br.getBookId());
+            p.setInt(2,br.getStudentId());
+            p.setTimestamp(3,new Timestamp(br.getStartTime().getTime()));
+            p.setTimestamp(4,new Timestamp(br.getEndTime().getTime()));
+            p.setInt(5,br.getId());
+            return p.executeUpdate();
+        } catch (SQLException e) {
+            throw new SystemExcption("0001","更改图书借阅信息详情出错",e);
+        } finally {
+            DBUtil.close(c,p);
+        }
+    }
+
+    public static int delete(String[] ids) {
+        Connection c = null;
+        PreparedStatement p = null;
+        try {
+            c = DBUtil.getConnection();
+            StringBuilder sql = new StringBuilder("delete from borrow_record where id in (");
+                    for(int i = 0;i < ids.length;i++){
+                        if(i != 0) {
+                            sql.append(",");
+                        }
+                        sql.append("?");
+                    }
+            sql.append(")");
+            p = c.prepareStatement(sql.toString());
+            for(int i = 0;i < ids.length;i++){
+                p.setInt(i+1,Integer.parseInt(ids[i]));
+            }
+            return p.executeUpdate();
+        } catch (SQLException e) {
+            throw new SystemExcption("0000","删除图书借阅信息详情出错",e);
+        } finally {
+            DBUtil.close(c,p);
+        }
     }
 }
