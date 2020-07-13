@@ -11,7 +11,125 @@ import java.util.*;
  * @Version 1.0
  **/
 public class Main {
-    
+    /**
+     * 编写一段程序来查找第 n 个超级丑数。
+     * 超级丑数是指其所有质因数都是长度为 k 的质数列表 primes 中的正整数。
+     */
+    public int nthSuperUglyNumber(int n, int[] primes) {
+        PriorityQueue<Long>queue=new PriorityQueue<>();
+        long res=1;
+        for(int i=1;i<n;i++){
+            for(int prime:primes){
+                queue.add(prime*res);
+            }
+            res=queue.poll();
+            while(!queue.isEmpty()&&res==queue.peek()) queue.poll();
+        }
+        return (int)res;
+    }
+    /**
+     * 编写一个程序，找出第n个丑数，丑数就是只包括2,3,5的正整数
+     * 1、利用优先级队列，也就是小顶堆
+     * 2、动态规划
+     */
+    public int nthUglyNumber(int n) {
+        //利用最小堆来解决
+//        PriorityQueue<Double> q = new PriorityQueue<>();
+//        double res = 1;
+//        for(int i = 1;i < n;i++) {
+//            q.add(res * 2);
+//            q.add(res * 3);
+//            q.add(res * 5);
+//            res = q.poll();
+//            //去重
+//            while (!q.isEmpty() && res == q.peek()) {
+//                q.poll();
+//            }
+//        }
+//        return (int)res;
+        //利用动态规划
+        int[] dp = new int[n];
+        dp[0] = 1;
+        int m = 0,j = 0,k = 0;
+        for(int i = 1;i < n; i++){
+            int min = Math.min(dp[m]*2,Math.min(dp[j]*3,dp[k]*5));
+            if(min == dp[m]*2) m++;
+            if(min == dp[j]*3) j++;
+            if(min == dp[k]*5) k++;
+            dp[i] = min;
+        }
+        return dp[n-1];
+    }
+    /**
+     * 编写一个函数，计算两个数组的交集
+     * 1、利用集合
+     * 2、利用Map映射
+     * 3、利用排序
+     */
+    public int[] intersect(int[] nums1, int[] nums2) {
+        // List<Integer> l = new ArrayList<>();
+        // for(int i = 0;i < nums1.length;i++) {
+        //     l.add(nums1[i]);
+        // }
+        // List<Integer> l2 = new ArrayList<>();
+        // for(int i = 0;i < nums2.length;i++){
+        //     if(l.contains(nums2[i])) {
+        //         l2.add(nums2[i]);
+        //         l.remove(Integer.valueOf(nums2[i]));
+        //     }
+
+        // }
+        // int[] arr = new int[l2.size()];
+        // int i = 0;
+        // for(int num:l2) {
+        //     arr[i++] = num;
+        // }
+        // return arr;
+
+        // Map<Integer,Integer> map = new HashMap<>();
+        // for(int num : nums1) {
+        //     Integer count = map.get(num);
+        //     if(count == null){
+        //         map.put(num,1);
+        //     }else {
+        //         map.put(num,++count);
+        //     }
+        // }
+        // List<Integer> l = new ArrayList<>();
+        // for(int num : nums2){
+        //     Integer count = map.get(num);
+        //     if(count != null && count != 0){
+        //         l.add(num);
+        //         map.put(num,--count);
+        //     }
+        // }
+        // int[] arr = new int[l.size()];
+        // int i = 0;
+        // for(int num : l){
+        //     arr[i++] = num;
+        // }
+        // return arr;
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        List<Integer> l = new ArrayList<>();
+        for(int i = 0,j = 0;i < nums1.length && j < nums2.length;){
+            if(nums1[i] == nums2[j]) {
+                l.add(nums1[i]);
+                i++;
+                j++;
+            } else if(nums1[i] > nums2[j]) {
+                j++;
+            }else {
+                i++;
+            }
+        }
+        int[] arr = new int[l.size()];
+        int i = 0;
+        for(int num : l){
+            arr[i++] = num;
+        }
+        return arr;
+    }
     //深度优先搜索
     /**
      给定一个二维的矩阵，包含 'X' 和 'O'（字母 O）。
