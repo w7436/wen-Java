@@ -5,6 +5,66 @@
                            https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+    <!-- 把对象的创建交给spring管理-->
+    <!-- Spring管理的细节
+        1、创建bean对象的3钟方式：使用一个类中的静态方法创建对象；使用一个类中的实例方法创建对象；使用默认的构造方法
+        2、bean对象的作用范围
+            bean标签的属性scope属性
+            作用：用于指定bean的作用范围
+            取值：singleton:单例，默认值
+                 prototype：多例
+                 request：web应用的请求范围
+                 session：web应用的会话范围
+                 global-session：集群环境的会话范围，倘若不是集群环境就是session
+        3、bean对象的生命周期
+            单例对象：
+                出生：当容器创建时对象出生
+                活着：只要容器还在，对象一直活着
+                销毁：容器销毁，对象死亡
+            多例对象：
+                出生：当我们使用对象时候，spring框架创建
+                活着：对象只要在使用一直活着
+                销毁：垃圾回收机制
+     -->
+
+    <!--依赖注入
+        依赖关系的管理我们都交给spring,在当前类使用到其他类中的对象，由spring为我们提供，我们只需要在配置文件中
+        进行配置，依赖关系的维护称之为依赖注入
+        依赖注入的数据，三类：基本类型和String；bean对象；复杂类型/集合类型
+        依赖注入的方式：三类：使用构造方法；使用set方法；使用注解
+
+        1、构造函数的注入：
+        使用的标签：constructor-arg
+        标签出现的位置bean内部
+        标签中的属性：
+            type：指定需要注入的数据的类型，该数据是构造函数中某个数据的类型
+            index:指定要注入的数据给构造函数中指定的索引位置，位置从0开始
+            name：给构造函数中指定的参数进行赋值
+
+            value：用于提供基本类型和String类型的赋值操作
+            ref：用于指定其他的bean类型，也就是在IOC核心容器中出现过的bean对象
+
+         优点：在获取bean对象的时候，注入数据是必须的操作，否则不能创建对象
+         缺点：改变恶类的实例化方式
+
+
+         2、set方法注入（常用）
+            标签：property
+            标签出现的位置bean内部
+            name：指定注入时所调用的set方法名称
+            value：用于提供基本类型和String类型的赋值操作
+            ref：用于指定其他的bean类型，也就是在IOC核心容器中出现过的bean对象
+
+            优点：创建对象没有明确的限制，直接使用默认构造函数
+
+
+        3、复杂结类型的注入/集合类型的注入
+            用于给list结构集合注入的标签：list array set
+            用于给map集合注入的标签：map props
+            结构相同，标签可以互换
+            -->
+
+
         <!--定义bean对象：默认是通过无参构造方法生成对象，没有设置scope默认为singleton -->
 <!--    <bean id="duck1" class="model.Duck">-->
 <!--        <property name="name" value="LadyGaga" />-->
@@ -36,7 +96,8 @@
 
     <!--   通过实例方法实例化对象-->
 <!--    <bean id="duckFactory" class="model.DuckFactory" />-->
-
 <!--    <bean id="duck4" factory-bean="duckFactory" factory-method="create2" />-->
+
+
     <bean id="test" class="model.Test" init-method="init"/>
 </beans>
