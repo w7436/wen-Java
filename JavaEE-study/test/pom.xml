@@ -28,7 +28,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.47</version>
+            <version>8.0.16</version>
         </dependency>
 
 <!--    C3P0是一个开放源代码的JDBC连接池，Hibernate的发行包中默认使用此连接池，性能很好。-->
