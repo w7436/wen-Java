@@ -27,6 +27,52 @@ class ListNode {
 }
 public class Main {
     /**
+     *  将有序数组转换为二叉搜索树
+     *  将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。
+     *
+     * 本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1
+     */
+    public TreeNode build(int[] nums,int left,int right) {
+        if(left > right) return null;
+        int mid = left + (right - left) / 2;
+        TreeNode root = new TreeNode(nums[mid]);
+        root.left = build(nums,left,mid - 1);
+        root.right = build(nums,mid+1,right);
+        return root;
+    }
+    public TreeNode sortedArrayToBST(int[] nums) {
+        if(nums == null) return null;
+        else return build(nums,0,nums.length-1);
+    }
+    /**
+     * 有序链表转化为二叉搜索树
+     * 给定一个单链表，其中的元素按升序排序，将其转换为高度平衡的二叉搜索树。
+     * 本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1
+     *
+     * 思想：先利用快慢指针找到根节点，将链表划分两部分，进行递归，直到根节点为null
+     */
+    public TreeNode sortedListToBST(ListNode head) {
+        if(head == null) return null;
+        if(head.next == null ) return new TreeNode(head.val);
+        //找根节点
+        ListNode pre = head;
+        ListNode slow = head.next;
+        ListNode fast = slow.next;
+        while(fast != null && fast.next != null) {
+            pre = pre.next;
+            slow = pre.next;
+            fast = fast.next.next;
+        }
+
+        pre.next = null;
+        TreeNode root = new TreeNode(slow.val);
+        root.left = sortedListToBST(head);
+        root.right = sortedListToBST(slow.next);
+        return root;
+    }
+
+
+    /**
      * 给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径,将符合的路径打印出来
      *
      */

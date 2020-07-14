@@ -17,6 +17,8 @@
             <version>5.2.5.RELEASE</version>
         </dependency>
 
+        <!--Apache 组织提供的一个开源 JDBC工具类库，它是对JDBC的简单封装，学习成本极低，
+        并且使用dbutils能极大简化jdbc编码的工作量，同时也不会影响程序的性能-->
         <dependency>
             <groupId>commons-dbutils</groupId>
             <artifactId>commons-dbutils</artifactId>
@@ -26,7 +28,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.4</version>
+            <version>5.1.47</version>
         </dependency>
 
 <!--    C3P0是一个开放源代码的JDBC连接池，Hibernate的发行包中默认使用此连接池，性能很好。-->
@@ -43,6 +45,18 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+        </dependency>
+
+        <!--整和junit单元测试的jar包-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>5.2.5.RELEASE</version>
+        </dependency>
 
 
 

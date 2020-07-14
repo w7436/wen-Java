@@ -26,6 +26,8 @@ public class FilterLogin implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         String uri = req.getServletPath();
+
+        
         if("/login.html".equals(uri) || uri.startsWith("/public/") || uri.startsWith("/static/")
         || "/user/login".equals(uri)){
             filterChain.doFilter(servletRequest,servletResponse);

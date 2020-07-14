@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AOP-test/AOP-test.iml" filepath="$PROJECT_DIR$/AOP-test/AOP-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-study/Spring-study.iml" filepath="$PROJECT_DIR$/Spring-study/Spring-study.iml" />
       <module fileurl="file://$PROJECT_DIR$/ee-study/ee-study.iml" filepath="$PROJECT_DIR$/ee-study/ee-study.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />

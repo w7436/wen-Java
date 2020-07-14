@@ -1,11 +1,9 @@
 package nancy.dao;
 
 import nancy.exception.SystemExcption;
-import nancy.model.Book;
-import nancy.model.BorrowRecord;
-import nancy.model.Classes;
-import nancy.model.Student;
+import nancy.model.*;
 import nancy.util.DBUtil;
+import nancy.util.countHolder;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,7 +19,7 @@ import java.util.List;
  **/
 public class BorrowRecordDAO {
 
-    public static List<BorrowRecord> query() {
+    public static List<BorrowRecord> query(Page pg) {
         List<BorrowRecord> list = new ArrayList<>();
         Connection c = null;
         PreparedStatement p = null;
@@ -29,7 +27,7 @@ public class BorrowRecordDAO {
 
         try{
             c = DBUtil.getConnection();
-            String sql ="select br.id," +
+            StringBuilder sql =new StringBuilder("select br.id," +
                     "       br.book_id," +
                     "       br.student_id," +
                     "       br.start_time," +
@@ -50,9 +48,44 @@ public class BorrowRecordDAO {
                     "  from borrow_record br" +
                     "         join book b on br.book_id = b.id" +
                     "         join student s on br.student_id = s.id" +
-                    "         join classes c on s.classes_id = c.id";
-            p = c.prepareStatement(sql);
+                    "         join classes c on s.classes_id = c.id");
+            //搜索内容不为空,根据学生姓名和图书的名称进行查询
+            if(pg.getSearchText()!=null && pg.getSearchText().trim().length() > 0) {
+                sql.append("  where s.student_name like ?  or b.book_name like ?");
+            }
+            if(pg.getSortOrder() != null && pg.getSortOrder().trim().length() > 0) {
+                sql.append("  order by br.create_time " + pg.getSortOrder());//使用拼接方式，占位符替换时，字符串替换会给我们添加单引号
+            }
+            StringBuilder countSQL = new StringBuilder("select count(0) count from (");
+            countSQL.append(sql);
+            countSQL.append("）tmp");
+
+            //获取查询结构集的数量
+            p = c.prepareStatement(countSQL.toString());
+            if(pg.getSearchText()!=null && pg.getSearchText().trim().length() > 0){
+                p.setString(1,"%"+pg.getSearchText()+"%");
+                p.setString(2,"%"+pg.getSearchText()+"%");
+            }
+            while(r.next()){
+                int count = r.getInt("count");
+                countHolder.set(count);
+
+            }
+
+            //分页查询
+            sql.append(" limit ?,?");
+            p = c.prepareStatement(sql.toString());
+            int i= 1;
+            if(pg.getSearchText()!=null && pg.getSearchText().trim().length() > 0){
+                p.setString(i++,"%"+pg.getSearchText()+"%");
+                p.setString(i++,"%"+pg.getSearchText()+"%");
+            }
+            //页码转索引（前一页的页码*每一页的行数,索引从0开始）
+            p.setInt(i++,(pg.getPageNumber()-1)*pg.getPageSize());
+            p.setInt(i++,pg.getPageSize());
             r = p.executeQuery();
+
+
             while(r.next()){
                 BorrowRecord br = new BorrowRecord();
                 br.setId(r.getInt("id"));

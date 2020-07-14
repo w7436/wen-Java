@@ -2,6 +2,8 @@ package nancy.servlet;
 
 import nancy.dao.BorrowRecordDAO;
 import nancy.model.BorrowRecord;
+import nancy.model.Page;
+import nancy.util.Util;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +21,8 @@ import java.util.List;
 public class BorrowRecordQueryServlet extends AbstrctBaseServlet {
     @Override
     public Object process(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        List<BorrowRecord> list = BorrowRecordDAO.query();
+        Page pg = Util.parse(req);
+        List<BorrowRecord> list = BorrowRecordDAO.query(pg);
         return list;
     }
 }

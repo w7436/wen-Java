@@ -8,7 +8,7 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--扫描这个包中所有的注解-->
-    <context:component-scan base-package="nancy"></context:component-scan>
+<!--    <context:component-scan base-package="nancy"></context:component-scan>-->
     <!--
     1、用于创创建对象：作用和XML中配置文件中的编写<base>标签功能一样的
     @component：用于把当前类对象存入容器中
@@ -42,5 +42,19 @@
         PostConstruct：
             作用：用于指定初始化方法
     -->
+
+<!--    &lt;!&ndash;配置QueryRunner &ndash;&gt;-->
+<!--    <bean id = "queryRunner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">-->
+<!--        &lt;!&ndash;注入数据源&ndash;&gt;-->
+<!--        <constructor-arg name ="ds" ref="dataSource"></constructor-arg>-->
+<!--    </bean>-->
+
+<!--    <bean id = "dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+<!--        &lt;!&ndash;连接数据库的必备信息&ndash;&gt;-->
+<!--        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>-->
+<!--        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/new_test"></property>-->
+<!--        <property name="user" value="root"></property>-->
+<!--        <property name="password" value="123456"></property>-->
+<!--    </bean>-->
 
 </beans>

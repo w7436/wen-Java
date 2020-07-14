@@ -12,6 +12,34 @@ import java.util.*;
  **/
 public class Main {
     /**
+     *三角形最小路径和
+     *
+     * 给定一个三角形，找出自顶向下的最小路径和。每一步只能移动到下一行中相邻的结点上。
+     * 相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上一层结点下标 + 1 的两个结点
+     * 动态规划：
+     */
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int row = triangle.size();
+        int col = triangle.get(row-1).size();
+        int[][] dp  = new int[row][col];
+        int res = Integer.MAX_VALUE;
+        for(int i = 1;i < row;i++) {
+            for(int j = 0;j <= i;j++) {
+                if(j == 0) {
+                    dp[i][j] = dp[i-1][j] + triangle.get(i).get(j);
+                } else if (j == i) {
+                    dp[i][j] = dp[i-1][j-1] + triangle.get(i).get(j);
+                } else {
+                    dp[i][j] = Math.min(dp[i-1][j-1],dp[i-1][j])+triangle.get(i).get(j);
+                }
+            }
+        }
+        for(int i = 0;i < col;i++) {
+            res = Math.min(res,dp[row-1][i]);
+        }
+        return res;
+    }
+    /**
      * 编写一段程序来查找第 n 个超级丑数。
      * 超级丑数是指其所有质因数都是长度为 k 的质数列表 primes 中的正整数。
      */

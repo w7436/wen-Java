@@ -3,6 +3,7 @@ package nancy.servlet;
 import nancy.exception.Baseexception;
 import nancy.model.responseResult;
 import nancy.util.JsonUtil;
+import nancy.util.countHolder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -41,6 +42,7 @@ public abstract class AbstrctBaseServlet extends HttpServlet {
             r.setCode("000");
             r.setMessage("操作成功");
             r.setData(data);
+            r.setTotal(countHolder.get());
         } catch (Exception e) {//出现异常处理逻辑
             e.printStackTrace();
             if(e instanceof Baseexception ){
@@ -56,6 +58,8 @@ public abstract class AbstrctBaseServlet extends HttpServlet {
             PrintWriter pw = new PrintWriter(sw);
             e.printStackTrace();
             r.setStackTrace(sw.toString());
+        }finally {
+            countHolder.remove();//线程结束前要remove删除
         }
 
         PrintWriter pw = resp.getWriter();

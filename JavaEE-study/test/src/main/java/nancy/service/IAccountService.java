@@ -16,5 +16,9 @@ import java.util.List;
  * 账户的业务层接口
  */
 public interface IAccountService {
-    List<Account> findAllAccount;
+    List<Account> findAllAccount();//查询所有
+    Account findAccountById(Integer id);//id查询
+    void saveAccount(Account account);//保存数据
+    void updateAccount(Account account);//更新数据
+    void deleteAccount(Integer id);//删除数据
 }
