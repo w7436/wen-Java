@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ee-study" />
         <module name="AOP-test" />
+        <module name="Proxy-test" />
         <module name="Spring-study" />
         <module name="test" />
       </profile>
@@ -16,6 +17,7 @@
     <bytecodeTargetLevel>
       <module name="AOP-test" target="1.5" />
       <module name="ee-study" target="1.8" />
+      <module name="Proxy-test" target="1.5" />
       <module name="Spring-study" target="1.8" />
       <module name="test" target="1.5" />
     </bytecodeTargetLevel>

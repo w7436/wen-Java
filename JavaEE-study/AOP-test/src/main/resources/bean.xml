@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--配置spring的IOC，将service对象配置-->
+    <bean id="accountService" class="nancy.service.impl.AccountServiceImpl"></bean>
+    <!--spring中基于AOP配置步骤：
+        1、把通知bean也交给spring管理
+        2、使用aop:config标签表明AOP配置
+        3、使用aop:aspect标签表明配置切面
+            id属性：是给切面提供唯一一个标识
+            ref属性：是指通知类bean的Id
+    -->
+    <bean id = "logger" class="nancy.utils.logger"></bean>
+    <aop:config>
+        <aop:aspect id =
+    </aop:config>
+
+
+
+</beans>
