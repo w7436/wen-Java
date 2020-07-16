@@ -16,9 +16,10 @@
             id属性：是给切面提供唯一一个标识
             ref属性：是指通知类bean的Id
     -->
+
     <bean id = "logger" class="nancy.utils.logger"></bean>
     <aop:config>
-        <aop:aspect id =
+        <aop:aspect id = "logAdvice" ref="logger" ><
     </aop:config>
 
 

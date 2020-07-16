@@ -15,7 +15,7 @@ public class AccountServiceImpl implements IAccountService {
     }
 
     public void updateAccount(int i) {
-        System.out.println("执行了更新");
+        System.out.println("执行了更新"+i);
 
     }
 
