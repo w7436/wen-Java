@@ -71,7 +71,9 @@ create table borrow_record(
    student_id int comment '学生id',
    start_time timestamp not null comment '借阅日期',
    end_time timestamp null default null comment '归还日期',
-   create_time timestamp default NOW() comment '创建时间'
+   create_time timestamp default NOW() comment '创建时间',
+   foreign key (book_id) references book(id),
+   foreign key (student_id) references student(id)
 ) comment '图书借阅信息';
 
 
@@ -140,6 +142,3 @@ insert into borrow_record(book_id, student_id, start_time, end_time, create_time
 insert into borrow_record(book_id, student_id, start_time, end_time, create_time) values (3, 3, '2020-02-01 14:20:00', '2020-02-21 14:20:00', now());
 insert into borrow_record(book_id, student_id, start_time, end_time, create_time) values (3, 6, '2020-04-01 14:20:00', '2020-05-01 14:20:00', now());
 insert into borrow_record(book_id, student_id, start_time, end_time, create_time) values (3, 8, '2020-06-01 14:20:00', '2020-06-06 14:20:00', now());
-
-
-select * from borrow_record where start_time >= '2020-05-01 14:20:00' and end_time <= '2020-06-06 14:20:00';

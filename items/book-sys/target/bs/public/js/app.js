@@ -196,8 +196,7 @@ function initNav(pid, options){
     $('#'+pid+' a[data-toggle="tab"]').on('click', function (e) {
         e.preventDefault();
         $(this).tab('show');
-        for(let i in options){
-            let option = options[i];
+        for(let option of options){
             if(this.id === option.id && !option.hasInit && option.init != undefined){
                 //初始化方法调用
                 option.init();
@@ -206,16 +205,14 @@ function initNav(pid, options){
         }
     });
     $('#'+pid+' a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        for(let i in options){
-            let option = options[i];
+        for(let option of options){
             if(this.id === option.id && option.active == false){
                 $(e.target).removeClass("active");
             }
         }
     });
     $('#'+pid+' a[data-toggle="tab"]').each(function () {
-        for(let i in options){
-            let option = options[i];
+        for(let option of options){
             if(this.id === option.id && option.default == true){
                 $(this).click();
             }
@@ -435,35 +432,57 @@ function initClipboard(copyDomId, pid) {
  */
 function initSuccessModal() {
     let content = '';
-    content +=   '<div class="modal fade" id="main_success_modal" tabindex="-1" role="dialog" data-backdrop="static">';
-    content +=      '<div class="modal-dialog modal-sm" role="document" aria-hidden="true">';
-
-    content +=          '<div class="modal-content text-center" style="height: 30px;">';
-    content +=              '<p class="text-success">';
-    content +=                  '<i class="far fa-hand-peace mr-2" style="top: auto; left: auto;"></i>';
-    content +=                  '<label id="main_success_modal_title"></label>';
-    content +=              '</p>';
+    content +=   '<div class="container">';
+    content +=      '<div class="modal fade" id="'+successModal.id+'" tabindex="-1" role="dialog" data-backdrop="static">';
+    content +=          '<div class="modal-dialog modal-sm" role="document" aria-hidden="true">';
+    content +=              '<div class="modal-content text-center" style="height: 30px;">';
+    content +=                  '<p class="text-success">';
+    content +=                      '<i class="far fa-hand-peace mr-2" style="top: auto; left: auto;"></i>';
+    content +=                      '<label id="'+successModal.id+'_title"></label>';
+    content +=                  '</p>';
+    content +=              '</div>';
     content +=          '</div>';
     content +=      '</div>';
     content +=  '</div>';
     $("body").append(content);
+    $('#'+successModal.id).on('shown.bs.modal', function (e) {
+        let hook = successModal.hook();
+        hook();
+    })
 }
+
+let successModal = {
+    id: "main_success_modal",
+    defaultTimeout: 200,
+    hook: function(){
+        let timeout = successModal.timeout ? successModal.timeout : successModal.defaultTimeout;
+        return function () {
+            setTimeout(function() {
+                $("#"+successModal.id).modal("hide");
+                if(successModal.callback != undefined)
+                    successModal.callback();
+            }, timeout);
+        }
+    },
+    show: function (opts) {
+        opts = opts ? opts : {};
+        successModal.timeout = opts.timeout;
+        successModal.callback = opts.callback;
+        $("#"+successModal.id+"_title").html(opts.content ? opts.content : "操作成功");
+        $('#'+successModal.id).modal('show');
+    }
+};
 
 /**
  * 显示ajax提交成功模态框
  * @param content 内容
  */
 function showSuccessModal(content, callback, timeout) {
-    timeout = timeout == undefined ? 500 : timeout;
-    if(content == undefined)
-        content = "操作成功";
-    $("#main_success_modal_title").html(content);
-    $('#main_success_modal').modal('show');
-    setTimeout(function() {
-        $("#main_success_modal").modal("hide");
-        if(callback != undefined)
-            callback();
-    }, timeout);
+    successModal.show({
+        content: content,
+        callback: callback,
+        timeout: timeout,
+    });
 }
 
 /**
@@ -536,34 +555,48 @@ function validateForm(form, event) {
  * @param opts 表格配置
  */
 function initTable(opts) {
-    initColumnFormatter(opts);
+    let promises = promiseSelectColumn(opts);
     initToolbar(opts);
-    $("#"+opts.id).bootstrapTable(opts);
+    $.when.apply(this, promises).done(function () {
+        for(let column of arguments)
+            setColumnFormatter(column);
+        $("#"+opts.id).bootstrapTable(opts);
+    });
 }
 
 /**
  * 获取表格列中设置的数据字典数据，并添加到列属性中
  * @param opts 表格属性
  */
-function initColumnFormatter(opts) {
-    for(let i in opts.columns){
-        let column = opts.columns[i];
-        if(column.type == 'select' && ((column.url == undefined && column.dictionaryKey != undefined) || column.relatedSelect == undefined)){
-            column.dictionary = queryDictionaryTags(column.url, column.dictionaryKey);
-            column.formatter = function(value, item, index) {
-                if(value == undefined){
-                    value = parseField(item, column.field);
-                }
-                if(column.dictionary != undefined){
-                    for(let i in column.dictionary){
-                        let option = column.dictionary[i];
-                        if(option.dictionaryTagKey == value)
-                            return option.dictionaryTagValue;
-                    }
-                }
-                return '-';
+function promiseSelectColumn(opts) {
+    let promises = new Array();
+    for(let column of opts.columns){
+        if(column.type == 'select'
+            && column.visible != false
+            && ((column.url == undefined && column.dictionaryKey != undefined)
+                    || column.relatedSelect == undefined)){
+            promises.push(promiseAjaxDictionaryTags(column));
+        }
+    }
+    return promises;
+}
+
+/**
+ * 设置表单列的formatter显示内容
+ * @param column
+ */
+function setColumnFormatter(column) {
+    column.formatter = function(value, item, index) {
+        if(value == undefined){
+            value = parseField(item, column.field);
+        }
+        if(column.dictionary != undefined){
+            for(let option of column.dictionary){
+                if(option.dictionaryTagKey == value)
+                    return option.dictionaryTagValue;
             }
         }
+        return '-';
     }
 }
 
@@ -591,17 +624,21 @@ function parseField(item, field) {
  * @param dictionaryKey 数据字典键
  * @returns 数据字典数据
  */
-function queryDictionaryTags(url, dictionaryKey) {
-    let tags;
-    $.ajax({
-        url: (url == undefined ? APP.dictTagUrl : url),
-        data: (isString(dictionaryKey) ? {"dictionaryKey": dictionaryKey} : undefined),
-        async: false,
-        success: function (r) {
-            tags = r.data;
-        }
+function promiseAjaxDictionaryTags(column) {
+    return new Promise(function (resolve, reject) {
+        $.ajax({
+            url: (column.url == undefined ? APP.dictTagUrl : column.url),
+            data: (isString(column.dictionaryKey) ? {"dictionaryKey": column.dictionaryKey} : undefined),
+            success: function (r) {
+                // console.log("query "+this.url+": "+JSON.stringify(r.data));
+                column.dictionary = r.data;
+                resolve(column);
+            },
+            error: function (jqXHR, statusText, errorThrown) {
+                reject(jqXHR);
+            }
+        });
     });
-    return tags;
 }
 
 /**
@@ -616,8 +653,7 @@ function initToolbar(opts) {
     if(isString(toolbars) || !Array.isArray(toolbars) || toolbars.length == 0)
         return;
     let content =           '<div id="'+tableId+'_toolbar" role="toolbar">';
-    for(let i in toolbars){
-        let toolbar = toolbars[i];
+    for(let toolbar of toolbars){
         switch(toolbar.type){
             case "add":
                 toolbar.id = tableId+'_toolbar_add';
@@ -680,11 +716,8 @@ function initToolbar(opts) {
     // opts.onLoadError = function(row){
     //     tableSelected(opts);
     // };
-    for(let i in toolbars){
-        let toolbar = toolbars[i];
-        if(toolbar.hasInit === true){
-
-        }else{
+    for(let toolbar of toolbars){
+        if(toolbar.hasInit !== true){
             toolbar.init();
             toolbar.hasInit = true;
         }
@@ -717,8 +750,8 @@ function initToolbarModal(tableId, toolbar, columns) {
     content +=                  '<form id="'+btnId+'_form" class="form-inline needs-validation" novalidate role="form">';
     if(toolbar.type == "update")
         content +=                  '<input type="hidden" id="'+btnId+'_form_id" name="'+btnId+'_form_id">';
-    if(toolbar.type == "custom")
-        content += '<div id="' + btnId + '_form_ids_div" class="d-none"></div>';
+    // if(toolbar.type == "custom")
+    //     content +=                  '<div id="' + btnId + '_form_ids_div" class="d-none"></div>';
     content +=                      parseColumns(btnId, columns, toolbar);
     content +=                  '</form>';
     content +=                  generateErrorContent(btnId+"_modal");
@@ -740,44 +773,46 @@ function initToolbarModal(tableId, toolbar, columns) {
     content +=  '</div>';
     $("body").append(content);
 
+    //模态框初始化日期控件
+    initDatetimePicker(btnId+"_modal");
+
     let form = document.getElementById(btnId+"_form");
 
-    for(let i in columns){
-        let column = columns[i];
+    for(let column of columns){
         let $dom = $('[id="'+form.id+"_"+column.field+'"]');
         //级联下拉菜单绑定事件
         if(isString(column.relatedSelect)){
             $('[id="'+form.id+"_"+column.relatedSelect+'"]').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+                // console.log("select "+column.field+" related "+column.relatedSelect+" change: "+$(e.target).val())
                 if($(e.target).val() == undefined) {
-                    if(column.type == undefined || column.type == "text"){
+                    //文本框关联下拉菜单，没有值是设置为空
+                    if(column.type == undefined || column.type == "text" || column.type == "textarea"){
                         $dom.val('');
                     }
                     return;
                 }
 
-                let dictionaryKey;
                 let relatedDictionary;
                 if (column.relatedField != undefined) {
-                    for (let i in columns) {
-                        let relatedColumn = columns[i];
+                    for (let relatedColumn of columns) {
                         if (relatedColumn.field == column.relatedSelect) {
                             relatedDictionary = relatedColumn.dictionary;
                             break;
                         }
                     }
-                    for (let i in relatedDictionary) {
-                        if (relatedDictionary[i].dictionaryTagKey == $(e.target).val()) {
-                            dictionaryKey = parseField(relatedDictionary[i], column.relatedField);
+                    for (let option of relatedDictionary) {
+                        if (option.dictionaryTagKey == $(e.target).val()) {
+                            column.dictionaryKey = parseField(option, column.relatedField);
                             break;
                         }
                     }
                 } else {
-                    dictionaryKey = $(e.target).val();
+                    column.dictionaryKey = $(e.target).val();
                 }
                 if(column.type == 'select') {
-                    initRelatedSelect($dom, column, dictionaryKey);
-                }else if(column.type == undefined || column.type == "text"){
-                    $dom.val(dictionaryKey);
+                    initRelatedSelect($dom, column);
+                }else if(column.type == undefined || column.type == "text" || column.type == "textarea"){
+                    $dom.val(column.dictionaryKey);
                 }
             });
         }
@@ -789,77 +824,97 @@ function initToolbarModal(tableId, toolbar, columns) {
         $("#"+btnId+"_modal").modal('show');
         initErrorContent(btnId+"_modal");
 
-        for(let i in columns){
-            let column = columns[i];
+        let promises = new Array();
+        for(let column of columns){
             let $dom = $('[id="'+form.id+"_"+column.field+'"]');
             //初始化表单值
             if(isString(column.field) && (toolbar.invisible == undefined
                                 || $.inArray(column.field, toolbar.invisible) == -1)) {
+                //查询下拉菜单选项
+                if(column.type == 'select' && column.relatedSelect == undefined){
+                    promises.push(promiseAjaxDictionaryTags(column));
+                }else{
+                    setDomValue($dom);
+                }
+            }
+        }
+        $.when.apply(this, promises).then(function () {
+            for(let selectColumn of arguments){
+                let $dom = $('[id="'+form.id+"_"+selectColumn.field+'"]');
+                $dom.html(selectOptions(selectColumn.dictionary));
                 setDomValue($dom);
             }
-        }
+            //点击修改按钮，需要先查询数据
+            if(toolbar.type == "update"){
+                let ids = tableSelectedIds(tableId);
+                $.ajax({
+                    url: toolbar.queryUrl,
+                    data: {id: ids[0]},
+                    success: function (result) {
+                        // console.log("query "+this.url);
+                        $(form).show();
+                        $("#"+btnId+"_form_submit").show();
+                        let data = result.data;
+
+                        let $dom = $('#'+form.id+"_id");
+                        setDomValue($dom, data.id);
+
+                        for (let column of columns) {
+                            //A->B级联下拉菜单，B获取值并设置到列属性，之后在A改变内容时获取
+                            if (column.type == 'select' && isString(column.relatedSelect)) {
+                                column.selectInitData = parseField(data, column.field);
+                            }
+                        }
+                        //前后遍历不能合并：级联下拉有依赖性
+                        for (let column of columns) {
+                            if(isString(column.field)){
+                                let $dom = $('[id="'+form.id+"_"+column.field+'"]');
+                                // if (column.type == 'select') {
+                                //     console.log("set "+column.field+": "+parseField(data, column.field))
+                                // }
+                                setDomValue($dom, parseField(data, column.field));
+                            }
+                        }
+                    },
+                    error: function (error) {
+                        $(form).hide();
+                        $("#"+btnId+"_form_submit").hide();
+                        showError(error, btnId+"_modal");
+                    }
+                });
+            }
+        });
 
         //自定义按钮，隐藏域设置为表格多选ids
-        if(toolbar.type == "custom"){
-            let ids = tableSelectedIds(tableId);
-            let content = '';
-            for(let i in ids){
-                content += '<input type="checkbox" name="'+form.id+"_ids"+'" value="'+ids[i]+'" checked>';
-            }
-            $("#"+form.id+"_ids_div").html(content);
-        //点击修改按钮，需要先查询数据
-        }else if(toolbar.type == "update"){
-            let ids = tableSelectedIds(tableId);
-            $.ajax({
-                url: toolbar.queryUrl,
-                data: {id: ids[0]},
-                success: function (result) {
-                    $(form).show();
-                    $("#"+btnId+"_form_submit").show();
-                    let data = result.data;
-
-                    let $dom = $('#'+form.id+"_id");
-                    setDomValue($dom, data.id);
-
-                    for (let i in columns) {
-                        let column = columns[i];
-                        //A->B级联下拉菜单，B获取值并设置到列属性，之后在A改变内容时获取
-                        if (column.type == 'select' && isString(column.relatedSelect)) {
-                            column.selectInitData = parseField(data, column.field);
-                        }
-                    }
-                    //前后遍历不能合并：级联下拉有依赖性
-                    for (let i in columns) {
-                        let column = columns[i];
-                        if(isString(column.field)){
-                            let $dom = $('[id="'+form.id+"_"+column.field+'"]');
-                            // if (column.type == 'select') {
-                            //     console.log("set "+column.field+": "+parseField(data, column.field))
-                            // }
-                            setDomValue($dom, parseField(data, column.field));
-                        }
-                    }
-                },
-                error: function (error) {
-                    $(form).hide();
-                    $("#"+btnId+"_form_submit").hide();
-                    showError(error, btnId+"_modal");
-                }
-            });
-        }
+        // if(toolbar.type == "custom"){
+        //     let ids = tableSelectedIds(tableId);
+        //     let content = '';
+        //     for(let id of ids){
+        //         content += '<input type="checkbox" name="'+form.id+"_ids"+'" value="'+id+'" checked>';
+        //     }
+        //     $("#"+form.id+"_ids_div").html(content);
+        // }
     });
-    //模态框初始化日期控件
-    initDatetimePicker(btnId+"_modal");
+
 
     //模态框中提交事件
     $("#"+btnId+"_form_submit").click(function (e) {
         if(validateForm(form, e)){
+            let data = $(form).serializeJson(form.id+"_");
+            if(toolbar.type == "custom") {
+                let ids = tableSelectedIds(tableId);
+                if (typeof toolbar.disableCount == "number") {
+                    data.ids = ids;
+                } else if (toolbar.enableCount == 1) {
+                    data.id = ids[0];
+                }
+            }
             $.ajax({
                 type: 'post',
                 url: toolbar.url,
                 contentType: "application/json",
                 //表单中控件id和name为特殊值会有问题，所以统一生成的id都加前缀，提交时获取的name去除前缀
-                data: $(form).serializeJsonString(form.id+"_"),
+                data: JSON.stringify(data),
                 success: function () {
                     $(form).removeClass("was-validated");
                     $("#"+btnId+"_modal").modal('hide');
@@ -884,7 +939,7 @@ function initToolbarModal(tableId, toolbar, columns) {
  * @param value
  * TODO
  */
-function initRelatedSelect($dom, column, dictionaryKey) {
+function initRelatedSelect($dom, column) {
     //初始化
     if(column.url == undefined) {
         if(column.selectInited != true){
@@ -894,17 +949,18 @@ function initRelatedSelect($dom, column, dictionaryKey) {
             column.selectInited = true;
         }
         //设值
-        $dom.selectpicker('val', dictionaryKey);
+        $dom.selectpicker('val', column.dictionaryKey);
     }else {
-        let tags = queryDictionaryTags(column.url, dictionaryKey);
-        column.dictionary = tags;
-        let options = selectOptions(tags);
-        $dom.html(options);
-        //设值
-        $dom.selectpicker('val', column.selectInitData == undefined ? '' : column.selectInitData);
-        $dom.selectpicker('refresh');
-        if(column.selectInitData != undefined)
-            column.selectInitData = undefined;
+        let promise = promiseAjaxDictionaryTags(column);
+        $.when(promise).done(function () {
+            let options = selectOptions(column.dictionary);
+            $dom.html(options);
+            //设值
+            $dom.selectpicker('val', column.selectInitData == undefined ? '' : column.selectInitData);
+            $dom.selectpicker('refresh');
+            if(column.selectInitData != undefined)
+                column.selectInitData = undefined;
+        })
     }
 }
 
@@ -915,13 +971,15 @@ function initRelatedSelect($dom, column, dictionaryKey) {
  */
 function setDomValue($dom, value) {
     if(value == undefined) value = '';
-    if ($dom.hasClass("datetimepicker-input"))
+    if ($dom.hasClass("datetimepicker-input") && $dom.val() != value)
         $dom.datetimepicker('date', value);
-    else if ($dom.attr("type") == "text" || $dom.attr("type") == "hidden")
+    else if (($dom.attr("type") == "text" || $dom.is("textarea") || $dom.attr("type") == "hidden") && $dom.val() != value)
         $dom.val(value);
-    else if ($dom.attr("type") == "checkbox")
+    else if ($dom.attr("type") == "checkbox" && $dom.val() != value){
         $dom.attr("checked", value);
-    else if($dom.is("select") && $dom.hasClass("selectpicker")){
+        $dom.val(value);
+    }else if($dom.is("select") && $dom.hasClass("selectpicker") && $dom.selectpicker('val') != value){
+        // console.log("set select value: "+$dom.attr("id")+"="+$dom.selectpicker('val')+"->"+value)
         $dom.selectpicker('val', value);
         $dom.selectpicker('refresh');
     }
@@ -941,9 +999,7 @@ function parseColumns(btnId, columns, toolbar) {
     let content = '';
     // 表单每行添加控件时，如果该行有两个控件，需要在该行第一个控件添加开头标签，第二个控件添加结束标签
     let nextNewLine = true;
-    let first = true;
-    for(let i in columns){
-        let column = columns[i];
+    for(let column of columns){
         if(isString(column.field) && (invisible == undefined || $.inArray(column.field, invisible) == -1)) {
             let required = (column.required == true || $.inArray(column.field, toolbar.requireFields) != -1);
             let requiredString = (required ? ' required' : '');
@@ -957,18 +1013,20 @@ function parseColumns(btnId, columns, toolbar) {
             let domPatternString = (isString(column.pattern) ? ' pattern="'+column.pattern+'"' : '');
             let type = (isString(column.type) ? column.type : "text");
             if(type == "checkbox") {
-                content +=          '<div class="form-row form-group col-md-12'+(first ? '' : ' mt-3')+' p-0">';
-                content +=              '<label for="'+formId+'_'+column.field+'" class="col-md-2 p-0">'+column.title+'：</label>';
-                content +=              '<input type="'+type+'" class="ml-2 p-0"'+domString+' value="false" onclick="'+(column.disabled == true ? 'return false;' : 'this.value=this.checked;')+'">';
+                content += '<div class="form-group col-md-12 align-items-start mt-3 p-0">';
+                content += '<label for="' + formId + '_' + column.field + '" class="col-md-2 p-0" style="display: inline; text-align:right">' + column.title + '：</label>';
+                content += '<input type="' + type + '" class="p-0"' + domString + ' value="false" onclick="' + (column.disabled == true ? 'return false;' : 'this.value=this.checked;') + '">';
+                content += columnTooltip(column);
+                content += '</div>';
+            } else if(type == "textarea") {
+                content +=          '<div class="form-group col-md-12 align-items-start mt-3 p-0">';
+                content +=              '<label for="'+formId+'_'+column.field+'" class="col-md-2 p-0" style="display: inline; text-align:right">'+column.title+'：</label>';
+                content +=              '<textarea class="form-control p-0 col-md-8" rows="3"'+domString+'></textarea>';
                 content +=              columnTooltip(column);
                 content +=          '</div>';
-                nextNewLine = true;
             } else {
-                if(nextNewLine){
-                    content +=      '<div class="form-row col-md-12 '+(first ? '' : ' mt-3')+' p-0">';
-                }
-                content +=              '<div class="form-group col-md-6 align-items-start">';
-                content +=                  '<label for="'+formId+'_'+column.field+'" class="col-md-4 p-0 mt-1">'+(required ? ' <label class="text-danger font-weight-bold mr-1">*</label>' : '')+column.title+'：</label>';
+                content +=              '<div class="form-group col-md-6 align-items-start mt-3 p-0">';
+                content +=                  '<label for="'+formId+'_'+column.field+'" class="col-md-4 p-0 mt-1" style="display: inline; text-align:right">'+(required ? ' <label class="text-danger font-weight-bold mr-1" style="display: inline; text-align:right">*</label>' : '')+column.title+'：</label>';
                 if(type == "datetime") {
                     content +=              '<input type="text" class="form-control datetimepicker-input col-md-7"'+domString+' data-toggle="datetimepicker" data-target="#'+domId+'"/>';
                 }else if(type == "select"){
@@ -982,25 +1040,16 @@ function parseColumns(btnId, columns, toolbar) {
                 }
                 content +=                  columnTooltip(column);
                 content +=              '</div>';
-                if(!nextNewLine){
-                    content +=      '</div>';
-                }
-                nextNewLine = !nextNewLine;
             }
-            if(first)
-                first = false;
         }
     }
-    if(!nextNewLine)
-        content += '</div>';
     return content;
 }
 
 function selectOptions(data) {
     let content = '';
     if($.isArray(data)) {
-        for (let i in data) {
-            let option = data[i];
+        for (let option of data) {
             if(option != undefined && option.dictionaryTagKey != undefined && option.dictionaryTagValue != undefined)
                 content += '<option value="' + option.dictionaryTagKey + '">' + option.dictionaryTagValue + '</option>';
         }
@@ -1122,8 +1171,7 @@ function tableSelected(opts) {
     let tableId = opts.id;
     let toolbars = opts.toolbars;
     let selectedRows = $("#"+tableId).bootstrapTable('getAllSelections');
-    for(let i in toolbars){
-        let toolbar = toolbars[i];
+    for(let toolbar of toolbars){
         if(typeof toolbar.enableCount == "number"){
             if(selectedRows.length == toolbar.enableCount)
                 $("#"+toolbar.id).attr("disabled", false);
@@ -1146,8 +1194,7 @@ function tableSelected(opts) {
 function tableSelectedIds(tableId) {
     let selectedRows = $("#"+tableId).bootstrapTable('getAllSelections');
     let ids = new Array();
-    for(let i in selectedRows){
-        let row = selectedRows[i];
+    for(let row of selectedRows){
         if(row.id != undefined) {
             ids.push(row.id);
         }

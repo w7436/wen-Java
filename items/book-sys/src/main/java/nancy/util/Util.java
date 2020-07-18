@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServletRequest;
  * @Version 1.0
  **/
 public class Util {
+    //解析搜索和分页的数据searchText=&sortOrder=asc&pageSize=7&pageNumber=1
     public static Page parse(HttpServletRequest request){
         Page p = new Page();
-        p.setSearchText(request.getParameter("searchText"));
+        p.setSearchText(request.getParameter("searchText"));//如果key没有的话返回null
         p.setPageSize(Integer.parseInt(request.getParameter("pageSize")));
         p.setSortOrder(request.getParameter("sortOrder"));
         p.setPageNumber(Integer.parseInt(request.getParameter("pageNumber")));

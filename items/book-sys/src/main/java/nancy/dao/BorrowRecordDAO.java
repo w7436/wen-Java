@@ -53,21 +53,25 @@ public class BorrowRecordDAO {
             if(pg.getSearchText()!=null && pg.getSearchText().trim().length() > 0) {
                 sql.append("  where s.student_name like ?  or b.book_name like ?");
             }
+            //升序或者降序，占位符替换的时候需要注意，会自动加上''.
             if(pg.getSortOrder() != null && pg.getSortOrder().trim().length() > 0) {
                 sql.append("  order by br.create_time " + pg.getSortOrder());//使用拼接方式，占位符替换时，字符串替换会给我们添加单引号
             }
-            StringBuilder countSQL = new StringBuilder("select count(0) count from (");
+
+            StringBuilder countSQL = new StringBuilder("select count(0) count from ( ");
             countSQL.append(sql);
-            countSQL.append("）tmp");
+            countSQL.append(" ) tmp");
 
             //获取查询结构集的数量
             p = c.prepareStatement(countSQL.toString());
+
             if(pg.getSearchText()!=null && pg.getSearchText().trim().length() > 0){
                 p.setString(1,"%"+pg.getSearchText()+"%");
                 p.setString(2,"%"+pg.getSearchText()+"%");
             }
+            r = p.executeQuery();
             while(r.next()){
-                int count = r.getInt("count");
+                int count = r.getInt("count");//获取查询总数量
                 countHolder.set(count);
 
             }
