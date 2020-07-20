@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="bs.war">
+    <root id="archive" name="book.war">
       <element id="artifact" artifact-name="book-sys:war exploded" />
     </root>
   </artifact>
