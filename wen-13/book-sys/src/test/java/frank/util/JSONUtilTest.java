@@ -7,7 +7,6 @@ import org.junit.Test;
 import java.io.InputStream;
 
 public class JSONUtilTest {
-
     @Test
     public void testRead(){
         InputStream is = getClass().getClassLoader().getResourceAsStream("response.json");
