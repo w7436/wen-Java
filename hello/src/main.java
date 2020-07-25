@@ -111,6 +111,7 @@ public class main {
     }
     public static void main(String[] args) {
         int[] array = {4,2,9,8,5,1,6,3,7};
+        Object
 //        bubbleSort(array);
 //       insertSort(array);
 //        insertSortOP(array);
