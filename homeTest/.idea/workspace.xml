@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7da550-8d9b-4d97-95f8-1f2765b8451b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../SSM/SSM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PriorityQueue/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueue/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hello/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hello/src/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TreeNode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TreeNode/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +100,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -191,8 +189,8 @@
       <item itemvalue="Application.TestDemo" />
       <item itemvalue="Application.EverdayTestDemo" />
       <item itemvalue="Application.Test" />
-      <item itemvalue="JUnit.TestDemo.dfs" />
       <item itemvalue="Application.MAIN" />
+      <item itemvalue="JUnit.TestDemo.dfs" />
     </list>
     <recent_temporary>
       <list>
@@ -302,6 +300,7 @@
       <workItem from="1594610547081" duration="239000" />
       <workItem from="1594684357340" duration="4030000" />
       <workItem from="1596634861575" duration="1553000" />
+      <workItem from="1596681881702" duration="1323000" />
     </task>
     <servers />
   </component>
@@ -342,26 +341,26 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="336" key="GridCell.Tab.-1.right/0.0.1280.689@0.0.1280.689" timestamp="1588390737483" />
-    <state width="1237" height="265" key="GridCell.Tab.0.bottom" timestamp="1596639989133">
+    <state width="1237" height="165" key="GridCell.Tab.0.bottom" timestamp="1596727092422">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state width="1237" height="436" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588945254964" />
-    <state width="1237" height="265" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1596639989133" />
-    <state width="1237" height="265" key="GridCell.Tab.0.center" timestamp="1596639989133">
+    <state width="1237" height="165" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1596727092422" />
+    <state width="1237" height="165" key="GridCell.Tab.0.center" timestamp="1596727092421">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state width="1237" height="436" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1588945254964" />
-    <state width="1237" height="265" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1596639989133" />
-    <state width="1237" height="265" key="GridCell.Tab.0.left" timestamp="1596639989133">
+    <state width="1237" height="165" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1596727092421" />
+    <state width="1237" height="165" key="GridCell.Tab.0.left" timestamp="1596727092421">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state width="1237" height="436" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1588945254964" />
-    <state width="1237" height="265" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1596639989133" />
-    <state width="1237" height="265" key="GridCell.Tab.0.right" timestamp="1596639989133">
+    <state width="1237" height="165" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1596727092421" />
+    <state width="1237" height="165" key="GridCell.Tab.0.right" timestamp="1596727092421">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state width="1237" height="436" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1588945254964" />
-    <state width="1237" height="265" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1596639989133" />
+    <state width="1237" height="165" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1596727092421" />
     <state width="1237" height="265" key="GridCell.Tab.1.bottom" timestamp="1596639989133">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
@@ -382,10 +381,10 @@
     </state>
     <state width="1237" height="223" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1588389330258" />
     <state width="1237" height="265" key="GridCell.Tab.1.right/0.0.1280.690@0.0.1280.690" timestamp="1596639989133" />
-    <state x="157" y="0" key="SettingsEditor" timestamp="1594262355104">
+    <state x="157" y="0" key="SettingsEditor" timestamp="1596681971704">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state x="157" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1594262355104" />
+    <state x="157" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1596681971704" />
     <state x="412" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591177758019">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
