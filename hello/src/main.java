@@ -98,7 +98,36 @@ public class main {
             }
         }
     }
-    //
+    /**
+     * 选择排序:每次选择最大或者最小的元素放在数组的最后的位置
+     */
+    public static void selectSort(int[] arr) {
+        for(int i = 0;i < arr.length - 1;i++) {
+            int maxPos = 0;
+            for(int j = 1;j < arr.length-i;j++) {
+                if(arr[maxPos] < arr[j]){
+                    maxPos = j;
+                }
+            }
+            if(maxPos != arr.length-1-i) {
+                swap(arr,maxPos,arr.length-1-i);
+            }
+        }
+    }
+    public static void selectSortOP(int[] arr) {
+        int begin = 0,end = arr.length-1;
+        while(begin < end) {
+            int index = begin+1;
+            int maxPos = begin;
+            int minPos = begin;
+            while(index <= end) {
+                if(arr[maxPos] > arr[index] ) {
+
+                }
+            }
+        }
+    }
+    //交换两个数字
     private static void swap(int[] arr, int j, int i) {
         int tmp = arr[j];
         arr[j] = arr[i];
@@ -111,11 +140,14 @@ public class main {
     }
     public static void main(String[] args) {
         int[] array = {4,2,9,8,5,1,6,3,7};
-        Object
+
 //        bubbleSort(array);
 //       insertSort(array);
 //        insertSortOP(array);
         shellSort(array);
         printArr(array);
     }
+
 }
+
+

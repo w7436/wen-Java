@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91a8d977-efcd-4437-add3-68b42c1be699" name="Default" comment="" />
+    <list default="true" id="91a8d977-efcd-4437-add3-68b42c1be699" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello/out/production/hello/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hello/src/main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +31,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../wen-MySQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -124,6 +128,7 @@
       <workItem from="1593051663498" duration="2561000" />
       <workItem from="1593398710353" duration="4144000" />
       <workItem from="1593569315776" duration="120000" />
+      <workItem from="1595574888196" duration="1253000" />
     </task>
     <servers />
   </component>
