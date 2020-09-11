@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c34cc2ac-fba3-441f-9c33-dd9985e27265" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringMVC_Demo_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringMVC_Demo_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SSM/springMVC-01-servlet/springMVC-01-servlet.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frame.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frame/Calculate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frame/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frame/MyCalculatorListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frame/Test/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frame/Test/Myqueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frame/nancy/DivideDef.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frame/nancy/EcDef.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Calculate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyCalculatorListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/Myqueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nancy/DivideDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PriorityQueue/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PriorityQueue/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hello/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homeTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../homeTest/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Tag Library Descriptor" />
+        <option value="FxmlFile" />
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+        <option name="userSettingsFile" value="D:\software\idea2020\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gnjSoBLkjJIX3HSg97ZFNFseKu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../later-Spring" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15527344" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="JUnit.userDaoTest">
+    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nancy.pojo.Hello" />
+      <module name="spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nancy.pojo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <module name="spring" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="userDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nancy.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nancy.dao" />
+      <option name="MAIN_CLASS_NAME" value="nancy.dao.userDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="userDaoTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nancy.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nancy.dao" />
+      <option name="MAIN_CLASS_NAME" value="nancy.dao.userDaoTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.userDaoTest" />
+        <item itemvalue="JUnit.userDaoTest.test" />
+        <item itemvalue="Application.MyTest" />
+        <item itemvalue="Application.Hello" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c34cc2ac-fba3-441f-9c33-dd9985e27265" name="Default Changelist" comment="" />
+      <created>1598757252859</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598757252859</updated>
+      <workItem from="1598757261062" duration="876000" />
+      <workItem from="1598779444473" duration="6586000" />
+      <workItem from="1598863771567" duration="5292000" />
+      <workItem from="1599653673851" duration="9883000" />
+      <workItem from="1599720821961" duration="985000" />
+      <workItem from="1599722446805" duration="176000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="268" y="24" key="#Inspections" timestamp="1598783903667">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="268" y="24" key="#Inspections/0.0.1280.690@0.0.1280.690" timestamp="1598783903667" />
+    <state x="122" y="0" key="#Project_Structure" timestamp="1599659230451">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="122" y="0" key="#Project_Structure/0.0.1280.690@0.0.1280.690" timestamp="1599659230451" />
+    <state x="234" y="4" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599667784665">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="234" y="4" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.690@0.0.1280.690" timestamp="1599667784665" />
+    <state x="447" y="59" key="#com.intellij.ide.util.MemberChooser" timestamp="1599664314318">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="447" y="59" key="#com.intellij.ide.util.MemberChooser/0.0.1280.690@0.0.1280.690" timestamp="1599664314318" />
+    <state x="407" y="252" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1598757419525">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="407" y="252" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath/0.0.1280.690@0.0.1280.690" timestamp="1598757419525" />
+    <state x="432" y="252" key="#com.intellij.javaee.module.view.web.EditWebRootDialog" timestamp="1598757401112">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="432" y="252" key="#com.intellij.javaee.module.view.web.EditWebRootDialog/0.0.1280.690@0.0.1280.690" timestamp="1598757401112" />
+    <state x="422" y="71" key="FileChooserDialogImpl" timestamp="1599722361091">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="422" y="71" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1599722361091" />
+    <state width="1237" height="464" key="GridCell.Tab.0.bottom" timestamp="1599669367034">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="464" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1599669367034" />
+    <state width="1237" height="464" key="GridCell.Tab.0.center" timestamp="1599669367034">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="464" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1599669367034" />
+    <state width="1237" height="464" key="GridCell.Tab.0.left" timestamp="1599669367034">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="464" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1599669367034" />
+    <state width="1237" height="464" key="GridCell.Tab.0.right" timestamp="1599669367034">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="464" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1599669367034" />
+    <state width="1237" height="464" key="GridCell.Tab.1.bottom" timestamp="1599669367034">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="464" key="GridCell.Tab.1.bottom/0.0.1280.690@0.0.1280.690" timestamp="1599669367034" />
+    <state width="1237" height="464" key="GridCell.Tab.1.center" timestamp="1599669367034">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="464" key="GridCell.Tab.1.center/0.0.1280.690@0.0.1280.690" timestamp="1599669367034" />
+    <state width="1237" height="464" key="GridCell.Tab.1.left" timestamp="1599669367034">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="464" key="GridCell.Tab.1.left/0.0.1280.690@0.0.1280.690" timestamp="1599669367034" />
+    <state width="1237" height="464" key="GridCell.Tab.1.right" timestamp="1599669367034">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="464" key="GridCell.Tab.1.right/0.0.1280.690@0.0.1280.690" timestamp="1599669367034" />
+    <state x="288" y="49" key="NewModule_or_Project.wizard" timestamp="1599722363508">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="288" y="49" key="NewModule_or_Project.wizard/0.0.1280.690@0.0.1280.690" timestamp="1599722363508" />
+    <state x="143" y="0" key="SettingsEditor" timestamp="1599722190636">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="143" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1599722190636" />
+    <state x="23" y="0" key="new project wizard" timestamp="1599722509761">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="23" y="0" key="new project wizard/0.0.1280.690@0.0.1280.690" timestamp="1599722509761" />
+    <state x="322" y="28" key="spring file set editor" timestamp="1599658745319">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="322" y="28" key="spring file set editor/0.0.1280.690@0.0.1280.690" timestamp="1599658745319" />
+  </component>
+</project>
